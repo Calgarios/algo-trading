@@ -1,0 +1,383 @@
+{
+  "configuration": {
+    "archive_sha256": "86ead90a23e36cda27089811851e023abe2e82646c944761628903eed3363249",
+    "code_sha256": {
+      "requirements-phase2.txt": "71811c158ce5bac60fc8494f79631085bd9ea22a69dd82e5c743afe90ac6f344",
+      "scripts/package_support.py": "eac7b48f0498171317e91b5ac045e70b72dd5bc2beaf1284394e019fceb2d5e6",
+      "scripts/run_phase2.py": "3c27677e1ade0eaf17623aabb5fa716f39b578c4d183653fd0809772375902dc"
+    },
+    "days": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30"
+    ],
+    "dependencies": {
+      "numpy": "2.3.1",
+      "pandas": "2.3.1",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2025.2",
+      "six": "1.17.0",
+      "tzdata": "2025.2"
+    },
+    "event_order": "notebook: sorted symbols, row-index round robin, original order within symbol",
+    "initial_cash_thb": 10000000,
+    "package_tree_sha256": "d2338e6fee3846d757fdfbd8480a745fd353d9877a981e01202e1cebaa1f6415",
+    "purpose": "Phase 2 official example integration; not the Phase 3 strategy",
+    "python": "3.13.5",
+    "random_seed": null,
+    "randomness": "No random operations in example or runner",
+    "strategy": "strategy.Example_strategy.Example_strategy",
+    "team": "example",
+    "timezone": "UTC; raw tick times are naive Asia/Bangkok"
+  },
+  "daily_metrics": [
+    {
+      "average_exposure": 0.006843575176051379,
+      "benchmark_return_pct": 0.0,
+      "cash": 8798048.783865634,
+      "date": "2026-09-09",
+      "expected_payoff": -143.42538154924003,
+      "max_drawdown_pct": 0,
+      "nav": 8858673.783865634,
+      "return_pct": -11.413262161343656,
+      "round_trips": 7955,
+      "ticks": 222574
+    },
+    {
+      "average_exposure": 0.005117032848536388,
+      "benchmark_return_pct": -0.11633704503905519,
+      "cash": 7864433.556380321,
+      "date": "2026-09-10",
+      "expected_payoff": -144.89667801158575,
+      "max_drawdown_pct": 10.921332595488511,
+      "nav": 7891188.556380321,
+      "return_pct": -21.088114436196786,
+      "round_trips": 14553,
+      "ticks": 175003
+    },
+    {
+      "average_exposure": 0.003804803309320936,
+      "benchmark_return_pct": -0.7820434694292123,
+      "cash": 6715526.353025526,
+      "date": "2026-09-11",
+      "expected_payoff": -141.5562173927118,
+      "max_drawdown_pct": 24.103059700978992,
+      "nav": 6723462.353025526,
+      "return_pct": -32.76537646974474,
+      "round_trips": 23146,
+      "ticks": 173751
+    },
+    {
+      "average_exposure": 0.0045488680537802495,
+      "benchmark_return_pct": -1.1716802393219263,
+      "cash": 5444272.055235452,
+      "date": "2026-09-14",
+      "expected_payoff": -140.83487677854046,
+      "max_drawdown_pct": 38.12344613909543,
+      "nav": 5481442.055235452,
+      "return_pct": -45.18557944764548,
+      "round_trips": 32083,
+      "ticks": 170564
+    },
+    {
+      "average_exposure": 0.006107273691975584,
+      "benchmark_return_pct": -1.2557014385167866,
+      "cash": 4482558.260291148,
+      "date": "2026-09-15",
+      "expected_payoff": -145.5136502991052,
+      "max_drawdown_pct": 48.76695574277411,
+      "nav": 4538568.260291148,
+      "return_pct": -54.61431739708852,
+      "round_trips": 37530,
+      "ticks": 188561
+    },
+    {
+      "average_exposure": 0.008819231402055684,
+      "benchmark_return_pct": -2.372906394844242,
+      "cash": 1502841.3678099585,
+      "date": "2026-09-16",
+      "expected_payoff": -167.24168828508542,
+      "max_drawdown_pct": 82.64702589444313,
+      "nav": 1537243.3678099585,
+      "return_pct": -84.62756632190042,
+      "round_trips": 50601,
+      "ticks": 197339
+    },
+    {
+      "average_exposure": 0.015525935556681513,
+      "benchmark_return_pct": -1.227078832197659,
+      "cash": 1052443.6728820268,
+      "date": "2026-09-17",
+      "expected_payoff": -162.1167992684413,
+      "max_drawdown_pct": 87.41797361460519,
+      "nav": 1114600.6728820268,
+      "return_pct": -88.85399327117975,
+      "round_trips": 54812,
+      "ticks": 151268
+    },
+    {
+      "average_exposure": 0.02159343691049107,
+      "benchmark_return_pct": -1.2280021420789204,
+      "cash": 806850.4516995455,
+      "date": "2026-09-18",
+      "expected_payoff": -157.58751277694313,
+      "max_drawdown_pct": 90.26851566348839,
+      "nav": 862080.4516995455,
+      "return_pct": -91.37919548300455,
+      "round_trips": 57987,
+      "ticks": 138343
+    },
+    {
+      "average_exposure": 0.037528282894358694,
+      "benchmark_return_pct": -0.49858733588165605,
+      "cash": 305391.9469052855,
+      "date": "2026-09-21",
+      "expected_payoff": -154.281279513882,
+      "max_drawdown_pct": 95.8713690578446,
+      "nav": 365741.9469052855,
+      "return_pct": -96.34258053094715,
+      "round_trips": 62448,
+      "ticks": 164762
+    },
+    {
+      "average_exposure": 0.11927103593681124,
+      "benchmark_return_pct": -0.2271342307905413,
+      "cash": 6204.140406201331,
+      "date": "2026-09-22",
+      "expected_payoff": -150.25357858551493,
+      "max_drawdown_pct": 99.51714961573475,
+      "nav": 42774.14040620133,
+      "return_pct": -99.572258595938,
+      "round_trips": 66275,
+      "ticks": 175009
+    },
+    {
+      "average_exposure": 0.19853391468853987,
+      "benchmark_return_pct": -0.041548944656809916,
+      "cash": 309.38839080139456,
+      "date": "2026-09-23",
+      "expected_payoff": -149.0247365677559,
+      "max_drawdown_pct": 99.60480102050305,
+      "nav": 35009.388390801396,
+      "return_pct": -99.64990611609198,
+      "round_trips": 66871,
+      "ticks": 165739
+    },
+    {
+      "average_exposure": 0.2645940143224241,
+      "benchmark_return_pct": -0.5262866323195433,
+      "cash": 304.3602920013945,
+      "date": "2026-09-24",
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.60711545383475,
+      "nav": 34804.360292001395,
+      "return_pct": -99.65195639707999,
+      "round_trips": 66872,
+      "ticks": 176455
+    },
+    {
+      "average_exposure": 0.32049102170494154,
+      "benchmark_return_pct": -0.5770686757889683,
+      "cash": 304.3602920013945,
+      "date": "2026-09-25",
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.60711545383475,
+      "nav": 34804.360292001395,
+      "return_pct": -99.65195639707999,
+      "round_trips": 66872,
+      "ticks": 141937
+    },
+    {
+      "average_exposure": 0.36840631121665207,
+      "benchmark_return_pct": -0.7691171310915302,
+      "cash": 304.3602920013945,
+      "date": "2026-09-28",
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.60711545383475,
+      "nav": 35004.360292001395,
+      "return_pct": -99.64995639708,
+      "round_trips": 66872,
+      "ticks": 137706
+    },
+    {
+      "average_exposure": 0.40993618858445546,
+      "benchmark_return_pct": -1.6250253910217265,
+      "cash": 304.3602920013945,
+      "date": "2026-09-29",
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.60711545383475,
+      "nav": 35204.360292001395,
+      "return_pct": -99.64795639708,
+      "round_trips": 66872,
+      "ticks": 210265
+    },
+    {
+      "average_exposure": 0.4462638691345156,
+      "benchmark_return_pct": -4.099495872804818,
+      "cash": 304.3602920013945,
+      "date": "2026-09-30",
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.61050196526207,
+      "nav": 34504.360292001395,
+      "return_pct": -99.65495639708,
+      "round_trips": 66872,
+      "ticks": 316891
+    }
+  ],
+  "data_audit": {
+    "backwards_timestamps_within_symbol": 0,
+    "exact_repeated_tick_rows": 1046005,
+    "null_cells": 0,
+    "sha256": "b0026b6edb1af7acca189482769a8443d027e08b220c2d1f87e7caa7a778612f",
+    "total_ticks": 2906167,
+    "trading_days": 16,
+    "universe_size": 48
+  },
+  "eligibility": "Not certified. Example fails working positive-payoff, average-exposure, drawdown and nonnegative-return requirements.",
+  "final": {
+    "date": "2026-09-30",
+    "holdings": [
+      {
+        "Actual Volume": 100,
+        "Amount Cost": 34257.45,
+        "Average Cost": 342.57449999999994,
+        "Buy Price": 342.57,
+        "Buy time": "2026-09-16 09:29:52",
+        "Market Price": 342.0,
+        "Market Value": 34200.0,
+        "Realized P&L": 0.0,
+        "Symbol": "ADVANC",
+        "Unrealized %": -0.16770074830438345,
+        "Unrealized P&L": -57.45
+      }
+    ],
+    "metrics": {
+      "Average Exposure": 0.4463,
+      "Avg Gain": 0.0,
+      "Avg Loss": 149.02,
+      "Benchmark Max DD": 4.099495872804818,
+      "Benchmark Return": -4.099495872804818,
+      "Buy Order Count": 66873,
+      "Calmar Ratio": -1.000446282580058,
+      "Cash Balance": 304.36,
+      "Excess Return": -95.55546052427518,
+      "Expected Payoff": -149.02,
+      "Max Drawdown (%)": 99.61,
+      "Max NAV": 8858673.78,
+      "Min NAV": 34504.36,
+      "Net Asset Value": 34504.36,
+      "Number of Stocks": 1,
+      "Owner": "example",
+      "Previous Day Max DD (%)": 99.61,
+      "Profitable Round-Trips": 0,
+      "Realized P&L": -9965438.19,
+      "Relative Drawdown": 0.9961050196526208,
+      "Return rate": -99.65495639708,
+      "Round-Trip Count": 66872,
+      "Sell Order Count": 66872,
+      "Total Cost": 34257.45,
+      "Unrealized %": -0.17,
+      "Unrealized P&L": -57.45,
+      "Win Rate": 0.0
+    },
+    "raw": {
+      "average_exposure": 0.4462638691345156,
+      "cash": 304.3602920013945,
+      "expected_payoff": -149.0225832504068,
+      "max_drawdown_pct": 99.61050196526207,
+      "nav": 34504.360292001395
+    },
+    "ticks": 316891
+  },
+  "purpose": "Phase 2 integration reference only; unchanged official Example_strategy, not a submission candidate",
+  "reconciliation": {
+    "cash_from_fills": 304.3602920021286,
+    "distinct_traded_stocks": 5,
+    "fill_rows": 133745,
+    "total_fees_thb": 3633491.639698379
+  },
+  "recorded_date_bangkok": "2026-10-29",
+  "repeatability": {
+    "economic_outputs_byte_identical": true,
+    "excluded": "Wall-clock error/summary timestamps, machine metadata and measured runtime",
+    "fresh_processes": 2,
+    "sha256": {
+      "engine/example/example_portfolio.json": "938415e43e729bff8d46c39e1ba072bdd23f513a28fbe55504d3b730cbb3248c",
+      "engine/example/example_transaction_log.csv": "1a8104236e21db8969bb05a87b90a6675da664b7913525758726560e9ba229eb",
+      "report.json": "0646c7a7debcd9e12fd3548e4b5b12401f0fc9f45aa5af555db097a0bd378212"
+    }
+  },
+  "runtime_observations": [
+    {
+      "daily_seconds": {
+        "2026-09-09": 11.845,
+        "2026-09-10": 7.957,
+        "2026-09-11": 6.701,
+        "2026-09-14": 9.297,
+        "2026-09-15": 11.609,
+        "2026-09-16": 12.476,
+        "2026-09-17": 6.074,
+        "2026-09-18": 5.378,
+        "2026-09-21": 8.04,
+        "2026-09-22": 11.093,
+        "2026-09-23": 12.921,
+        "2026-09-24": 11.087,
+        "2026-09-25": 11.194,
+        "2026-09-28": 9.036,
+        "2026-09-29": 11.549,
+        "2026-09-30": 16.638
+      },
+      "maximum_day_seconds": 16.638,
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "python": "3.13.5",
+      "total_daily_seconds": 162.895
+    },
+    {
+      "daily_seconds": {
+        "2026-09-09": 13.076,
+        "2026-09-10": 9.498,
+        "2026-09-11": 9.321,
+        "2026-09-14": 15.993,
+        "2026-09-15": 14.08,
+        "2026-09-16": 15.274,
+        "2026-09-17": 13.05,
+        "2026-09-18": 9.324,
+        "2026-09-21": 10.633,
+        "2026-09-22": 12.21,
+        "2026-09-23": 7.824,
+        "2026-09-24": 6.007,
+        "2026-09-25": 5.143,
+        "2026-09-28": 4.943,
+        "2026-09-29": 7.656,
+        "2026-09-30": 10.859
+      },
+      "maximum_day_seconds": 15.993,
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "python": "3.13.5",
+      "total_daily_seconds": 164.891
+    }
+  ],
+  "tests": {
+    "failed": 0,
+    "includes_known_upstream_defect_characterization": true,
+    "passed": 17
+  },
+  "validation_code_sha256": {
+    "scripts/audit_sample.py": "83266c8c53433f21e6ac4f969ad9eea4d61d6560152096cc96bf06afdff4854b",
+    "scripts/install_tradesim.py": "87660f48eac4dfed85b3196c215d53e96991e6cd894be75b2c3b12a118498efc",
+    "tests/test_tradesim_contract.py": "b3a1c5003b89a58c41fec0d7a1bc0e4ecb28811dbe8e638e3035d5582f919f17"
+  }
+}

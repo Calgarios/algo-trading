@@ -1,0 +1,10 @@
+{
+  "archive_name": "tradeSim0.2.7.zip",
+  "archive_sha256": "86ead90a23e36cda27089811851e023abe2e82646c944761628903eed3363249",
+  "archive_bytes": 17749522,
+  "source": "User-uploaded organizer distribution, received 2026-10-29 Asia/Bangkok",
+  "file_count": 536,
+  "tree_sha256": "d2338e6fee3846d757fdfbd8480a745fd353d9877a981e01202e1cebaa1f6415",
+  "tree_hash_algorithm": "sha256(json.dumps({relative_posix_path: file_sha256}, sort_keys=True).encode()); exclude __MACOSX, .DS_Store and __pycache__",
+  "engine_modified": false
+}
