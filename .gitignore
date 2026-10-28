@@ -1,0 +1,7 @@
+.venv/
+.local/
+artifacts/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.zip
