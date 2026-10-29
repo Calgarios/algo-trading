@@ -1,0 +1,4 @@
+# Offline report generation only; not required by submitted strategy/engine.
+matplotlib==3.10.7
+reportlab==4.4.4
+pypdf==6.1.3

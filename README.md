@@ -3,6 +3,9 @@
 KGI Algo Trading Bootcamp & Competition 2026, CU league.
 
 - [Current progress](docs/current-progress/README.md)
+- [Next actions and lessons](docs/to-do/README.md)
+- [Ten-strategy Phase 3 results](docs/result-data-visualisation/phase-3-results.md)
+- [Phase 3 comparison PDF](docs/result-data-visualisation/phase-3-results.pdf)
 - [Phase 1 plan](docs/phase-1-summary.md)
 - [Phase 2 interface, execution findings and limitations](docs/phase-2-summary.md)
 - [Official package provenance](docs/tradesim-0.2.7-provenance.json)
@@ -12,6 +15,37 @@ KGI Algo Trading Bootcamp & Competition 2026, CU league.
 - [Common criteria versus Best Alpha](docs/award-criteria.md)
 
 ## Reproduce Phase 3
+
+The ten-strategy comparison adds five custom signals and five indicator signals
+under one risk/execution layer. Each run freezes ten stocks using only history
+available before September 9, targets 76% exposure, and can reduce that target
+to 72% or 55% under its drawdown guard. The realized 70–80% exposure preference
+is reported separately from the ≥50% common criterion. Exact definitions and
+selection rules are in the [predeclared specification](docs/phase-3-ten-strategy-spec.md).
+
+After installing the Phase 2 environment below:
+
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/run_strategy_suite.py --output artifacts/comparison --workers 3
+uv pip install --python .venv/bin/python -r requirements-reporting.txt
+.venv/bin/python scripts/build_phase3_results.py --input artifacts/comparison
+```
+
+This uses the frozen configurations in `research/phase3-suite/`. The suite checks
+their hashes and the preparation sources before running. Regenerate the baskets
+independently with `scripts/prepare_strategy_suite.py --output artifacts/prepared-baskets`
+and compare with the recorded manifest. A changed hypothesis needs a new declared
+experiment, not an overwritten result. The report explains a fresh-process repeat
+and the optional `--repeat` argument for including that evidence in the PDF/Markdown.
+Reporting packages are local research tools, not strategy runtime dependencies.
+
+All ten use the same official tick dates, benchmark, costs, capital and event
+ordering. The baskets differ by strategy; each simulation trades at most ten
+distinct names. Daily reports now include all portfolio and SET50 metrics.
+September is development data, not untouched validation. The default companion
+below remains the original engineering reference; explicit suite configurations
+select the new strategies without changing that reference.
 
 Install the pinned environment and original package using the setup commands
 below, then run from the repository root:

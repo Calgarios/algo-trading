@@ -64,6 +64,8 @@ def main():
         parser.error('Dates must be unique available sample dates in ascending order.')
     if days != available[available.index(days[0]):available.index(days[-1]) + 1]:
         parser.error('Do not skip sample trading days within a run.')
+    if config.get('suite') and config['suite']['start_date'] != days[0]:
+        parser.error('Frozen comparison basket must be prepared for the run start date.')
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     bundle = output / 'strategy'
@@ -81,6 +83,8 @@ def main():
                   'scripts/run_phase3.py', 'scripts/phase3_reporting.py', 'scripts/phase3_support.py',
                   'scripts/package_support.py', 'requirements-phase2.txt', 'docs/phase-3-baseline-spec.md',
                   'docs/phase-3-exit-experiment.md', 'docs/award-criteria.md']
+    if config.get('suite'):
+        code_files += ['docs/phase-3-ten-strategy-spec.md', 'scripts/prepare_strategy_suite.py']
     metadata = {
         'purpose': 'Phase 3 deterministic diversified integration baseline; not untouched validation',
         'archive_sha256': provenance['archive_sha256'], 'package_tree_sha256': provenance['tree_sha256'],
@@ -145,6 +149,8 @@ def main():
             plans.append({'date': day, 'plan': plan})
             for fill in sim.execution.tranLog.transaction_log:
                 ledger.apply(fill)
+            if config.get('suite') and (len(ledger.symbols) > 10 or not ledger.symbols <= set(config['suite']['basket'])):
+                raise AssertionError('Comparison exceeded its ten distinct-stock basket')
             sim.flushTransactionLog()
             sim.flushErrorLogger()
             sim.create_transaction_summarize('baseline')
@@ -181,6 +187,10 @@ def main():
                     if not isclose(expected, observed, rel_tol=1e-10, abs_tol=1e-9):
                         raise AssertionError('Independent benchmark differs from engine')
             daily[-1]['eligibility'] = eligibility(metrics)
+            daily[-1]['performance'] = metrics
+            if config.get('suite'):
+                daily[-1]['target_exposure'] = plan['target_exposure']
+                daily[-1]['drawdown_guard'] = plan['drawdown_guard']
             environment['daily_seconds'][day] = round(time.perf_counter() - started, 3)
             print(f'{day}: {len(frame):,} ticks, NAV {nav:,.2f}, fills {ledger.fill_count}, '
                   f'{environment["daily_seconds"][day]:.2f}s', flush=True)
@@ -190,6 +200,10 @@ def main():
               'execution': {'decisions': decision_count, 'order_attempts': order_count,
                             'partial_fills': partial_count, 'zero_fills': zero_count,
                             'rejected_responses': rejected_count},
+              'user_targets': {'average_exposure_band': [0.70, 0.80],
+                               'average_exposure_in_band': .70 <= metrics['average_exposure'] <= .80,
+                               'distinct_stock_cap': 10,
+                               'distinct_stock_cap_met': metrics['distinct_stocks'] <= 10},
               'limitations': ['Static supplied universe; no effective-dated membership',
                               'Latest marks across symbols are not synchronized',
                               'Local owner baseline is not a verified registered identity',

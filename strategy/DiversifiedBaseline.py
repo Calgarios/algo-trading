@@ -1,6 +1,6 @@
 """Deterministic monthly quantity targets; no research-harness dependencies."""
 from datetime import date
-from math import floor, isfinite
+from math import floor, isfinite, sqrt
 
 from strategy.Strategies_template import Strategy_template
 
@@ -12,8 +12,10 @@ class DiversifiedBaseline(Strategy_template):
         super().__init__('baseline', 'DiversifiedBaseline', handler, '1min')
         self.config = handler.load_json('baseline.json')
         self._validate_config()
-        self.history = {s: handler.get_historical_data(s, 60, '1D')
-                        for s in self.config['universe']}
+        suite = self.config.get('suite')
+        symbols = suite['basket'] if suite else self.config['universe']
+        self.history = {s: handler.get_historical_data(s, 180 if suite else 60, '1D') for s in symbols}
+        self.benchmark_history = handler.get_historical_data('SET50', 180, '1D') if suite else []
         self.opening_nav = handler.get_cash_balance() + sum(
             h['Market Value'] for h in handler.get_all_stocks_info())
         self.plan = None
@@ -22,6 +24,12 @@ class DiversifiedBaseline(Strategy_template):
         self.last_decision = None
         self.exit_reason = None
         self.sold_today = False
+        self.rebalance_active = None
+        if suite:
+            info = handler.get_portfolio_info()
+            peak = max(self.config['initial_capital_thb'], info.get('Max NAV') or 0, self.opening_nav)
+            self.opening_drawdown = max(handler.get_max_draw_down() or 0,
+                                        (peak - self.opening_nav) / peak * 100)
 
     def _validate_config(self):
         c = self.config
@@ -44,6 +52,156 @@ class DiversifiedBaseline(Strategy_template):
             raise ValueError('Invalid exit policy')
         if c.get('selection', 'alphabetical') not in ('alphabetical', 'momentum20'):
             raise ValueError('Unsupported selection rule')
+        suite = c.get('suite')
+        if suite and (suite['id'] not in self.SUITE_IDS or len(suite['basket']) != 10
+                      or len(set(suite['basket'])) != 10 or not set(suite['basket']) <= set(c['universe'])
+                      or c['positions'] != 10 or c['target_exposure'] != .76 or c.get('exit_policy') is not None):
+            raise ValueError('Invalid ten-stock comparison configuration')
+
+    SUITE_IDS = ('C1', 'C2', 'C3', 'C4', 'C5', 'T1', 'T2', 'T3', 'T4', 'T5')
+
+    @staticmethod
+    def _mean(values):
+        return sum(values) / len(values)
+
+    @staticmethod
+    def _std(values):
+        mean = sum(values) / len(values)
+        return sqrt(sum((x - mean) ** 2 for x in values) / (len(values) - 1))
+
+    @staticmethod
+    def _ema(values, period):
+        result = [values[0]]
+        alpha = 2 / (period + 1)
+        for value in values[1:]:
+            result.append(alpha * value + (1 - alpha) * result[-1])
+        return result
+
+    @staticmethod
+    def _rsi(values, period=14):
+        changes = [b - a for a, b in zip(values, values[1:])]
+        gain = sum(max(x, 0) for x in changes[:period]) / period
+        loss = sum(max(-x, 0) for x in changes[:period]) / period
+        for change in changes[period:]:
+            gain = ((period - 1) * gain + max(change, 0)) / period
+            loss = ((period - 1) * loss + max(-change, 0)) / period
+        return 50.0 if gain == loss == 0 else 100.0 if loss == 0 else 100 - 100 / (1 + gain / loss)
+
+    @staticmethod
+    def _drawdown(values):
+        peak, worst = values[0], 0.0
+        for value in values:
+            peak = max(peak, value)
+            worst = max(worst, (peak - value) / peak * 100)
+        return worst
+
+    @classmethod
+    def suite_features(cls, bars, benchmark, day):
+        """Pure, prior-data-only features shared by preparation and daily decisions."""
+        def checked(records):
+            if len(records) < 80:
+                raise ValueError('Need at least 80 prior daily bars')
+            dates = [str(b['Date'])[:10] for b in records]
+            if dates != sorted(set(dates)) or any(d >= day for d in dates):
+                raise ValueError('Nonpast, duplicated or unordered history')
+            if (date.fromisoformat(day) - date.fromisoformat(dates[-1])).days > 7:
+                raise ValueError('Stale history')
+            for b in records:
+                if any(not isfinite(float(b[k])) or float(b[k]) <= 0 for k in ('Open', 'High', 'Low', 'Close')):
+                    raise ValueError('Invalid OHLC price')
+                if not isfinite(float(b['Volume'])) or float(b['Volume']) < 0:
+                    raise ValueError('Invalid history volume')
+            return dates, [float(b['Close']) for b in records]
+        dates, closes = checked(bars)
+        bm_dates, bm_closes = checked(benchmark)
+        returns = [b / a - 1 for a, b in zip(closes, closes[1:])]
+        stock_returns = dict(zip(zip(dates, dates[1:]), returns))
+        bm_returns = dict(zip(zip(bm_dates, bm_dates[1:]), [b / a - 1 for a, b in zip(bm_closes, bm_closes[1:])]))
+        aligned = sorted(stock_returns.keys() & bm_returns.keys())[-60:]
+        if len(aligned) < 40:
+            raise ValueError('Need 40 aligned stock/SET50 returns')
+        x, y = [bm_returns[d] for d in aligned], [stock_returns[d] for d in aligned]
+        mx, my = cls._mean(x), cls._mean(y)
+        variance = sum((v - mx) ** 2 for v in x)
+        beta = sum((a - mx) * (b - my) for a, b in zip(x, y)) / variance if variance else 0.0
+        vol = cls._std(returns[-20:])
+        sma20, sma60 = cls._mean(closes[-20:]), cls._mean(closes[-60:])
+        ema12, ema26 = cls._ema(closes, 12), cls._ema(closes, 26)
+        macd = [a - b for a, b in zip(ema12, ema26)]
+        path = sum(abs(b - a) for a, b in zip(closes[-21:-1], closes[-20:]))
+        turnovers = sorted(float(b['Close']) * float(b['Volume']) for b in bars[-20:])
+        return {'history_start': dates[0], 'history_end': dates[-1], 'bars': len(bars),
+                'close': closes[-1], 'ret5': closes[-1] / closes[-6] - 1,
+                'ret20': closes[-1] / closes[-21] - 1, 'ret60': closes[-1] / closes[-61] - 1,
+                'vol20': vol, 'downside20': sqrt(cls._mean([min(r, 0) ** 2 for r in returns[-20:]])) * sqrt(252),
+                'beta60': beta, 'aligned_returns': len(aligned),
+                'high55': max(float(b['High']) for b in bars[-56:-1]),
+                'efficiency20': abs(closes[-1] - closes[-21]) / path if path else 0.0,
+                'sma20': sma20, 'sma60': sma60, 'ema12': ema12[-1], 'ema26': ema26[-1],
+                'macd': macd[-1], 'macd_histogram': macd[-1] - cls._ema(macd, 9)[-1],
+                'rsi14': cls._rsi(closes),
+                'bollinger_z': (closes[-1] - sma20) / max(cls._std(closes[-20:]), 1e-8),
+                'median_value20': (turnovers[9] + turnovers[10]) / 2}
+
+    @classmethod
+    def suite_scores(cls, features, strategy_id):
+        if strategy_id == 'C5':
+            totals = {s: 0.0 for s in features}
+            for component in ('C1', 'C2', 'C3', 'C4'):
+                scores = cls.suite_scores(features, component)
+                ordered = sorted(scores, key=lambda s: (scores[s], s))
+                for symbol in ordered:
+                    # Average percentile for tied scores, independent of symbol.
+                    rank = (sum(v < scores[symbol] for v in scores.values())
+                            + (sum(v == scores[symbol] for v in scores.values()) - 1) / 2)
+                    totals[symbol] += rank / max(len(scores) - 1, 1) / 4
+            return totals
+        scores = {}
+        for symbol, f in features.items():
+            vol, close = max(f['vol20'], 1e-8), f['close']
+            scores[symbol] = {
+                'C1': (.6 * f['ret20'] + .4 * f['ret60']) / (vol * sqrt(20)),
+                'C2': -(f['downside20'] + .1 * max(f['beta60'], 0)),
+                'C3': (close / f['high55'] - 1) / vol + .5 * f['efficiency20'],
+                'C4': (f['ret60'] - 2 * f['ret5']) / (vol * sqrt(20)),
+                'T1': (f['sma20'] / f['sma60'] - 1) / vol,
+                'T2': (f['ema12'] - f['ema26']) / (close * vol),
+                'T3': (f['macd_histogram'] + .25 * f['macd']) / (close * vol),
+                'T4': -(f['rsi14'] - 35) ** 2 / 100 + (5 if close > f['sma60'] else 0),
+                'T5': -abs(f['bollinger_z'] + 1) - 2 * max(-2 - f['bollinger_z'], 0)
+                      + (1 if close > f['sma60'] else 0),
+            }[strategy_id]
+        return scores
+
+    def _build_suite_plan(self, day):
+        suite = self.config['suite']
+        features, rejected = {}, {}
+        for symbol, bars in self.history.items():
+            try:
+                features[symbol] = self.suite_features(bars, self.benchmark_history, day)
+            except (KeyError, TypeError, ValueError, OverflowError) as error:
+                rejected[symbol] = str(error)
+        try:
+            bm = [float(b['Close']) for b in self.benchmark_history
+                  if suite['start_date'] <= str(b['Date'])[:10] < day]
+            bm_dd = self._drawdown(bm) if bm and all(isfinite(x) and x > 0 for x in bm) else None
+        except (KeyError, TypeError, ValueError):
+            bm_dd = None
+        pf_dd = self.opening_drawdown
+        target, guard = .76, 'normal'
+        if pf_dd >= 2 or (bm_dd is not None and bm_dd >= .5 and pf_dd >= 1.2 * bm_dd):
+            target, guard = .72, 'soft_drawdown'
+        if pf_dd >= 4 or (bm_dd is not None and bm_dd >= 1 and pf_dd >= 1.35 * bm_dd):
+            target, guard = .55, 'hard_drawdown'
+        scores = self.suite_scores(features, suite['id'])
+        ordered = sorted(scores, key=lambda s: (-scores[s], s))
+        weights = {s: target / 10 * (1.2 - .4 * rank / 9) for rank, s in enumerate(ordered)}
+        targets = {s: floor(self.opening_nav * weights[s] / features[s]['close'] / 100) * 100 for s in ordered}
+        self.plan = {'month': day[:7] + '-01', 'date': day, 'strategy_id': suite['id'],
+                     'selected': ordered, 'targets': targets, 'weights': weights, 'eligible': features,
+                     'scores': scores, 'rejected': rejected, 'ready': len(features) == 10,
+                     'target_exposure': target, 'drawdown_guard': guard,
+                     'opening_portfolio_drawdown_pct': pf_dd, 'prior_benchmark_drawdown_pct': bm_dd}
 
     @staticmethod
     def buy_price(last, day):
@@ -93,6 +251,9 @@ class DiversifiedBaseline(Strategy_template):
         return None
 
     def _build_plan(self, day):
+        if self.config.get('suite'):
+            self._build_suite_plan(day)
+            return
         month = date.fromisoformat(day).replace(day=1)
         eligible, rejected = {}, {}
         for symbol, bars in self.history.items():
@@ -149,6 +310,9 @@ class DiversifiedBaseline(Strategy_template):
         if symbol not in self.config['universe']:
             decision['reason'] = 'unpermitted_symbol'
             return
+        if self.config.get('suite') and symbol not in self.config['suite']['basket']:
+            decision['reason'] = 'outside_frozen_basket'
+            return
         try:
             last = float(bar['Close'])
         except (TypeError, ValueError):
@@ -174,6 +338,14 @@ class DiversifiedBaseline(Strategy_template):
         elif not self.plan['ready']:
             decision['reason'] = 'unavailable_plan'
             return
+        if self.config.get('suite'):
+            decision.update({'strategy_id': self.config['suite']['id'], 'target_weight': self.plan['weights'][symbol],
+                             'drawdown_guard': self.plan['drawdown_guard']})
+            if self.rebalance_active is None:
+                self.rebalance_active = held == 0 or abs(target - held) * last >= .004 * self.opening_nav
+            if not self.rebalance_active:
+                decision['reason'] = 'rebalance_band'
+                return
         if held == target:
             decision['reason'] = 'at_target'
             return
