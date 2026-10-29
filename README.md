@@ -2,6 +2,7 @@
 
 KGI Algo Trading Bootcamp & Competition 2026, CU league.
 
+- [Current progress and Phase 3 handoff](docs/current-progress/README.md)
 - [Phase 1 plan](docs/phase-1-summary.md)
 - [Phase 2 interface, execution findings and limitations](docs/phase-2-summary.md)
 - [Official package provenance](docs/tradesim-0.2.7-provenance.json)
