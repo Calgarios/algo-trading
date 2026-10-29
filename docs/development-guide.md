@@ -5,7 +5,8 @@ Project: algo-trading | League: Chulalongkorn University (CU)
 Prepared: 29 October 2026 (Asia/Bangkok)
 
 > Status update: Phases 1 and 2 are now complete and merged. Read
-> [current progress and the Phase 3 handoff](current-progress/README.md) before
+> [current progress](current-progress/README.md) and the
+> [Phase 3 baseline](phase-3-summary.md) before
 > continuing. This guide and its PDF preserve the original planning snapshot;
 > their progress statements below predate Phase 2 completion.
 

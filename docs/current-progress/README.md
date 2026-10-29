@@ -1,15 +1,23 @@
-# Current progress and Phase 3 handoff
+# Current progress and Phase 4 handoff
 
 **Updated: 29 October 2026 (Asia/Bangkok).**
 Project: [Calgarios/algo-trading](https://github.com/Calgarios/algo-trading).
 Competition: KGI Algo Trading Bootcamp & Competition 2026, CU league.
-Reviewed repository baseline: `78e117f897f4ecfe15fb2df3dce72cc8fc262a1b` on `main`.
+Phase 3 starting baseline: `9e9b0d7e71cda4088f570ed7ec35eeefee186f28` on `main`.
 
-**Phases 1 and 2 are complete and merged. We are ready to begin Phase 3:
-our first complete baseline strategy. Phase 3 implementation has not started.**
-We have a verified local integration and reproducible organizer-example run;
-we do not yet have a team strategy, a validated profitable approach, an
-eligibility tracker, or an accepted competition submission.
+**Phases 1 and 2 are complete and merged. Phase 3's local engineering
+checkpoint is complete and prepared for review: a team baseline, independent
+accounting, inspectable decisions and eligibility tracking.** We do not yet
+have a validated profitable approach or an accepted competition submission.
+
+Read the [Phase 3 summary](../phase-3-summary.md),
+[predeclared specification](../phase-3-baseline-spec.md) and
+[reference evidence](../phase-3-run-evidence.json). The original 16-day sample
+returns −2.991564% versus SET50 −4.099496%, with 69.693722% average exposure.
+Working Best Alpha criteria fail: negative total return, zero completed FIFO
+round trips and undefined payoff. All 43 tests pass and two full replays match.
+The next research phase must preserve this reference and avoid treating the
+already-inspected September sample as untouched validation.
 
 Use this file as the current handoff. The earlier phase summaries and
 development guide retain their historical context. In particular, statements
@@ -54,8 +62,9 @@ in the reviewed `main`. At review, only `main` remained on the remote; no
 GitHub Actions workflow is tracked. The reported tests were run locally, not
 by GitHub CI. All three PR discussion timelines were checked and had no comments.
 
-The user has authorized publishing this progress summary through a PR and
-merging it into `main`. This documentation update does not implement Phase 3.
+The prior progress summary was published and merged through PR #4. Phase 3 is
+a separate implementation change; prior approval to merge documentation does
+not constitute competition submission or acceptance.
 
 ## 3. What Phase 2 established
 
@@ -146,8 +155,8 @@ the exact behavior and controlled examples.
 | --- | --- | --- |
 | 1. Define objectives and constraints | Complete | Maintain assumptions as organizer information changes |
 | 2. Establish the environment | Complete | Preserve the verified package and reference run |
-| 3. Build the baseline | **Next; not started** | Team strategy, risk checks, decision/fill logs, accounting and eligibility report |
-| 4. Research candidates | Not started | Chronological comparisons and experiment log |
+| 3. Build the baseline | **Local engineering complete; prepared for review** | Strategy, reports, eligibility, 43 passing tests and repeatable reference; see Phase 3 summary |
+| 4. Research candidates | Next; not started | Hypotheses, chronological comparisons and experiment log |
 | 5. Refine portfolio and execution | Not started | Evidence-backed sizing, turnover and risk improvements |
 | 6. Validate and rehearse submission | Not started | Exact-artifact validation, submission rehearsal and tested fallback |
 | 7. Operate and document | Not started | Daily monitoring and final report/video material |
@@ -156,7 +165,10 @@ Local integration checks from Phase 2 do not constitute Phase 6 organizer
 acceptance. Bring essential Phase 6 checks forward if confirmed deadlines
 require an early baseline submission.
 
-## 6. Next work: Phase 3
+## 6. Original Phase 3 handoff (now implemented)
+
+The following records the handoff before implementation. The chosen design,
+completed validation and current next steps are in the linked Phase 3 summary.
 
 The agreed direction is a simple diversified reference. A reasonable proposed
 starting design is deterministic selection from eligible stocks with sufficient
@@ -224,8 +236,8 @@ the user supplies organizer information and guides major goals and tradeoffs.
 
 ## 8. Repository map and resuming work
 
-All 15 files tracked at the reviewed baseline were inspected, including the
-PDF's extracted text:
+The original handoff inspected all 15 files at its Phase 2 baseline, including
+the PDF's extracted text. These remain the integration foundation:
 
 | File(s) | Purpose |
 | --- | --- |
@@ -243,6 +255,11 @@ PDF's extracted text:
 | [tests/test_tradesim_contract.py](../../tests/test_tradesim_contract.py) | 17 execution/interface/accounting checks |
 | [.gitignore](../../.gitignore) | Excludes environments, raw package/data, ZIPs and generated artifacts |
 
+Phase 3 adds `strategy/DiversifiedBaseline.py`, `strategy/baseline.json`,
+`scripts/run_phase3.py`, local loading/reporting helpers, two test modules,
+the baseline specification, Phase 3 summary and compact reference evidence.
+The official package and Phase 2 execution/validation files are unchanged.
+
 The original ZIP, installed `.local/` package and large `artifacts/` outputs
 are not stored on GitHub. A fresh checkout needs the original upload and the
 README setup steps. The recorded archive SHA-256 is
@@ -253,18 +270,19 @@ reviewed `main`. Do not assume those files will exist after cloning.
 
 For the next chat:
 
-> Continue Phase 3 of Calgarios/algo-trading for the KGI CU competition. Read
-> docs/current-progress/README.md, docs/phase-2-summary.md and the recorded run
-> evidence on main. Phases 1 and 2 are complete; PRs #1, #2 and #3 are merged.
-> Build our first transparent diversified baseline with risk controls,
-> decision/fill logging, accounting reconciliation and eligibility reporting.
-> Preserve the unmodified TradeSim 0.2.7 package and Phase 2 replay. Treat the
-> organizer example as integration evidence only. Confirm organizer access and
-> deadlines in parallel; do not claim submission readiness without their checks.
+> Continue toward Phase 4 of Calgarios/algo-trading for the KGI CU competition.
+> Read docs/current-progress/README.md, docs/phase-3-summary.md, the baseline
+> specification and exact run evidence. Check the Phase 3 PR's review/merge
+> status. Preserve the baseline and unmodified TradeSim/Phase 2 integration.
+> Record research hypotheses before tuning and establish chronological
+> comparisons using permitted data. The baseline outperformed SET50 in the
+> inspected sample but lost money and failed working eligibility; it is not
+> a validated profitable candidate. Confirm organizer access and deadlines
+> alongside research; do not claim submission readiness without their checks.
 
 ## 9. Review basis and limits
 
-This summary reconciles the accessible project-chat records for **Start
+The original Phase 2 handoff reconciled accessible project-chat records for **Start
 algorithm trading project**, **Summarize competition rules**, **Locate
 algo-trading repository**, **Plan project phases** (including older turns),
 **Check project context**, **TradeSim Phase 2**, and both archived **Set up
@@ -273,7 +291,8 @@ It also reviews the complete tracked repository, merged PRs #1–#3 and their
 discussion timelines. Retrieved chat records and historical assertions are
 distinguished from checked-in code and recorded test evidence.
 
-The original workshop PDFs and live competition webpage were not independently
-reverified for this update. Historical rule/date statements are attributed
-accordingly. No registration confirmation, later organizer ruling, Phase 3
-implementation or accepted submission was found in the reviewed material.
+The Phase 3 update is based on the implementation and recorded local tests and
+replays, not a new review of all earlier chats. The original workshop PDFs and
+live competition webpage were not independently reverified. Historical
+rule/date statements remain attributed. No registration confirmation, later
+organizer ruling or accepted submission has been established.

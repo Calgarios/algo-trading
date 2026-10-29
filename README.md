@@ -2,10 +2,45 @@
 
 KGI Algo Trading Bootcamp & Competition 2026, CU league.
 
-- [Current progress and Phase 3 handoff](docs/current-progress/README.md)
+- [Current progress](docs/current-progress/README.md)
 - [Phase 1 plan](docs/phase-1-summary.md)
 - [Phase 2 interface, execution findings and limitations](docs/phase-2-summary.md)
 - [Official package provenance](docs/tradesim-0.2.7-provenance.json)
+- [Phase 3 baseline specification](docs/phase-3-baseline-spec.md)
+- [Phase 3 results and limitations](docs/phase-3-summary.md)
+
+## Reproduce Phase 3
+
+Install the pinned environment and original package using the setup commands
+below, then run from the repository root:
+
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/run_phase3.py --output artifacts/baseline-1
+.venv/bin/python scripts/run_phase3.py --output artifacts/baseline-2
+diff artifacts/baseline-1/reproducible-hashes.json artifacts/baseline-2/reproducible-hashes.json
+```
+
+The separate Phase 3 path runs `strategy/DiversifiedBaseline.py` with its
+`baseline.json` companion. It selects up to ten names alphabetically using
+prior-month history, targets 70% of initial capital, and checks cash, costs,
+position count, concentration and exposure before buying. Monthly quantities
+and 15-minute execution slots prevent repeated per-tick trading. These are
+reference design choices, not tuned alpha signals.
+
+Outputs include a readable `report.md`, machine-readable `report.json` with
+daily accounting and pass/fail/unknown eligibility, `plans.json` with selection
+inputs, `decisions.jsonl` with order responses and actual quantities,
+`fifo.json` with independent open/completed lots, engine fills/portfolio files,
+and `environment.json` with code revision and daily runtime. Source/config and
+package hashes identify the exact inputs. Wall-clock logs and runtime are
+excluded from deterministic comparisons. Existing output directories and
+skipped dates are refused; `--days 2026-09-09 2026-09-10` runs a smoke check.
+
+The local owner `baseline` is not a registered team identity. The single-file
+structure is checked locally; actual organizer validation, submission access
+and current rules remain open. No sample-end liquidation is forced, so this
+reference can fail the completed-round-trip and payoff requirements.
 
 ## Reproduce Phase 2
 
@@ -58,6 +93,6 @@ Script hashes identify code even in an uncommitted working tree. Use raw values
 for precision: upstream display metrics round cash/NAV and drawdown to two
 decimals and exposure to four decimals.
 
-Phase 2 establishes execution and reproducibility. The team strategy,
-eligibility monitor and organizer submission validation are later work.
-The official example's performance is not a strategy recommendation.
+Phase 2 establishes execution and reproducibility. Its original runner and
+contract tests remain unchanged. The official example's performance is not a
+strategy recommendation; Phase 3 uses the separate team baseline described above.
