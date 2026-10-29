@@ -92,6 +92,20 @@ class Reporting(unittest.TestCase):
             self.assertEqual(result['best_alpha_status'], 'unknown')
             self.assertEqual(result['competition_acceptance'], 'unknown')
 
+    def test_negative_total_return_can_pass_common_criteria(self):
+        metrics = {'distinct_stocks': 10, 'completed_fifo_round_trips': 5,
+                   'average_exposure': .6, 'expected_payoff_thb': 10,
+                   'net_return_pct': -1, 'excess_return_pp': 1,
+                   'official_max_drawdown_pct': 1, 'benchmark_max_drawdown_pct': 2}
+        result = eligibility(metrics)
+        self.assertEqual(result['common_status'], 'pass')
+        self.assertEqual(result['best_alpha_status'], 'fail')
+        self.assertEqual(result['other_award_performance_status']['best_risk_control'], 'pass')
+        self.assertEqual(result['checks']['net_return_pct']['scope'], 'best_alpha_addition')
+        result = eligibility({**metrics, 'distinct_stocks': 4})
+        self.assertEqual(result['common_status'], 'pass')
+        self.assertEqual(result['common_and_participation_status'], 'fail')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -157,11 +157,20 @@ def eligibility(metrics):
         states = [checks[k]['status'] for k in keys]
         return 'fail' if 'fail' in states else 'unknown' if 'unknown' in states else 'pass'
 
-    common = ['distinct_stocks', 'completed_fifo_round_trips', 'average_exposure',
+    common = ['completed_fifo_round_trips', 'average_exposure',
               'expected_payoff_thb', 'relative_drawdown']
-    return {'basis': 'Working award rules; current organizer confirmation pending',
+    for key, value in checks.items():
+        value['scope'] = ('common_performance' if key in common else 'trading_participation'
+                          if key == 'distinct_stocks' else 'best_alpha_addition')
+    general = combined(common + ['distinct_stocks'])
+    return {'basis': 'Scoring PDF page 18 (recovered extraction); later amendments unconfirmed',
             'checks': checks, 'common_status': combined(common),
-            'best_alpha_status': combined(list(checks)), 'competition_acceptance': 'unknown'}
+            'trading_participation_status': checks['distinct_stocks']['status'],
+            'common_and_participation_status': general,
+            'best_alpha_status': combined(list(checks)),
+            'other_award_performance_status': {
+                'best_risk_control': general, 'most_active_trader': general, 'precision_trader': general},
+            'competition_acceptance': 'unknown'}
 
 
 def performance(daily, ledger, benchmark, initial_cash=10000000):
@@ -179,4 +188,6 @@ def performance(daily, ledger, benchmark, initial_cash=10000000):
             'average_exposure': sum(exposures) / len(exposures),
             'distinct_stocks': len(ledger.symbols), 'completed_fifo_round_trips': len(ledger.completed),
             'expected_payoff_thb': ledger.expected_payoff(), 'fees_thb': ledger.fees,
+            'realized_pnl_thb': ledger.realized,
+            'unrealized_pnl_thb': navs[-1] - initial_cash - ledger.realized,
             'final_nav_thb': navs[-1], 'final_cash_thb': ledger.cash}

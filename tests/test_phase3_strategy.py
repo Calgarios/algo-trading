@@ -105,6 +105,18 @@ class BaselineContract(unittest.TestCase):
         self.tick(handler=later)
         self.assertEqual(original, later.strategy.plan)
 
+    def test_momentum_ranking_uses_only_prior_month_closes_and_stable_ties(self):
+        rising = [dict(b) for b in self.history]
+        rising[-20]['Close'] = 21
+        rising += [{'Date': '2026-09-08', 'Close': 1}]
+        handler = self.make_handler({'WHA': rising})
+        handler.strategy.config['selection'] = 'momentum20'
+        self.tick(handler=handler)
+        self.assertEqual(handler.strategy.plan['selected'][0], 'WHA')
+        self.assertEqual(handler.strategy.plan['selected'][1:3], ['ADVANC', 'AOT'])
+        self.assertEqual(handler.strategy.plan['eligible']['WHA']['momentum20'], 1)
+        self.assertEqual(handler.strategy.plan['targets']['WHA'], 16600)
+
     def test_daily_reload_rebuilds_plan_without_duplicate_target(self):
         self.tick()
         self.sim.save_summary_csv(pd.Timestamp(self.day).date(), university_start_date=self.day)
@@ -214,6 +226,101 @@ class BaselineContract(unittest.TestCase):
         for day in ['2026-11-15', '2026-11-16']:
             for price in [1, 2, 5, 10, 25, 50, 100, 200, 400]:
                 self.assertEqual(Baseline.buy_price(price, day), commissionService.market_fill_price(price, 'Buy', day))
+                self.assertEqual(Baseline.sell_price(price, day), commissionService.market_fill_price(price, 'Sell', day))
+
+    def enable_exits(self, handler=None):
+        handler = handler or self.handler
+        handler.strategy.config['exit_policy'] = {
+            'take_profit_net': .02, 'stop_loss_net': .04, 'max_holding_sessions': 10}
+
+    def test_profit_exit_is_net_of_both_sides_costs(self):
+        self.enable_exits()
+        self.tick()
+        decision = self.tick('10:20:01', price=43.25, flag='Buy')
+        self.assertEqual(decision['reason'], 'at_target')
+        self.assertLess(decision['estimated_net_liquidation_return'], .02)
+        decision = self.tick('10:35:01', price=44, flag='Buy')
+        self.assertEqual(decision['reason'], 'take_profit')
+        self.assertEqual(decision['held_after'], 0)
+        self.assertGreater(self.sim.portfolio.get_expected_payoff(), 0)
+        decision = self.tick('10:50:01', price=42)
+        self.assertEqual(decision['reason'], 'same_day_reentry_blocked')
+
+    def test_partial_stop_loss_remains_exit_only_for_the_day(self):
+        self.enable_exits()
+        self.tick()
+        decision = self.tick('10:20:01', price=40, flag='Buy', volume=100)
+        self.assertEqual(decision['reason'], 'stop_loss')
+        self.assertEqual(decision['filled_quantity'], 100)
+        decision = self.tick('10:35:01', price=42, flag='Buy')
+        self.assertEqual(decision['reason'], 'stop_loss')
+        self.assertEqual(decision['held_after'], 0)
+        self.assertLess(self.sim.portfolio.get_expected_payoff(), 0)
+
+    def test_time_exit_uses_trading_sessions_and_survives_daily_reload(self):
+        self.tick()
+        self.sim.save_summary_csv(pd.Timestamp(self.day).date(), university_start_date=self.day)
+        self.sim.save_portfolio()
+        self.day = '2026-09-23'
+        self.sim = tradeSim('baseline', folder=self.tmp.name, current_date=self.day)
+        self.history += [{'Date': str(d.date()), 'Close': 42.0}
+                         for d in pd.bdate_range('2026-09-01', '2026-09-22')]
+        self.handler = self.make_handler()
+        self.enable_exits()
+        decision = self.tick(flag='Buy', volume=100)
+        self.assertEqual(decision['reason'], 'holding_period')
+        self.assertEqual(decision['holding_sessions'], 10)
+        self.assertEqual(decision['filled_quantity'], 100)
+        self.sim.save_summary_csv(pd.Timestamp(self.day).date(), university_start_date='2026-09-09')
+        self.sim.save_portfolio()
+        self.day = '2026-09-24'
+        self.history += [{'Date': '2026-09-23', 'Close': 42.0}]
+        self.sim = tradeSim('baseline', folder=self.tmp.name, current_date=self.day)
+        self.handler = self.make_handler()
+        self.enable_exits()
+        decision = self.tick(flag='Buy')
+        self.assertEqual(decision['reason'], 'holding_period')
+        self.assertEqual(decision['held_after'], 0)
+
+    def test_missing_plan_does_not_disable_price_risk_exits(self):
+        self.tick()
+        self.history = []
+        self.handler = self.make_handler()
+        self.enable_exits()
+        decision = self.tick('10:20:01', price=39, flag='Buy')
+        self.assertEqual(decision['reason'], 'stop_loss')
+        self.assertIsNone(decision['holding_sessions'])
+        self.assertEqual(decision['held_after'], 0)
+
+    def test_old_entry_outside_history_still_expires_with_ten_observed_sessions(self):
+        self.tick()
+        self.day = '2026-10-01'
+        self.sim.current_date = pd.Timestamp(self.day).date()
+        self.history = [{'Date': str(d.date()), 'Close': 42.0}
+                        for d in pd.bdate_range('2026-09-14', '2026-09-30')]
+        self.handler = self.make_handler()
+        self.enable_exits()
+        decision = self.tick(flag='Buy')
+        self.assertEqual(decision['reason'], 'holding_period')
+        self.assertGreaterEqual(decision['holding_sessions'], 10)
+        self.assertEqual(decision['held_after'], 0)
+
+    def test_partial_sale_nav_uses_saved_market_value_for_other_symbols(self):
+        # The engine restores a partially sold lot's Market Price using start
+        # volume; its stored Market Value is the correct prior closing mark.
+        self.tick(symbol='AOT')
+        self.enable_exits()
+        self.tick('10:20:01', symbol='AOT', price=44, flag='Buy', volume=8300)
+        self.sim.save_summary_csv(pd.Timestamp(self.day).date(), university_start_date=self.day)
+        self.sim.save_portfolio()
+        self.day = '2026-09-10'
+        self.sim = tradeSim('baseline', folder=self.tmp.name, current_date=self.day)
+        other = self.make_handler()
+        stocks = self.sim.portfolio.get_all_stocks_info()
+        marked = sum(h['Market Value'] for h in stocks)
+        self.assertNotEqual(marked, sum(h['Actual Volume'] * h['Market Price'] for h in stocks))
+        decision = self.tick(symbol='ADVANC', handler=other)
+        self.assertEqual(decision['invested_before'], marked)
 
     def test_local_submission_shape(self):
         self.assertEqual(check_submission_shape()['local_structure_checks'], 'pass')

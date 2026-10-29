@@ -8,6 +8,8 @@ KGI Algo Trading Bootcamp & Competition 2026, CU league.
 - [Official package provenance](docs/tradesim-0.2.7-provenance.json)
 - [Phase 3 baseline specification](docs/phase-3-baseline-spec.md)
 - [Phase 3 results and limitations](docs/phase-3-summary.md)
+- [Phase 3 follow-up and prize criteria](docs/phase-3-followup.md)
+- [Common criteria versus Best Alpha](docs/award-criteria.md)
 
 ## Reproduce Phase 3
 
@@ -28,6 +30,21 @@ position count, concentration and exposure before buying. Monthly quantities
 and 15-minute execution slots prevent repeated per-tick trading. These are
 reference design choices, not tuned alpha signals.
 
+The follow-up adds two explicitly configured development experiments:
+
+```bash
+.venv/bin/python scripts/run_phase3.py --config research/configs/baseline-exits.json --output artifacts/exits
+.venv/bin/python scripts/run_phase3.py --config research/configs/momentum20-exits.json --output artifacts/momentum
+```
+
+Both use net +2% profit-taking, −4% loss exits and a ten-session holding limit;
+the second ranks eligible stocks by their 20 prior-month closes. A triggered
+exit prevents same-day re-entry, and partial exits retry only actual holdings.
+These thresholds can be exceeded between decision slots or during incomplete
+fills. Defaults retain the original alphabetical reference; configurations
+and outcomes are reported separately. The run copies the exact strategy and
+selected configuration into its output bundle for inspection.
+
 Outputs include a readable `report.md`, machine-readable `report.json` with
 daily accounting and pass/fail/unknown eligibility, `plans.json` with selection
 inputs, `decisions.jsonl` with order responses and actual quantities,
@@ -36,6 +53,10 @@ and `environment.json` with code revision and daily runtime. Source/config and
 package hashes identify the exact inputs. Wall-clock logs and runtime are
 excluded from deterministic comparisons. Existing output directories and
 skipped dates are refused; `--days 2026-09-09 2026-09-10` runs a smoke check.
+
+Common performance criteria and Best Alpha additions are reported separately:
+negative total return does not alone fail the common criteria, but it fails
+Best Alpha. Positive expected payoff remains a common requirement.
 
 The local owner `baseline` is not a registered team identity. The single-file
 structure is checked locally; actual organizer validation, submission access

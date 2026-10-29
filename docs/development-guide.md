@@ -59,6 +59,14 @@ These are working requirements from earlier reviews of the KGI materials, carrie
 - Keep portfolio maximum drawdown strictly below 1.5 times benchmark maximum drawdown.
 - Best Alpha additionally requires nonnegative total and excess returns and the common award criteria; net excess return is the primary ranking objective reported in the earlier review.
 
+Clarification checked against the recovered scoring PDF, page 18: **positive
+total return is not a universal common prize criterion.** The common criteria
+are drawdown, round trips, exposure and expected payoff. Total return ≥0 and
+excess return ≥0 are Best Alpha additions; zero is allowed by those additions.
+Five distinct stocks is tracked separately as a trading-participation rule.
+See [award criteria and source limits](award-criteria.md) for the distinction
+and the status of current organizer verification.
+
 The exposure requirement can conflict with reducing risk by holding cash. We must measure this tradeoff explicitly. Benchmark-relative drawdown and profitability cannot be guaranteed through software checks.
 
 ### Runtime and delivery

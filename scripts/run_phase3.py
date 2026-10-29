@@ -7,6 +7,7 @@ from math import isclose
 import os
 from pathlib import Path
 import platform
+import shutil
 import subprocess
 import sys
 import time
@@ -27,9 +28,12 @@ def markdown_report(report):
              '| Metric | Value |', '| --- | ---: |']
     for key, value in metrics.items():
         lines.append(f'| {key} | {"unknown" if value is None else format(value, ".8f")} |')
-    lines += ['', '| Working criterion | Status |', '| --- | --- |']
+    lines += ['', '| Criterion | Scope | Status |', '| --- | --- | --- |']
     for key, check in report['eligibility']['checks'].items():
-        lines.append(f'| {key} | {check["status"]} |')
+        lines.append(f'| {key} | {check["scope"]} | {check["status"]} |')
+    lines += ['', f'Common performance criteria: **{report["eligibility"]["common_status"]}**.',
+              f'Best Alpha: **{report["eligibility"]["best_alpha_status"]}**.',
+              'Nonnegative total/excess returns are Best Alpha additions, not universal common criteria.']
     lines += ['', 'All daily cash, holdings, open cost, NAV, realized P&L, FIFO completion and payoff checks reconciled.',
               '', 'Official return uses initial cash; SET50 uses the first sample close. Official drawdown',
               'uses daily closes only. Initial-capital drawdown and aligned first-close returns are separate.',
@@ -41,12 +45,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True, help='New output directory')
     parser.add_argument('--days', nargs='+', help='Contiguous ordered sample dates; default all 16')
+    parser.add_argument('--config', type=Path, default=ROOT / 'strategy/baseline.json',
+                        help='Companion JSON; copied into the output bundle before execution')
     args = parser.parse_args()
     provenance = verify_package()
     if sys.version_info[:2] != (3, 13):
         parser.error('Use Python 3.13 (validated with 3.13.5).')
     compatibility = check_submission_shape()
-    config = json.loads((ROOT / 'strategy/baseline.json').read_text())
+    config_path = args.config.resolve()
+    config = json.loads(config_path.read_text())
     with (PACKAGE / 'marketInfo/symbolSET50/Symbol_SET50.csv').open(encoding='utf-8-sig') as stream:
         universe = sorted(r['Symbol'] for r in csv.DictReader(stream))
     if config['universe'] != universe:
@@ -59,6 +66,10 @@ def main():
         parser.error('Do not skip sample trading days within a run.')
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
+    bundle = output / 'strategy'
+    bundle.mkdir()
+    shutil.copyfile(ROOT / 'strategy/DiversifiedBaseline.py', bundle / 'DiversifiedBaseline.py')
+    shutil.copyfile(config_path, bundle / 'baseline.json')
     os.environ['TZ'] = 'UTC'
     time.tzset()
     sys.path.insert(0, str(PACKAGE))
@@ -66,9 +77,10 @@ def main():
     from tradeSim.TradeSim import tradeSim
     from tradeSim.StrategyHandler import StrategyHandler
     strategy_class = load_baseline()
-    code_files = ['strategy/DiversifiedBaseline.py', 'strategy/baseline.json',
+    code_files = ['strategy/DiversifiedBaseline.py',
                   'scripts/run_phase3.py', 'scripts/phase3_reporting.py', 'scripts/phase3_support.py',
-                  'scripts/package_support.py', 'requirements-phase2.txt', 'docs/phase-3-baseline-spec.md']
+                  'scripts/package_support.py', 'requirements-phase2.txt', 'docs/phase-3-baseline-spec.md',
+                  'docs/phase-3-exit-experiment.md', 'docs/award-criteria.md']
     metadata = {
         'purpose': 'Phase 3 deterministic diversified integration baseline; not untouched validation',
         'archive_sha256': provenance['archive_sha256'], 'package_tree_sha256': provenance['tree_sha256'],
@@ -77,6 +89,7 @@ def main():
                          ['numpy', 'pandas', 'python-dateutil', 'pytz', 'six', 'tzdata']},
         'code_sha256': {p: sha256(ROOT / p) for p in code_files}, 'days': days,
         'team': 'baseline', 'strategy': 'DiversifiedBaseline', 'parameters': config,
+        'companion_config_sha256': sha256(config_path),
         'event_order': 'notebook: sorted symbols, row-index round robin, original order within symbol',
         'timezone': 'UTC logs; raw ticks and decision bars are naive Asia/Bangkok',
         'random_seed': None, 'randomness': 'No random operations',
@@ -102,7 +115,7 @@ def main():
                 raise ValueError('Tick symbols outside supplied universe')
             sim = tradeSim('baseline', folder=str(output / 'engine'), current_date=day)
             runner = sim.get_strategy_runner()
-            handlers = {s: StrategyHandler(strategy_class, runner, str(ROOT / 'strategy')) for s in groups}
+            handlers = {s: StrategyHandler(strategy_class, runner, str(bundle)) for s in groups}
             seen_plans, plan = set(), None
             for tick in range(max(map(len, groups.values()))):
                 for symbol, rows in groups.items():
@@ -188,7 +201,8 @@ def main():
     write_json(output / 'environment.json', environment)
     (output / 'report.md').write_text(markdown_report(report))
     paths = ['report.json', 'report.md', 'plans.json', 'fifo.json', 'decisions.jsonl',
-             'engine/baseline/baseline_portfolio.json', 'engine/baseline/baseline_transaction_log.csv']
+             'engine/baseline/baseline_portfolio.json', 'engine/baseline/baseline_transaction_log.csv',
+             'strategy/DiversifiedBaseline.py', 'strategy/baseline.json']
     write_json(output / 'reproducible-hashes.json', {p: sha256(output / p) for p in paths})
     print(json.dumps(metrics, indent=2, allow_nan=False))
 

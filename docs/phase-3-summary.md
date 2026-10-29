@@ -1,5 +1,9 @@
 # Phase 3 — First complete baseline
 
+> This records the original `5bc8859` reference. See the
+> [follow-up assessment](phase-3-followup.md) for the clarified award rules,
+> exit-policy/selection experiments and current Phase 4 handoff.
+
 Recorded 29 October 2026 (Asia/Bangkok), based on `main` commit
 `9e9b0d7e71cda4088f570ed7ec35eeefee186f28`. Phase 3 implementation and local
 validation are complete; the proposed change is prepared for review. This is

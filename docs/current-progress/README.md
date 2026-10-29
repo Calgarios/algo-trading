@@ -1,298 +1,186 @@
 # Current progress and Phase 4 handoff
 
-**Updated: 29 October 2026 (Asia/Bangkok).**
-Project: [Calgarios/algo-trading](https://github.com/Calgarios/algo-trading).
-Competition: KGI Algo Trading Bootcamp & Competition 2026, CU league.
-Phase 3 starting baseline: `9e9b0d7e71cda4088f570ed7ec35eeefee186f28` on `main`.
+Updated 29 October 2026 (Asia/Bangkok). Project:
+[Calgarios/algo-trading](https://github.com/Calgarios/algo-trading), KGI CU league.
 
-**Phases 1 and 2 are complete and merged. Phase 3's local engineering
-checkpoint is complete and prepared for review: a team baseline, independent
-accounting, inspectable decisions and eligibility tracking.** We do not yet
-have a validated profitable approach or an accepted competition submission.
+**Phases 1 and 2 are merged. Phase 3 is complete as a local engineering
+milestone in [PR #5](https://github.com/Calgarios/algo-trading/pull/5), pending
+review/merge. No tested strategy yet meets all measured prize criteria.**
+The next active work is Phase 4 research and chronological validation, alongside
+confirmation of organizer access and deadlines.
 
-Read the [Phase 3 summary](../phase-3-summary.md),
-[predeclared specification](../phase-3-baseline-spec.md) and
-[reference evidence](../phase-3-run-evidence.json). The original 16-day sample
-returns −2.991564% versus SET50 −4.099496%, with 69.693722% average exposure.
-Working Best Alpha criteria fail: negative total return, zero completed FIFO
-round trips and undefined payoff. All 43 tests pass and two full replays match.
-The next research phase must preserve this reference and avoid treating the
-already-inspected September sample as untouched validation.
+Read [the Phase 3 follow-up](../phase-3-followup.md) first. It explains the risk
+controls, corrects the prize-criteria distinction, reports all requested metrics
+and records two failed attempts to improve eligibility. Do not confuse a
+complete baseline with a profitable or accepted competition submission.
 
-Use this file as the current handoff. The earlier phase summaries and
-development guide retain their historical context. In particular, statements
-in the guide and its PDF that Phase 2 is next or that the package is missing
-are superseded by this file and the Phase 2 evidence.
+## Objective and rules clarification
 
-## 1. Our objective and agreed approach
+Build a reliable Python strategy using the supplied TradeSim engine, pursuing
+positive returns after costs and outperformance of SET50 while controlling risk.
+Best Alpha remains the provisional primary target; the user also wants practical
+prize eligibility established as early as evidence allows.
 
-Build a reproducible Python strategy for the organizer's TradeSim environment
-that pursues positive returns after costs and outperformance of SET50, manages
-portfolio risk, and measures award eligibility. **Best Alpha remains the
-provisional primary target**, not a promise or a final strategy selection.
+The recovered scoring PDF, page 18, lists four common performance criteria:
 
-The first useful version must complete:
+- Portfolio maximum drawdown strictly below 1.5 times SET50 maximum drawdown.
+- At least five completed FIFO round trips.
+- Average daily closing exposure at least 50%.
+- Expected payoff greater than zero.
 
-**Available data → stock selection → position sizing → orders → fills →
-portfolio accounting → performance and eligibility report.**
+**Positive total return is not a universal common criterion.** Best Alpha adds
+*nonnegative* total return and excess return (zero qualifies for those additions).
+Five distinct stocks is tracked separately as a trading-participation rule.
+See [award criteria and source limits](../award-criteria.md). Entry eligibility,
+ranking, available prizes and organizer acceptance remain separate questions.
 
-Keep the initial strategy transparent and diversified. Test momentum/relative
-strength and short-term mean reversion later as hypotheses, where data permits.
-State hypotheses before tuning, compare after costs, split data chronologically,
-record unsuccessful experiments, and preserve untouched evaluation data where
-feasible. The September sample has already been inspected and used for
-integration; do not present it as an untouched final assessment.
+## Completed work
 
-The workshop strategies and exercises are demonstrations; the user did not
-request their completion or choose them as our strategy. Early suggestions to
-build our own matching engine were superseded by inspection of the supplied
-TradeSim package. Keep the official engine unchanged.
-
-## 2. Completed work and GitHub history
-
-| Milestone | What was delivered | Status |
-| --- | --- | --- |
-| Initial research and setup | Reviewed the supplied competition materials, clarified CU league, established GitHub/cloud access | Context recovered from earlier project chats |
-| Phase 1 | Objective, working rules, first-version requirements, priorities, research standards and open dependencies | [PR #1](https://github.com/Calgarios/algo-trading/pull/1) merged; branch deleted |
-| Development roadmap | Seven-phase guide in editable Markdown and six-page PDF | [PR #3](https://github.com/Calgarios/algo-trading/pull/3) merged; branch deleted |
-| Phase 2 | TradeSim 0.2.7 inspection, pinned setup, data audit, execution/accounting checks and reproducible full-sample example | [PR #2](https://github.com/Calgarios/algo-trading/pull/2) merged; branch deleted |
-
-PR #3 merged before PR #2 even though its number is higher. Both are present
-in the reviewed `main`. At review, only `main` remained on the remote; no
-GitHub Actions workflow is tracked. The reported tests were run locally, not
-by GitHub CI. All three PR discussion timelines were checked and had no comments.
-
-The prior progress summary was published and merged through PR #4. Phase 3 is
-a separate implementation change; prior approval to merge documentation does
-not constitute competition submission or acceptance.
-
-## 3. What Phase 2 established
-
-The exact uploaded `tradeSim0.2.7.zip` is pinned by archive and extracted-tree
-SHA-256 hashes. The installer retains 536 non-metadata files under
-`.local/tradesim-0.2.7/`, preserving their bytes and original layout. Python
-3.13.5 and six headless dependencies are pinned. The official engine, data,
-notebook and example strategy were not patched.
-
-The runner reproduces the official notebook's event order, starts from THB
-10 million, reconstructs the simulator each day, reloads saved portfolio state,
-and saves the daily summary before saving the portfolio. It refuses existing
-output directories and skipped dates within the selected sample interval.
-Reports record code/input hashes, dependencies, configuration, daily metrics,
-holdings and runtime. Cash and quantities reconcile independently from fills;
-daily NAV reconciles to cash plus marked holdings.
-
-**Recorded validation: 17 tests passed and two fresh full-sample runs produced
-byte-identical reports, portfolio JSON and fill logs.** Wall-clock log timestamps,
-machine details and runtime measurements are intentionally excluded from that
-comparison. This documentation review checked that all six recorded runtime
-and validation source hashes still match the tracked files; it did not rerun
-the unchanged simulations.
-
-### Sample data
-
-| Item | Verified coverage |
+| Milestone | Evidence and status |
 | --- | --- |
-| Tick sample | 16 trading days, 9–30 September 2026; 2,906,167 rows |
-| Supplied tradable universe | 48 stocks; not an effective-dated history of all SET50 membership |
-| Daily history | 49 files including SET50, collectively 21 September 2023–21 October 2026; 54–747 rows per symbol |
-| Intraday history | Nine intervals, 49 files each; coverage varies by symbol and interval |
-| Short-history limitation | 1-minute history begins 24 September, 3-minute 23 September, 5-minute 21 September; unavailable at the start of the sample |
-| Benchmark | 16 SET50 daily closes matching sample dates |
-| Audit | No null cells, nonpositive prices, negative volumes or backwards timestamps within a symbol |
-| Repeated rows | 1,046,005 identical rows retained; no trade identifiers establish whether these are erroneous duplicates |
+| Phase 1 planning | Objectives, working rules, priorities and roadmap; PR #1 merged |
+| Development guide | Seven-phase Markdown/PDF guide; PR #3 merged; historical progress statements are superseded here |
+| Phase 2 integration | Pinned TradeSim 0.2.7, Python 3.13.5, six dependencies, data audit, 17 contract tests and two identical organizer-example runs; PR #2 merged |
+| Earlier progress handoff | PR #4 merged; Phase 3 started from main commit 9e9b0d7 |
+| Phase 3 original baseline | Deterministic diversified strategy, risk checks, decision/fill logs, independent accounting and eligibility; original reference commit 5bc8859 |
+| Phase 3 follow-up | Category-specific prize reporting, optional trade exits, one momentum comparison, restoration-risk fix, 51 passing tests and refreshed deterministic reference; PR #5 updated |
 
-### Official example result — integration evidence only
+The official engine/data and all six recorded Phase 2 runtime/validation sources
+remain unchanged. The workshop example remains integration evidence only: it
+lost 99.65% through excessive churn and is not the team's strategy.
 
-| Metric | Result |
-| --- | ---: |
-| Final NAV | THB 34,504.36 |
-| Net return | −99.654956% |
-| SET50 return under the official anchor | −4.099496% |
-| Excess return | −95.555461 percentage points |
-| Official daily-close maximum drawdown | 99.610502% |
-| Average daily exposure | 44.626387% |
-| Completed FIFO round trips | 66,872 |
-| Expected payoff | −THB 149.022583 |
-| Distinct traded stocks / fill rows | 5 / 133,745 |
-| Commission plus VAT | THB 3,633,491.64 |
+## Retained strategy and requested results
 
-The example repeatedly buys 100 shares of five named stocks and sells when
-Close is below its fee-inclusive purchase cost. Running that rule every tick
-causes severe churn through spread and fees. **This is not our baseline or a
-competition candidate.** It fails several working performance requirements.
-The first full run took 162.895 seconds across days, with a slowest day of
-16.638 seconds on the shared worker; this is not a production-runtime guarantee.
+The default remains the transparent alphabetical reference: ten eligible names,
+20 prior-month closes, monthly quantities worth roughly 7% of initial capital
+each, 70% total target allocation. It does not maximize returns or contain an
+alpha forecast. Pre-buy caps are 10% per stock, 80% total investment, 20% cash
+reserve and ten held names. Fees, slippage, lots, cash and actual fills are checked.
+Only one own-symbol IOC is attempted per 15-minute slot. Later price movements
+can exceed pre-buy limits; no guaranteed portfolio drawdown cap is claimed.
 
-## 4. Rules and limitations the next implementation must respect
+All results below use the same already-inspected 16 days, 9–30 September 2026,
+and 2,906,167 ticks. SET50 returned −4.099496%.
 
-| Finding | Consequence for Phase 3 |
-| --- | --- |
-| Every tick calls `on_data` with a forming OHLCV bar | Add explicit decision cadence; a `1min` setting does not prevent repeated orders in a minute |
-| One strategy instance per symbol per day | Do not rely on instance attributes for shared portfolio state or persistence across days |
-| History API excludes the entire current day and caps requests at 1,000 bars | Use bounded history, handle empty/short results, and avoid reading future-dated CSVs into decisions |
-| IOC, partial fills and shared tick liquidity | Success means accepted, not filled; reconcile actual holdings before retrying or resizing |
-| Positive 100-share lots and valid price grids | Validate sizing and prices; include the 16 November 2026 tick-table change |
-| Latest price ± one tick for market and limit fills | A limit at Close does not fill; account for slippage without charging it twice |
-| Commission 0.157% plus 7% VAT on commission | Fee is 0.16799% of filled notional per side, before slippage; avoid unnecessary turnover |
-| Auction prints do not fill | Do not assume opening/closing auction orders execute; the public bar has no raw `Flag` field |
-| Whole requested buy quantity is checked against cash; sales require holdings | Size conservatively, keep a cash buffer, prohibit shorting and reconcile partial fills |
-| Multiple limit orders can reuse the same daily allowance | Avoid the documented upstream defect; start with at most one own-symbol order per callback and no overlapping cross-symbol pending orders |
-| Notebook uses symbol/row-index round robin, not a global time sort | Avoid treating other symbols' live prices as synchronized; confirm production scheduling before cross-symbol intraday logic |
-| Portfolio return, benchmark return and drawdown have different first-day anchors | Preserve official measures and separately label independent economic measures; do not silently replace scoring definitions |
-| Display fields round accounting values | Use raw values for reconciliation and strict thresholds |
-| Delayed cross-symbol limit fills may have different `Placed` and `Timestamp` | Do not assume the changelog's timestamp-equality claim holds for every order |
+| Metric | Retained original | Alphabetical + exits | Momentum + exits |
+| --- | ---: | ---: | ---: |
+| Net return | −2.991564% | −4.227932% | −5.550515% |
+| SET50 excess return | +1.107932 pp | −0.128436 pp | −1.451019 pp |
+| Official maximum drawdown | 2.899616% | 3.794080% | 5.845328% |
+| Average closing exposure | 69.693722% | 57.033105% | 54.948217% |
+| Distinct traded stocks | 10 | 10 | 10 |
+| Completed FIFO round trips | 0 | 349 | 378 |
+| Expected payoff | Undefined | −THB 999.31 | −THB 1,390.41 |
+| Common performance criteria | Fail | Fail | Fail |
+| Best Alpha | Fail | Fail | Fail |
 
-The engine's FIFO completion, exclusion of breakeven lots from win-rate/payoff
-calculations, and daily-average exposure behavior were inspected. Competition
-interpretation of zero benchmark drawdown and other scoring edge cases still
-requires confirmation. See the [Phase 2 findings](../phase-2-summary.md) for
-the exact behavior and controlled examples.
+The original payoff is undefined, while the official engine displays 0.00.
+Drawdown uses the official daily-close anchor; including initial capital gives
+2.991564%, 4.227932% and 5.845328%. Exposure is an average, not the final value.
 
-## 5. Where the seven phases stand
+The first experiment adds net +2% profit-taking, −4% loss exits, ten-session
+maximum holding age and no same-day re-entry after a sell intent. The second
+uses identical controls with selection by the strongest 20 prior-month closes.
+Both complete trades and maintain sufficient average exposure, but negative
+payoff still fails the common criteria. Fees rise from THB 11,837 to THB 59,568
+and THB 72,957. **Reject both as replacements; keep their configurations and
+negative results for research.** No profitable trades, losses or test outcomes
+are hidden to manufacture a pass.
 
-| Phase | Current state | Next output |
-| --- | --- | --- |
-| 1. Define objectives and constraints | Complete | Maintain assumptions as organizer information changes |
-| 2. Establish the environment | Complete | Preserve the verified package and reference run |
-| 3. Build the baseline | **Local engineering complete; prepared for review** | Strategy, reports, eligibility, 43 passing tests and repeatable reference; see Phase 3 summary |
-| 4. Research candidates | Next; not started | Hypotheses, chronological comparisons and experiment log |
-| 5. Refine portfolio and execution | Not started | Evidence-backed sizing, turnover and risk improvements |
-| 6. Validate and rehearse submission | Not started | Exact-artifact validation, submission rehearsal and tested fallback |
-| 7. Operate and document | Not started | Daily monitoring and final report/video material |
+## What was verified and what remains limited
 
-Local integration checks from Phase 2 do not constitute Phase 6 organizer
-acceptance. Bring essential Phase 6 checks forward if confirmed deadlines
-require an early baseline submission.
+- 51 local tests cover the official contracts, selection/history, sizing,
+  partial/zero fills, daily state, exit behavior, FIFO accounting and scoring
+  boundaries. No GitHub CI workflow is configured in this development repo.
+- Independent cash, holdings, raw open costs, NAV, fees, realized P&L, completed
+  lots, payoff and portfolio/benchmark metrics reconcile on all sample days.
+- Two fresh retained-reference runs match all nine deterministic artifacts and
+  preserve the original economic result. The two rejected configurations have
+  separate full-sample evidence; they are not validated competition candidates.
+- The runner saves exact strategy/config bundles, input/code hashes, plans,
+  decisions, actual fills, FIFO records, daily reports, runtime and git context.
+- A newly tested engine restoration quirk can misstate a partially sold lot's
+  displayed price. Our pre-buy check uses its correct saved market value for
+  other symbols until fresh quotes arrive; the official source is not patched.
 
-## 6. Original Phase 3 handoff (now implemented)
+The sample universe has 48 supplied names, not effective-dated historical SET50
+membership. History excludes the current day; callbacks are forming bars on
+every tick. Notebook events are symbol/row-index round robin, not globally
+chronological. One-symbol IOC orders avoid the known multiple-limit daily-cap
+bug. Submission owner, production event order, restart behavior and organizer
+validation remain open. Intraday exit latches do not persist through process
+restarts; later daily runs re-evaluate actual lots.
 
-The following records the handoff before implementation. The chosen design,
-completed validation and current next steps are in the linked Phase 3 summary.
+## Phase 4: exactly where to continue
 
-The agreed direction is a simple diversified reference. A reasonable proposed
-starting design is deterministic selection from eligible stocks with sufficient
-prior-day history, explicit target weights, a cash reserve and infrequent
-rebalancing. **Exact selection, number of positions, weights, exposure target,
-rebalance cadence and exits have not been chosen or tested.** Record those
-choices before measuring performance; do not optimize against the example loss.
+Phase 4 has begun only with preliminary negative experiments. The research and
+validation milestone is not complete. Continue in this order:
 
-Implement in this order:
+1. Review PR #5 and its evidence; keep the original reference available. Confirm
+   its review/merge status before building subsequent branches from main.
+2. Establish additional permitted historical ticks and effective-dated universe
+   data, then define chronological development and validation periods. September
+   has been inspected repeatedly and must not be called untouched validation.
+3. Diagnose the recorded exits/momentum failures: entry quality, turnover,
+   realized losses and holding horizon. Declare each next hypothesis and its
+   acceptance criteria before changing parameters. Consider the planned relative
+   strength and mean-reversion families where available history supports them.
+4. Compare after fees and slippage using all seven metrics and category-specific
+   eligibility. Seek positive payoff with adequate exposure and controlled
+   drawdown; Best Alpha additionally needs nonnegative total/excess returns.
+   Do not choose a candidate simply because it passes this small sample.
+5. Advance a candidate to Phase 5 only when comparison and chronological evidence
+   justify it. Otherwise retain the reference and record the failed hypothesis.
 
-1. **Specify the baseline.** Fix the selection rule, decision timing, sizing,
-   entry/exit rules, missing-history behavior and risk limits. Explain how
-   daily reconstructed symbol instances use one consistent portfolio plan.
-2. **Build the team strategy and a separate runner path.** Keep the Phase 2
-   replay available unchanged. Use the supplied template and matching file/class
-   names. Keep research/reporting helpers outside the submitted strategy file;
-   do not assume those helpers can be imported on the organizer's runner.
-3. **Add execution and risk controls.** Check cash including costs, holdings,
-   permitted symbols, lots, per-stock/portfolio limits and actual filled
-   quantities. Prevent repeated per-tick churn, duplicate intents and use of
-   the daily-cap defect. Use own-symbol execution to limit scheduling ambiguity.
-4. **Add inspectable logs and reporting.** Record the information behind each
-   decision, intended quantity, accepted/rejected orders, actual fills, costs,
-   holdings and daily NAV through a local harness that respects submission
-   restrictions. Reconcile cash and FIFO lots independently.
-5. **Add eligibility tracking.** Report measured values, thresholds, and
-   pass/fail/unknown status. Track five distinct stocks separately from five
-   completed round trips; average closing exposure ≥50%; expected payoff >0;
-   portfolio drawdown strictly <1.5× benchmark drawdown; and nonnegative total
-   and excess return for Best Alpha. These remain working award requirements
-   pending current organizer confirmation. Do not manufacture trades solely
-   to claim readiness or convert unknown eligibility into a pass.
-6. **Validate and record the reference.** Test meaningful risk, partial-fill,
-   history, state and metric edge cases; complete the sample twice; compare
-   deterministic outputs; measure runtime and produce a Phase 3 handoff PR.
+Phase 5 portfolio/execution refinement, Phase 6 submission rehearsal and Phase 7
+operations remain ahead. The new exits and reporting reduce future engineering
+work; they do not remove the need for a strategy with positive net expectancy.
 
-Phase 3 is complete when the baseline runs end to end, its decisions are
-explainable, accounting reconciles, risk controls are exercised, results are
-reproducible, and the report states performance and eligibility honestly.
-Positive returns are evaluated separately from engineering completion. Full
-submission acceptance remains conditional on the organizer's actual checks.
+## Open dependencies and urgency
 
-## 7. Open dependencies and urgency
+Earlier materials report CU competition dates **2–27 November 2026** and daily
+updates before **09:00 Thai time**. These dates and the pre-competition testing
+cutoff have not been freshly confirmed. As of 29 October, the reported start is
+four calendar days away. Confirm access/deadlines alongside research.
 
-Earlier reviewed workshop materials report **CU competition dates of
-2–27 November 2026**, daily updates before **09:00 Thai time**, and testing
-roughly one week before competition. These were recovered from prior chats,
-not freshly confirmed with KGI. As of 29 October, that reported start is four
-calendar days away; the literal earlier testing window would already have
-passed. **Confirm actual access and deadlines now, alongside baseline work.**
+- User/organizer: registration, team/roster identity, personal eligibility,
+  assigned competition repository, current schedule/testing cutoff and fallback.
+- Technical/organizer: production scheduling, current scoring interpretations,
+  permitted longer data, adjustments and historical membership.
+- Closing deliverables: earlier guidance calls for a report and video ≤10 minutes;
+  current deadline and exact format remain unconfirmed.
 
-| Open item | Responsibility / next action |
-| --- | --- |
-| Registration and personal/team entry eligibility | User planned to register; no completion confirmation was found. Obtain organizer confirmation, team identity and roster |
-| Assigned competition repository and acceptance process | User supplies access/instructions; assistant verifies exact file/class, branch, dependency and CI requirements. This development repository is not automatically the assigned submission repository |
-| Current CU schedule, testing deadline, submission cutoff and fallback | Obtain current organizer instructions; do not infer acceptance from the reported dates or a successful local run |
-| Production event ordering, daily-cap defect and scoring anchors | Prepare precise questions/reproduction evidence for organizers; no resolution has been received |
-| Permitted data, price adjustments and historical membership | Confirm before expanding research beyond the supplied integration sample |
-| Final report/video | Earlier guidance calls for a report and video ≤10 minutes; exact deadline and format remain unconfirmed |
+The development repository is not automatically the competition repository.
+Local owner `baseline` must be replaced by the verified registered identity
+before organizer submission. No submission or competition acceptance is claimed.
 
-These gaps do not prevent a local Phase 3 baseline. They prevent claims that
-we are registered, accepted for competition, prize-eligible, or production-ready.
-The assistant handles implementation, verification, experiments and documents;
-the user supplies organizer information and guides major goals and tradeoffs.
+## Files and reproduction
 
-## 8. Repository map and resuming work
+- [README](../../README.md): installation and default/experimental replay commands.
+- [Original specification](../phase-3-baseline-spec.md) and
+  [original result](../phase-3-summary.md): unchanged design/reference history.
+- [Experiment declaration](../phase-3-exit-experiment.md),
+  [follow-up assessment](../phase-3-followup.md),
+  [follow-up evidence](../phase-3-followup-evidence.json): current comparisons.
+- [Original evidence](../phase-3-run-evidence.json): historical 5bc8859 reference.
+- [Phase 2 findings](../phase-2-summary.md) and
+  [provenance](../tradesim-0.2.7-provenance.json): verified engine/data foundation.
+- `strategy/DiversifiedBaseline.py`, `strategy/baseline.json`: retained default.
+- `research/configs/baseline-exits.json`, `research/configs/momentum20-exits.json`:
+  rejected development configurations, runnable explicitly with `--config`.
+- `scripts/run_phase3.py`, `scripts/phase3_reporting.py`, `scripts/phase3_support.py`:
+  local replay, independent reporting and structure checks; not strategy imports.
 
-The original handoff inspected all 15 files at its Phase 2 baseline, including
-the PDF's extracted text. These remain the integration foundation:
-
-| File(s) | Purpose |
-| --- | --- |
-| [README.md](../../README.md) | Exact environment installation and replay commands |
-| [docs/phase-1-summary.md](../phase-1-summary.md) | Phase 1 decisions and working rules |
-| [docs/development-guide.md](../development-guide.md), [PDF](../development-guide.pdf) | Seven-phase roadmap; progress text is a pre–Phase 2 snapshot |
-| [docs/phase-2-summary.md](../phase-2-summary.md) | Verified interface, data, execution and known discrepancies |
-| [docs/phase-2-run-evidence.json](../phase-2-run-evidence.json) | Full reference configuration, daily/final metrics, hashes and runtime evidence |
-| [docs/tradesim-0.2.7-provenance.json](../tradesim-0.2.7-provenance.json) | Exact archive and extracted-tree identity |
-| [.python-version](../../.python-version), [requirements-phase2.txt](../../requirements-phase2.txt) | Python and dependency pins |
-| [scripts/package_support.py](../../scripts/package_support.py) | Paths, file hashes and package-integrity verification |
-| [scripts/install_tradesim.py](../../scripts/install_tradesim.py) | Verified installation without overwriting project files |
-| [scripts/audit_sample.py](../../scripts/audit_sample.py) | Data coverage/quality inventory |
-| [scripts/run_phase2.py](../../scripts/run_phase2.py) | Official-example replay and accounting reconciliation |
-| [tests/test_tradesim_contract.py](../../tests/test_tradesim_contract.py) | 17 execution/interface/accounting checks |
-| [.gitignore](../../.gitignore) | Excludes environments, raw package/data, ZIPs and generated artifacts |
-
-Phase 3 adds `strategy/DiversifiedBaseline.py`, `strategy/baseline.json`,
-`scripts/run_phase3.py`, local loading/reporting helpers, two test modules,
-the baseline specification, Phase 3 summary and compact reference evidence.
-The official package and Phase 2 execution/validation files are unchanged.
-
-The original ZIP, installed `.local/` package and large `artifacts/` outputs
-are not stored on GitHub. A fresh checkout needs the original upload and the
-README setup steps. The recorded archive SHA-256 is
+The original ZIP and large artifacts are not tracked on GitHub. Fresh checkouts
+need the original `tradeSim0.2.7.zip` and README setup. Archive SHA-256:
 `86ead90a23e36cda27089811851e023abe2e82646c944761628903eed3363249`.
-Earlier chats mention `docs/materials-review.md`, `docs/tradesim-inspection.md`
-and original workshop files in other workspaces; none is tracked on this
-reviewed `main`. Do not assume those files will exist after cloning.
 
 For the next chat:
 
-> Continue toward Phase 4 of Calgarios/algo-trading for the KGI CU competition.
-> Read docs/current-progress/README.md, docs/phase-3-summary.md, the baseline
-> specification and exact run evidence. Check the Phase 3 PR's review/merge
-> status. Preserve the baseline and unmodified TradeSim/Phase 2 integration.
-> Record research hypotheses before tuning and establish chronological
-> comparisons using permitted data. The baseline outperformed SET50 in the
-> inspected sample but lost money and failed working eligibility; it is not
-> a validated profitable candidate. Confirm organizer access and deadlines
-> alongside research; do not claim submission readiness without their checks.
-
-## 9. Review basis and limits
-
-The original Phase 2 handoff reconciled accessible project-chat records for **Start
-algorithm trading project**, **Summarize competition rules**, **Locate
-algo-trading repository**, **Plan project phases** (including older turns),
-**Check project context**, **TradeSim Phase 2**, and both archived **Set up
-algo-trading** chats. Unrelated personal chats are outside this project summary.
-It also reviews the complete tracked repository, merged PRs #1–#3 and their
-discussion timelines. Retrieved chat records and historical assertions are
-distinguished from checked-in code and recorded test evidence.
-
-The Phase 3 update is based on the implementation and recorded local tests and
-replays, not a new review of all earlier chats. The original workshop PDFs and
-live competition webpage were not independently reverified. Historical
-rule/date statements remain attributed. No registration confirmation, later
-organizer ruling or accepted submission has been established.
+> Continue Phase 4 of Calgarios/algo-trading. Read docs/current-progress/README.md,
+> docs/phase-3-followup.md and its evidence, then check PR #5 status. Phase 3's
+> engineering is complete, but all three tested configurations fail measured
+> prize criteria. Keep the default reference, record the two rejected experiments,
+> and establish permitted chronological research/validation data before tuning.
+> Distinguish common criteria from Best Alpha additions. Preserve the official
+> engine and Phase 2 integration, and confirm organizer access/deadlines in parallel.

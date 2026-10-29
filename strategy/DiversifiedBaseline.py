@@ -20,6 +20,8 @@ class DiversifiedBaseline(Strategy_template):
         self.last_slot = None
         self.decision_sequence = 0
         self.last_decision = None
+        self.exit_reason = None
+        self.sold_today = False
 
     def _validate_config(self):
         c = self.config
@@ -34,6 +36,14 @@ class DiversifiedBaseline(Strategy_template):
                 or c['max_exposure'] + c['cash_reserve'] > 1
                 or not c['target_exposure'] / c['positions'] <= c['max_position'] <= 1):
             raise ValueError('Invalid baseline sizing/risk configuration')
+        exits = c.get('exit_policy')
+        if exits is not None and (
+                not 0 < exits['take_profit_net'] < 1 or not 0 < exits['stop_loss_net'] < 1
+                or type(exits['max_holding_sessions']) is not int
+                or not 1 <= exits['max_holding_sessions'] <= 40):
+            raise ValueError('Invalid exit policy')
+        if c.get('selection', 'alphabetical') not in ('alphabetical', 'momentum20'):
+            raise ValueError('Unsupported selection rule')
 
     @staticmethod
     def buy_price(last, day):
@@ -43,6 +53,44 @@ class DiversifiedBaseline(Strategy_template):
                  if day < '2026-11-16' else
                  (.01, .02, .02, .05, .10, .25, .50, 1., 2.))
         return round(last + ticks[sum(last >= b for b in bounds)], 2)
+
+    @staticmethod
+    def sell_price(last, day):
+        bounds = (2, 5, 10, 25, 50, 100, 200, 400)
+        ticks = ((.01, .02, .05, .10, .25, .25, .50, 1., 2.)
+                 if day < '2026-11-16' else
+                 (.01, .02, .02, .05, .10, .25, .50, 1., 2.))
+        return round(last - ticks[sum(last > b for b in bounds)], 2)
+
+    def _exit_signal(self, symbol, last, day, decision):
+        policy = self.config.get('exit_policy')
+        if policy is None:
+            return None
+        lots = self.handler.get_stock_by_symbol(symbol)
+        if not lots:
+            return None
+        quantity = sum(lot.get_actual_vol() for lot in lots)
+        cost = sum(lot.get_buy_price() * lot.get_actual_vol() for lot in lots)
+        proceeds = quantity * self.sell_price(last, day) * (1 - self.FEE_RATE)
+        net = proceeds / cost - 1
+        # Official buy-time strings use host timezone; SET sessions stay on the
+        # same calendar date in UTC and Bangkok. Runner fixes TZ=UTC.
+        opened = min(lot.get_buy_time_str()[:10] for lot in lots)
+        dates = [str(b['Date'])[:10] for b in self.history[symbol]]
+        # Observed sessions are a lower bound when the entry is older than the
+        # bounded history. Ten observed later sessions still prove expiry.
+        age = (sum(opened <= d < day for d in dates)
+               if dates and dates == sorted(set(dates)) and opened <= dates[-1]
+               and all(d < day for d in dates) else None)
+        decision.update({'estimated_net_liquidation_return': net, 'oldest_lot_date': opened,
+                         'holding_sessions': age})
+        if net <= -policy['stop_loss_net']:
+            return 'stop_loss'
+        if net >= policy['take_profit_net']:
+            return 'take_profit'
+        if age is not None and age >= policy['max_holding_sessions']:
+            return 'holding_period'
+        return None
 
     def _build_plan(self, day):
         month = date.fromisoformat(day).replace(day=1)
@@ -66,7 +114,13 @@ class DiversifiedBaseline(Strategy_template):
                                     'anchor_date': str(prior[-1][0]), 'anchor_close': prior[-1][1]}
             except (KeyError, TypeError, ValueError, OverflowError) as error:
                 rejected[symbol] = str(error)
-        selected = sorted(eligible)[:self.config['positions']]
+        if self.config.get('selection') == 'momentum20':
+            for item in eligible.values():
+                item['momentum20'] = item['history'][-1]['close'] / item['history'][0]['close'] - 1
+            ranked = sorted(eligible, key=lambda s: (-eligible[s]['momentum20'], s))
+        else:
+            ranked = sorted(eligible)
+        selected = ranked[:self.config['positions']]
         allocation = (self.config['initial_capital_thb'] * self.config['target_exposure']
                       / self.config['positions'])
         targets = {s: floor(allocation / eligible[s]['anchor_close'] / 100) * 100 for s in selected}
@@ -92,8 +146,8 @@ class DiversifiedBaseline(Strategy_template):
         decision = {'timestamp': timestamp, 'symbol': symbol, 'month': self.plan['month'],
                     'reason': 'hold', 'requested_quantity': 0, 'filled_quantity': 0}
         self.last_decision = decision
-        if symbol not in self.config['universe'] or not self.plan['ready']:
-            decision['reason'] = 'unpermitted_symbol' if symbol not in self.config['universe'] else 'unavailable_plan'
+        if symbol not in self.config['universe']:
+            decision['reason'] = 'unpermitted_symbol'
             return
         try:
             last = float(bar['Close'])
@@ -112,16 +166,27 @@ class DiversifiedBaseline(Strategy_template):
         if self.handler.get_open_orders():
             decision['reason'] = 'pending_order'
             return
+        self.exit_reason = self.exit_reason or self._exit_signal(symbol, last, day, decision)
+        if self.exit_reason and held:
+            target = 0
+            decision['target'] = 0
+            decision['exit_reason'] = self.exit_reason
+        elif not self.plan['ready']:
+            decision['reason'] = 'unavailable_plan'
+            return
         if held == target:
             decision['reason'] = 'at_target'
             return
         side = 'Sell' if held > target else 'Buy'
         quantity = abs(target - held)
         if side == 'Buy':
+            if self.config.get('exit_policy') and (self.sold_today or self.exit_reason):
+                decision['reason'] = 'same_day_reentry_blocked'
+                return
             if held == 0 and len(holdings) >= self.config['positions']:
                 decision['reason'] = 'position_count_limit'
                 return
-            invested = sum(h['Actual Volume'] * (last if h['Symbol'] == symbol else h['Market Price'])
+            invested = sum(h['Actual Volume'] * last if h['Symbol'] == symbol else h['Market Value']
                            for h in holdings)
             nav = min(self.opening_nav, cash + invested)
             if not isfinite(nav) or nav <= 0 or not isfinite(invested):
@@ -145,7 +210,10 @@ class DiversifiedBaseline(Strategy_template):
         if quantity < 100:
             decision['reason'] = 'risk_or_lot_limit'
             return
-        decision.update({'side': side, 'requested_quantity': quantity, 'reason': 'rebalance'})
+        decision.update({'side': side, 'requested_quantity': quantity,
+                         'reason': self.exit_reason if side == 'Sell' and self.exit_reason else 'rebalance'})
+        if side == 'Sell':
+            self.sold_today = True  # Includes rejected/zero-fill sell attempts.
         response = self.handler.create_order_at_market(quantity, side, symbol)
         after = self.handler.get_total_stock_volume_by_symbol(symbol)
         filled = after - held if side == 'Buy' else held - after
