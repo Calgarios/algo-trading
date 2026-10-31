@@ -1,0 +1,2367 @@
+{
+  "decision": "retain_reference_revise_research",
+  "provenance": {
+    "code_sha256": {
+      "scripts/package_support.py": "eac7b48f0498171317e91b5ac045e70b72dd5bc2beaf1284394e019fceb2d5e6",
+      "scripts/phase3_reporting.py": "026833bef0ab866a60bb3c03503e5cfc1393b9b7bc12a2e629d79243148c1de3",
+      "scripts/phase4_diagnostics.py": "9f906f1902aa1c68142ef05096058a0f76e135572aafd7d8b885422917e2dbc8"
+    },
+    "evidence_sha256": "744671d9ea086844b297c146035059315c9b45c09daf96a70e4f9acb3c1d400c",
+    "fee_rate": 0.0016799
+  },
+  "runs": {
+    "C1": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7293325801117571,
+          "fees_thb": 12206.59017399999,
+          "net_pnl_change_thb": 54898.409826003015,
+          "return_from_previous_nav_pct": 0.5489840982600303,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 7266259.999999994
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7523083529696046,
+          "fees_thb": 1161.6088524999996,
+          "net_pnl_change_thb": -31561.60885250196,
+          "return_from_previous_nav_pct": -0.31389286660180593,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 691474.9999999998
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7445550529619437,
+          "fees_thb": 236.57191749999947,
+          "net_pnl_change_thb": -101491.57191750407,
+          "return_from_previous_nav_pct": -1.0125527449865501,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 140824.99999999968
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7232078984531078,
+          "fees_thb": 360.00257000000056,
+          "net_pnl_change_thb": 7719.997430000454,
+          "return_from_previous_nav_pct": 0.07780808157935581,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 214300.00000000032
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7523008588508039,
+          "fees_thb": 438.49589749999905,
+          "net_pnl_change_thb": 110686.50410250388,
+          "return_from_previous_nav_pct": 1.114716521598158,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 261024.99999999942
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7489901874332857,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -132425.0,
+          "return_from_previous_nav_pct": -1.3189410340833985,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7552244160364494,
+          "fees_thb": 431.2975260000003,
+          "net_pnl_change_thb": 73848.7024740018,
+          "return_from_previous_nav_pct": 0.7453572259798147,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 256740.00000000017
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7589146270731847,
+          "fees_thb": 517.0732199999984,
+          "net_pnl_change_thb": -31037.07322000712,
+          "return_from_previous_nav_pct": -0.3109405172322277,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 307799.99999999907
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7546303712889766,
+          "fees_thb": 284.2390800000012,
+          "net_pnl_change_thb": -4749.239079998806,
+          "return_from_previous_nav_pct": -0.04772798395693556,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 169200.0000000007
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7485323190317101,
+          "fees_thb": 105.41372500000034,
+          "net_pnl_change_thb": 7929.586275001988,
+          "return_from_previous_nav_pct": 0.07972727403977586,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 62750.000000000204
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7538320259297323,
+          "fees_thb": 460.29259999999886,
+          "net_pnl_change_thb": 18044.707399999723,
+          "return_from_previous_nav_pct": 0.1812842681898852,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 273999.9999999993
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.753756462798498,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -3060.0,
+          "return_from_previous_nav_pct": -0.030686340885588415,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.748487342047876,
+          "fees_thb": 201.16802500000085,
+          "net_pnl_change_thb": -52196.16802499816,
+          "return_from_previous_nav_pct": -0.5235951182406162,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 119750.00000000051
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7672861986937513,
+          "fees_thb": 336.65195999999924,
+          "net_pnl_change_thb": -61516.651960000396,
+          "return_from_previous_nav_pct": -0.6203397032009672,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 200399.99999999953
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7695020045416423,
+          "fees_thb": 460.33459749999747,
+          "net_pnl_change_thb": -98475.33459750377,
+          "return_from_previous_nav_pct": -0.9992331745071525,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 274024.9999999985
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7182550444836946,
+          "fees_thb": 749.9493575000015,
+          "net_pnl_change_thb": -192804.94935749844,
+          "return_from_previous_nav_pct": -1.9761458684429467,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 446425.0000000009
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.406771118781268
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.451645342537518
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7182550444836946,
+          "fees_thb": 749.9493575000015,
+          "net_pnl_change_thb": -192804.94935749844,
+          "return_from_previous_nav_pct": -1.9761458684429467,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 446425.0000000009
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7489901874332857,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -132425.0,
+          "return_from_previous_nav_pct": -1.3189410340833985,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7445550529619437,
+          "fees_thb": 236.57191749999947,
+          "net_pnl_change_thb": -101491.57191750407,
+          "return_from_previous_nav_pct": -1.0125527449865501,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 140824.99999999968
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -0.7845723625201311,
+        "average_exposure": 0.7486947339191261,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 25,
+        "completed_lot_net_pnl_thb": -28147.54821749997,
+        "expected_payoff_thb": -1125.9019286999987,
+        "fee_drag_pp": 0.17949689502499985,
+        "fees_thb": 17949.689502499987,
+        "name": "Risk-adjusted momentum",
+        "net_pnl_thb": -436189.68950250186,
+        "net_return_pct": -4.361896895025019,
+        "nonflat_win_rate": 0.32,
+        "official_excess_return_pp": -0.2624010222202049,
+        "partial_realization_on_open_lots_thb": -14892.488307500018,
+        "post_first_day_traded_notional_thb": 3418714.999999998,
+        "profit_factor": 0.09738467621871284,
+        "realized_pnl_thb": -43040.03652499999,
+        "same_fills_fee_added_back_return_pct": -4.182400000000019,
+        "traded_notional_over_initial_capital": 1.0684974999999992,
+        "traded_notional_thb": 10684974.999999993,
+        "unrealized_loss_share_pct": 90.1327249220197,
+        "unrealized_pnl_thb": -393149.65297750186
+      }
+    },
+    "C2": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7021837614070217,
+          "fees_thb": 11775.763020000004,
+          "net_pnl_change_thb": 879.2369800042361,
+          "return_from_previous_nav_pct": 0.00879236980004805,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 7009800.000000002
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.754416056641635,
+          "fees_thb": 1414.4841995000006,
+          "net_pnl_change_thb": -10589.484199507162,
+          "return_from_previous_nav_pct": -0.1058855321475205,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 842005.0000000003
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7597891196214243,
+          "fees_thb": 113.01527250000072,
+          "net_pnl_change_thb": -57073.015272501856,
+          "return_from_previous_nav_pct": -0.5712848844711127,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 67275.00000000042
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "normal",
+          "exposure": 0.7551741196851399,
+          "fees_thb": 255.2440060000008,
+          "net_pnl_change_thb": -2275.2440059930086,
+          "return_from_previous_nav_pct": -0.022905409859841352,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 151940.0000000005
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7509163330840325,
+          "fees_thb": 321.4152670000003,
+          "net_pnl_change_thb": 35348.584733000025,
+          "return_from_previous_nav_pct": 0.3559439430403266,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 191330.00000000017
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7387719694550834,
+          "fees_thb": 157.2386400000014,
+          "net_pnl_change_thb": -105622.23864000104,
+          "return_from_previous_nav_pct": -1.0597949468746148,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 93600.00000000083
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7526883660264336,
+          "fees_thb": 381.6060839999991,
+          "net_pnl_change_thb": 42308.393916003406,
+          "return_from_previous_nav_pct": 0.42906215485847277,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 227159.99999999948
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7480486608576644,
+          "fees_thb": 79.20728500000041,
+          "net_pnl_change_thb": 4460.792714998126,
+          "return_from_previous_nav_pct": 0.04504497041912803,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 47150.00000000025
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7535120802197438,
+          "fees_thb": 75.67949500000032,
+          "net_pnl_change_thb": 36524.32050500065,
+          "return_from_previous_nav_pct": 0.36865559082854826,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 45050.00000000019
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7437330116030263,
+          "fees_thb": 169.24992500000008,
+          "net_pnl_change_thb": 13025.75007500127,
+          "return_from_previous_nav_pct": 0.1309915598101563,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 100750.00000000004
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7433147406650188,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -16225.0,
+          "return_from_previous_nav_pct": -0.1629508991249473,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.743047597859441,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -10335.0,
+          "return_from_previous_nav_pct": -0.10396587202625707,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7544421120346508,
+          "fees_thb": 201.9071810000005,
+          "net_pnl_change_thb": -29481.90718099661,
+          "return_from_previous_nav_pct": -0.29688458405257023,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 120190.00000000029
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7495525861859555,
+          "fees_thb": 73.44522799999868,
+          "net_pnl_change_thb": -19023.445228004828,
+          "return_from_previous_nav_pct": -0.19213766831008838,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 43719.999999999214
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7522792228901334,
+          "fees_thb": 69.92583749999903,
+          "net_pnl_change_thb": -59544.92583750002,
+          "return_from_previous_nav_pct": -0.6025642317119329,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 41624.999999999425
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "normal",
+          "exposure": 0.745029061440154,
+          "fees_thb": 371.59388000000035,
+          "net_pnl_change_thb": -193376.59388000518,
+          "return_from_previous_nav_pct": -1.9687352404829106,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 221200.0000000002
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -3.74864719150627
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -3.78729662980752
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "normal",
+          "exposure": 0.745029061440154,
+          "fees_thb": 371.59388000000035,
+          "net_pnl_change_thb": -193376.59388000518,
+          "return_from_previous_nav_pct": -1.9687352404829106,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 221200.0000000002
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7387719694550834,
+          "fees_thb": 157.2386400000014,
+          "net_pnl_change_thb": -105622.23864000104,
+          "return_from_previous_nav_pct": -1.0597949468746148,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 93600.00000000083
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7522792228901334,
+          "fees_thb": 69.92583749999903,
+          "net_pnl_change_thb": -59544.92583750002,
+          "return_from_previous_nav_pct": -0.6025642317119329,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 41624.999999999425
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": 0.38103269083359326,
+        "average_exposure": 0.7466811749797849,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 5,
+        "completed_lot_net_pnl_thb": -4889.764790500008,
+        "expected_payoff_thb": -977.9529581000015,
+        "fee_drag_pp": 0.15459775320500008,
+        "fees_thb": 15459.775320500006,
+        "name": "Downside defence",
+        "net_pnl_thb": -370999.775320502,
+        "net_return_pct": -3.709997753205019,
+        "nonflat_win_rate": 0.2,
+        "official_excess_return_pp": 0.3894981195997955,
+        "partial_realization_on_open_lots_thb": -9475.70711899998,
+        "post_first_day_traded_notional_thb": 2192995.0000000014,
+        "profit_factor": 0.015818660726731368,
+        "realized_pnl_thb": -14365.47190949999,
+        "same_fills_fee_added_back_return_pct": -3.5554000000000197,
+        "traded_notional_over_initial_capital": 0.9202795000000004,
+        "traded_notional_thb": 9202795.000000004,
+        "unrealized_loss_share_pct": 96.12790280072548,
+        "unrealized_pnl_thb": -356634.30341100204
+      }
+    },
+    "C3": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7303729965416523,
+          "fees_thb": 12214.888879999993,
+          "net_pnl_change_thb": 75345.1111199949,
+          "return_from_previous_nav_pct": 0.7534511111999542,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 7271199.999999996
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7614921281955415,
+          "fees_thb": 1049.1815450000013,
+          "net_pnl_change_thb": -38209.18154500611,
+          "return_from_previous_nav_pct": -0.37923446912836445,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 624550.0000000007
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7513529079059886,
+          "fees_thb": 284.4490674999997,
+          "net_pnl_change_thb": -73309.4490674939,
+          "return_from_previous_nav_pct": -0.7303821486713491,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 169324.99999999983
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7167578027004088,
+          "fees_thb": 951.8733375000011,
+          "net_pnl_change_thb": -30526.873337499797,
+          "return_from_previous_nav_pct": -0.30637700683788793,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 566625.0000000006
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7237729937419942,
+          "fees_thb": 861.2007350000003,
+          "net_pnl_change_thb": 90768.79926499352,
+          "return_from_previous_nav_pct": 0.9137829608952375,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 512650.00000000023
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7490860736146382,
+          "fees_thb": 882.0734925000033,
+          "net_pnl_change_thb": -131587.07349250093,
+          "return_from_previous_nav_pct": -1.3127112481398084,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 525075.000000002
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.750936154480466,
+          "fees_thb": 197.97621499999877,
+          "net_pnl_change_thb": 64457.023784998804,
+          "return_from_previous_nav_pct": 0.6515758950219386,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 117849.99999999927
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7509927391756793,
+          "fees_thb": 481.82891799999925,
+          "net_pnl_change_thb": -4571.828917995095,
+          "return_from_previous_nav_pct": -0.045916011068869445,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 286819.99999999953
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7458918067192086,
+          "fees_thb": 678.3436200000033,
+          "net_pnl_change_thb": -11588.343619996682,
+          "return_from_previous_nav_pct": -0.11643807116242799,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 403800.000000002
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7509856235268574,
+          "fees_thb": 91.05057999999917,
+          "net_pnl_change_thb": -14676.050580002367,
+          "return_from_previous_nav_pct": -0.14763482604756017,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 54199.999999999505
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7534039474331683,
+          "fees_thb": 498.4935259999984,
+          "net_pnl_change_thb": 42036.50647401437,
+          "return_from_previous_nav_pct": 0.4234945994730399,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 296739.999999999
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7522418921352024,
+          "fees_thb": 189.37512699999934,
+          "net_pnl_change_thb": -34319.37512699887,
+          "return_from_previous_nav_pct": -0.3442907082872537,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 112729.9999999996
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7476262994789687,
+          "fees_thb": 439.24345299999914,
+          "net_pnl_change_thb": -43664.243453003466,
+          "return_from_previous_nav_pct": -0.4395514181241178,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 261469.99999999948
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7469866158085166,
+          "fees_thb": 177.69982199999504,
+          "net_pnl_change_thb": -24837.699821999297,
+          "return_from_previous_nav_pct": -0.25113559664127205,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 105779.99999999705
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7235078515212798,
+          "fees_thb": 377.92710299999817,
+          "net_pnl_change_thb": -25437.92710299976,
+          "return_from_previous_nav_pct": -0.2578520920669569,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 224969.9999999989
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7092464137744745,
+          "fees_thb": 529.5884750000005,
+          "net_pnl_change_thb": -198829.5884750057,
+          "return_from_previous_nav_pct": -2.020650665541235,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 315250.0000000003
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -3.6392649237062535
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -3.689027908447504
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7092464137744745,
+          "fees_thb": 529.5884750000005,
+          "net_pnl_change_thb": -198829.5884750057,
+          "return_from_previous_nav_pct": -2.020650665541235,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 315250.0000000003
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7490860736146382,
+          "fees_thb": 882.0734925000033,
+          "net_pnl_change_thb": -131587.07349250093,
+          "return_from_previous_nav_pct": -1.3127112481398084,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 525075.000000002
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7513529079059886,
+          "fees_thb": 284.4490674999997,
+          "net_pnl_change_thb": -73309.4490674939,
+          "return_from_previous_nav_pct": -0.7303821486713491,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 169324.99999999983
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -0.2109798501277016,
+        "average_exposure": 0.7415408904221278,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 34,
+        "completed_lot_net_pnl_thb": -20531.766892499953,
+        "expected_payoff_thb": -603.8754968382339,
+        "fee_drag_pp": 0.1990519389649999,
+        "fees_thb": 19905.19389649999,
+        "name": "Efficient breakout",
+        "net_pnl_thb": -358950.1938965004,
+        "net_return_pct": -3.5895019389650007,
+        "nonflat_win_rate": 0.2647058823529412,
+        "official_excess_return_pp": 0.5099939338398136,
+        "partial_realization_on_open_lots_thb": -4946.476936499952,
+        "post_first_day_traded_notional_thb": 4577834.999999998,
+        "profit_factor": 0.10608814819607533,
+        "realized_pnl_thb": -25478.243828999905,
+        "same_fills_fee_added_back_return_pct": -3.390450000000004,
+        "traded_notional_over_initial_capital": 1.1849034999999994,
+        "traded_notional_thb": 11849034.999999994,
+        "unrealized_loss_share_pct": 92.90201140374748,
+        "unrealized_pnl_thb": -333471.95006750047
+      }
+    },
+    "C4": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.6759910863575614,
+          "fees_thb": 11335.5032275,
+          "net_pnl_change_thb": 2624.4967725072056,
+          "return_from_previous_nav_pct": 0.02624496772507534,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 6747725.0
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7586588333761428,
+          "fees_thb": 1835.4419409999991,
+          "net_pnl_change_thb": -26025.44194100797,
+          "return_from_previous_nav_pct": -0.2601861336432809,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 1092589.9999999995
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7555978232561704,
+          "fees_thb": 362.85839999999916,
+          "net_pnl_change_thb": -108637.85839999467,
+          "return_from_previous_nav_pct": -1.0889267755767262,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 215999.9999999995
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7218041006527224,
+          "fees_thb": 564.3288069999962,
+          "net_pnl_change_thb": 6795.671192996204,
+          "return_from_previous_nav_pct": 0.06886601049316265,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 335929.99999999773
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7491039684589087,
+          "fees_thb": 431.8266945000014,
+          "net_pnl_change_thb": 48198.1733055003,
+          "return_from_previous_nav_pct": 0.4880947850323558,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 257055.00000000081
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.751356551536539,
+          "fees_thb": 597.473234000001,
+          "net_pnl_change_thb": -107202.47323400155,
+          "return_from_previous_nav_pct": -1.0803482711734036,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 355660.0000000006
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7483971774525048,
+          "fees_thb": 643.9056699999946,
+          "net_pnl_change_thb": 75546.09433000162,
+          "return_from_previous_nav_pct": 0.7696413882581687,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 383299.9999999968
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.75235027659218,
+          "fees_thb": 218.17701249999845,
+          "net_pnl_change_thb": -29848.177012499422,
+          "return_from_previous_nav_pct": -0.3017619630381829,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 129874.99999999908
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7483820084835614,
+          "fees_thb": 74.3775725000014,
+          "net_pnl_change_thb": 20140.62242749892,
+          "return_from_previous_nav_pct": 0.2042359028026075,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 44275.00000000084
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7573214503893791,
+          "fees_thb": 369.6619950000004,
+          "net_pnl_change_thb": 20670.338004998863,
+          "return_from_previous_nav_pct": 0.20918026034728587,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 220050.00000000023
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7565844370784973,
+          "fees_thb": 163.72305399999823,
+          "net_pnl_change_thb": 22916.276945998892,
+          "return_from_previous_nav_pct": 0.23142468083932055,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 97459.99999999894
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7570748148601559,
+          "fees_thb": 167.67081899999903,
+          "net_pnl_change_thb": -45242.67081899941,
+          "return_from_previous_nav_pct": -0.4558373873439936,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 99809.99999999942
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7562023937029684,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -35355.0,
+          "return_from_previous_nav_pct": -0.3578464819398941,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7597418188706557,
+          "fees_thb": 435.3796829999992,
+          "net_pnl_change_thb": -43125.37968299724,
+          "return_from_previous_nav_pct": -0.438062156608765,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 259169.99999999953
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7214110712072278,
+          "fees_thb": 577.4656249999971,
+          "net_pnl_change_thb": -116747.4656250067,
+          "return_from_previous_nav_pct": -1.1911238640916366,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 343749.99999999825
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7106407328787258,
+          "fees_thb": 224.99740649999876,
+          "net_pnl_change_thb": -210974.99740649387,
+          "return_from_previous_nav_pct": -2.178434442189592,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 133934.99999999927
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -5.307684889268738
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -5.352691867122488
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7106407328787258,
+          "fees_thb": 224.99740649999876,
+          "net_pnl_change_thb": -210974.99740649387,
+          "return_from_previous_nav_pct": -2.178434442189592,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 133934.99999999927
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7214110712072278,
+          "fees_thb": 577.4656249999971,
+          "net_pnl_change_thb": -116747.4656250067,
+          "return_from_previous_nav_pct": -1.1911238640916366,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 343749.99999999825
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7555978232561704,
+          "fees_thb": 362.85839999999916,
+          "net_pnl_change_thb": -108637.85839999467,
+          "return_from_previous_nav_pct": -1.0889267755767262,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 215999.9999999995
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -1.1880392944371492,
+        "average_exposure": 0.7425386590721188,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 39,
+        "completed_lot_net_pnl_thb": -14050.355379499957,
+        "expected_payoff_thb": -360.265522551281,
+        "fee_drag_pp": 0.18002791141499982,
+        "fees_thb": 18002.791141499983,
+        "name": "Trend pullback",
+        "net_pnl_thb": -526267.7911414988,
+        "net_return_pct": -5.262677911414992,
+        "nonflat_win_rate": 0.41025641025641024,
+        "official_excess_return_pp": -1.163182038610178,
+        "partial_realization_on_open_lots_thb": -18238.16679,
+        "post_first_day_traded_notional_thb": 3968859.9999999907,
+        "profit_factor": 0.2209194011361747,
+        "realized_pnl_thb": -32288.522169499956,
+        "same_fills_fee_added_back_return_pct": -5.082649999999989,
+        "traded_notional_over_initial_capital": 1.071658499999999,
+        "traded_notional_thb": 10716584.99999999,
+        "unrealized_loss_share_pct": 93.86462126069607,
+        "unrealized_pnl_thb": -493979.2689719989
+      }
+    },
+    "C5": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7149269908592604,
+          "fees_thb": 11969.052313999995,
+          "net_pnl_change_thb": 43640.94768600166,
+          "return_from_previous_nav_pct": 0.4364094768600113,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 7124859.999999997
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7524240307306445,
+          "fees_thb": 1249.7448059999988,
+          "net_pnl_change_thb": -20934.744806002825,
+          "return_from_previous_nav_pct": -0.20843780572249448,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 743939.9999999993
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7524090610416125,
+          "fees_thb": 445.5934750000015,
+          "net_pnl_change_thb": -96310.5934750028,
+          "return_from_previous_nav_pct": -0.9609240411270203,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 265250.0000000009
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7234667919400865,
+          "fees_thb": 491.91671750000023,
+          "net_pnl_change_thb": 18228.083282502368,
+          "return_from_previous_nav_pct": 0.1836324482698659,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 292825.0000000001
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7672671300981456,
+          "fees_thb": 700.8542799999996,
+          "net_pnl_change_thb": 75954.14572000317,
+          "return_from_previous_nav_pct": 0.7637709386213665,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 417199.9999999997
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7563472410141329,
+          "fees_thb": 357.11314200000015,
+          "net_pnl_change_thb": -150627.11314200424,
+          "return_from_previous_nav_pct": -1.5031779161943204,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 212580.0000000001
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7477177232535983,
+          "fees_thb": 516.2332699999988,
+          "net_pnl_change_thb": 77733.76673000865,
+          "return_from_previous_nav_pct": 0.7875800892401807,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 307299.9999999993
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7548367529483552,
+          "fees_thb": 139.34770500000013,
+          "net_pnl_change_thb": -50054.3477050066,
+          "return_from_previous_nav_pct": -0.5031758671606767,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 82950.00000000007
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7615037940034578,
+          "fees_thb": 817.2461514999977,
+          "net_pnl_change_thb": 26732.75384850055,
+          "return_from_previous_nav_pct": 0.27009247121565494,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 486484.99999999866
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7599344625103367,
+          "fees_thb": 257.7974540000032,
+          "net_pnl_change_thb": 3947.2025460023433,
+          "return_from_previous_nav_pct": 0.03977285581466816,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 153460.0000000019
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7429943488786074,
+          "fees_thb": 292.21860500000184,
+          "net_pnl_change_thb": 21287.78139499575,
+          "return_from_previous_nav_pct": 0.21441495258620602,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 173950.0000000011
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7427954273533385,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -7695.0,
+          "return_from_previous_nav_pct": -0.07733980901739601,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7481193150687008,
+          "fees_thb": 305.1118374999969,
+          "net_pnl_change_thb": -58760.111837498844,
+          "return_from_previous_nav_pct": -0.5910348605739468,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 181624.99999999817
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7518560229705143,
+          "fees_thb": 265.0210239999942,
+          "net_pnl_change_thb": -60830.02102400176,
+          "return_from_previous_nav_pct": -0.6154926872771416,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 157759.99999999657
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.717046507760259,
+          "fees_thb": 941.8275355000005,
+          "net_pnl_change_thb": -91911.82753549889,
+          "return_from_previous_nav_pct": -0.9357452759057305,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 560645.0000000003
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7097706795445508,
+          "fees_thb": 465.3322999999982,
+          "net_pnl_change_thb": -215905.3322999943,
+          "return_from_previous_nav_pct": -2.2188739604642183,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 276999.99999999895
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.903080132712458
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.9511161592549575
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7097706795445508,
+          "fees_thb": 465.3322999999982,
+          "net_pnl_change_thb": -215905.3322999943,
+          "return_from_previous_nav_pct": -2.2188739604642183,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 276999.99999999895
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7563472410141329,
+          "fees_thb": 357.11314200000015,
+          "net_pnl_change_thb": -150627.11314200424,
+          "return_from_previous_nav_pct": -1.5031779161943204,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 212580.0000000001
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7524090610416125,
+          "fees_thb": 445.5934750000015,
+          "net_pnl_change_thb": -96310.5934750028,
+          "return_from_previous_nav_pct": -0.9609240411270203,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 265250.0000000009
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -1.1689656448772734,
+        "average_exposure": 0.7439635174984751,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 39,
+        "completed_lot_net_pnl_thb": -32187.735529499918,
+        "expected_payoff_thb": -825.3265520384595,
+        "fee_drag_pp": 0.19214410616999988,
+        "fees_thb": 19214.410616999987,
+        "name": "Balanced ensemble",
+        "net_pnl_thb": -485504.41061699577,
+        "net_return_pct": -4.855044106169959,
+        "nonflat_win_rate": 0.15384615384615385,
+        "official_excess_return_pp": -0.7555482333651451,
+        "partial_realization_on_open_lots_thb": -15026.101821500033,
+        "post_first_day_traded_notional_thb": 4312969.999999995,
+        "profit_factor": 0.06461977624516638,
+        "realized_pnl_thb": -47213.83735099995,
+        "same_fills_fee_added_back_return_pct": -4.662899999999958,
+        "traded_notional_over_initial_capital": 1.1437829999999993,
+        "traded_notional_thb": 11437829.999999993,
+        "unrealized_loss_share_pct": 90.27530207377539,
+        "unrealized_pnl_thb": -438290.57326599583
+      }
+    },
+    "T1": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.6799609806487222,
+          "fees_thb": 11418.098870799993,
+          "net_pnl_change_thb": -27185.098870800808,
+          "return_from_previous_nav_pct": -0.27185098870801117,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 6796891.999999996
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.756299081753571,
+          "fees_thb": 1493.078320999999,
+          "net_pnl_change_thb": 3580.9216790068895,
+          "return_from_previous_nav_pct": 0.03590682986205351,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 888789.9999999994
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7545441396033022,
+          "fees_thb": 152.14518320000025,
+          "net_pnl_change_thb": -74523.14518320188,
+          "return_from_previous_nav_pct": -0.7469946712902686,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 90568.00000000015
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7228291918354042,
+          "fees_thb": 532.511500999999,
+          "net_pnl_change_thb": 8731.48849899508,
+          "return_from_previous_nav_pct": 0.08818017342038242,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 316989.9999999994
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7423689615322175,
+          "fees_thb": 284.9530374999995,
+          "net_pnl_change_thb": 92151.04696250334,
+          "return_from_previous_nav_pct": 0.9298226971619972,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 169624.99999999968
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7505849169733246,
+          "fees_thb": 187.19965650000086,
+          "net_pnl_change_thb": -118036.19965649955,
+          "return_from_previous_nav_pct": -1.180036871261969,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 111435.00000000051
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7521935113423819,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": 64165.00000000186,
+          "return_from_previous_nav_pct": 0.6491332724058552,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7514784578163073,
+          "fees_thb": 159.2545200000004,
+          "net_pnl_change_thb": -5123.25452000089,
+          "return_from_previous_nav_pct": -0.051495770913456695,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 94800.00000000025
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7455846895491492,
+          "fees_thb": 95.7542999999987,
+          "net_pnl_change_thb": -6689.754300005734,
+          "return_from_previous_nav_pct": -0.0672758975421961,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 56999.99999999922
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7400987081906605,
+          "fees_thb": 291.5466450000022,
+          "net_pnl_change_thb": -2524.546645000577,
+          "return_from_previous_nav_pct": -0.025405339700490526,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 173550.00000000128
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7488763345391054,
+          "fees_thb": 134.48607439999978,
+          "net_pnl_change_thb": 27919.513925600797,
+          "return_from_previous_nav_pct": 0.2810346103240269,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 80055.99999999987
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7452343816294248,
+          "fees_thb": 67.3219924999994,
+          "net_pnl_change_thb": 14620.678007502109,
+          "return_from_previous_nav_pct": 0.14675762054048302,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 40074.99999999964
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7490274974365699,
+          "fees_thb": 85.00294000000031,
+          "net_pnl_change_thb": -51164.0029399991,
+          "return_from_previous_nav_pct": -0.51281506050187,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 50600.00000000018
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7493012742921694,
+          "fees_thb": 344.79107549999935,
+          "net_pnl_change_thb": -54177.791075497866,
+          "return_from_previous_nav_pct": -0.5458212098005899,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 205244.99999999962
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7467113358956026,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -100941.0,
+          "return_from_previous_nav_pct": -1.0225244014471113,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7245759140635339,
+          "fees_thb": 269.7835404999987,
+          "net_pnl_change_thb": -203161.7835405022,
+          "return_from_previous_nav_pct": -2.079273993594566,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 160594.99999999924
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.362369095723735
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.4011589148684855
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7245759140635339,
+          "fees_thb": 269.7835404999987,
+          "net_pnl_change_thb": -203161.7835405022,
+          "return_from_previous_nav_pct": -2.079273993594566,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 160594.99999999924
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7505849169733246,
+          "fees_thb": 187.19965650000086,
+          "net_pnl_change_thb": -118036.19965649955,
+          "return_from_previous_nav_pct": -1.180036871261969,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 111435.00000000051
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7467113358956026,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -100941.0,
+          "return_from_previous_nav_pct": -1.0225244014471113,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": 0.03672289642859816,
+        "average_exposure": 0.7412293360688404,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 17,
+        "completed_lot_net_pnl_thb": -8024.462139499988,
+        "expected_payoff_thb": -472.0271846764699,
+        "fee_drag_pp": 0.1551592765789999,
+        "fees_thb": 15515.92765789999,
+        "name": "SMA trend",
+        "net_pnl_thb": -432357.9276578985,
+        "net_return_pct": -4.323579276578982,
+        "nonflat_win_rate": 0.35294117647058826,
+        "official_excess_return_pp": -0.22408340377416724,
+        "partial_realization_on_open_lots_thb": -5100.029297099995,
+        "post_first_day_traded_notional_thb": 2439328.9999999986,
+        "profit_factor": 0.30070124716116736,
+        "realized_pnl_thb": -13124.491436599983,
+        "same_fills_fee_added_back_return_pct": -4.168419999999985,
+        "traded_notional_over_initial_capital": 0.9236220999999994,
+        "traded_notional_thb": 9236220.999999994,
+        "unrealized_loss_share_pct": 96.96443835141501,
+        "unrealized_pnl_thb": -419233.4362212985
+      }
+    },
+    "T2": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.6882734840872771,
+          "fees_thb": 11513.219848499999,
+          "net_pnl_change_thb": 56801.7801515013,
+          "return_from_previous_nav_pct": 0.5680178015150084,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 6853514.999999999
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7550607254525035,
+          "fees_thb": 1984.5246664999995,
+          "net_pnl_change_thb": -37574.52466651052,
+          "return_from_previous_nav_pct": -0.37362300150599603,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 1181334.9999999998
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7534441735266992,
+          "fees_thb": 371.8038675000007,
+          "net_pnl_change_thb": -86971.80386749841,
+          "return_from_previous_nav_pct": -0.8680490186494749,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 221325.0000000004
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7281396037453345,
+          "fees_thb": 419.75661299999774,
+          "net_pnl_change_thb": -6919.756613001227,
+          "return_from_previous_nav_pct": -0.06966953927745045,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 249869.99999999866
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.7519908400285105,
+          "fees_thb": 352.31702750000113,
+          "net_pnl_change_thb": 107472.68297250196,
+          "return_from_previous_nav_pct": 1.0828115670343808,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 209725.00000000067
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7483150863832352,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -146525.0,
+          "return_from_previous_nav_pct": -1.4604584726409908,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7584434398185479,
+          "fees_thb": 611.3996049999987,
+          "net_pnl_change_thb": 84743.60039500706,
+          "return_from_previous_nav_pct": 0.857183606367018,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 363949.99999999924
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7601729369310893,
+          "fees_thb": 206.96368000000075,
+          "net_pnl_change_thb": -50711.963680000976,
+          "return_from_previous_nav_pct": -0.5085931849347025,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 123200.00000000045
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7649498167993815,
+          "fees_thb": 73.32763499999965,
+          "net_pnl_change_thb": 15591.672364998609,
+          "return_from_previous_nav_pct": 0.1571691255963792,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 43649.99999999979
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7648341972608166,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -4885.0,
+          "return_from_previous_nav_pct": -0.04916511551344982,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7660207013137877,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": 50360.00000000186,
+          "return_from_previous_nav_pct": 0.5070978755955746,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7605623894763709,
+          "fees_thb": 84.07899499999803,
+          "net_pnl_change_thb": -18859.07899500057,
+          "return_from_previous_nav_pct": -0.18894256913805085,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 50049.99999999883
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7540702848496338,
+          "fees_thb": 93.9064099999996,
+          "net_pnl_change_thb": -36073.906409999356,
+          "return_from_previous_nav_pct": -0.36209610586788177,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 55899.99999999976
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7525490262275091,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -61025.0,
+          "return_from_previous_nav_pct": -0.6147717258624841,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7552477776142413,
+          "fees_thb": 69.92583749999903,
+          "net_pnl_change_thb": -61574.92583750002,
+          "return_from_previous_nav_pct": -0.6241488221857994,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 41624.999999999425
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7218153070795102,
+          "fees_thb": 446.15624149999894,
+          "net_pnl_change_thb": -225131.1562415026,
+          "return_from_previous_nav_pct": -2.2963548437924475,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 265584.99999999936
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.253392255337529
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.293960706405029
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7218153070795102,
+          "fees_thb": 446.15624149999894,
+          "net_pnl_change_thb": -225131.1562415026,
+          "return_from_previous_nav_pct": -2.2963548437924475,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 265584.99999999936
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7483150863832352,
+          "fees_thb": 0.0,
+          "net_pnl_change_thb": -146525.0,
+          "return_from_previous_nav_pct": -1.4604584726409908,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 0.0
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7534441735266992,
+          "fees_thb": 371.8038675000007,
+          "net_pnl_change_thb": -86971.80386749841,
+          "return_from_previous_nav_pct": -0.8680490186494749,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 221325.0000000004
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -0.654343081464626,
+        "average_exposure": 0.748993111912153,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 25,
+        "completed_lot_net_pnl_thb": -9848.990532999978,
+        "expected_payoff_thb": -393.95962131999914,
+        "fee_drag_pp": 0.16227380426999993,
+        "fees_thb": 16227.380426999993,
+        "name": "EMA trend",
+        "net_pnl_thb": -421282.3804270029,
+        "net_return_pct": -4.212823804270027,
+        "nonflat_win_rate": 0.32,
+        "official_excess_return_pp": -0.11332793146521247,
+        "partial_realization_on_open_lots_thb": -12078.179609499974,
+        "post_first_day_traded_notional_thb": 2806214.9999999963,
+        "profit_factor": 0.32418967783286673,
+        "realized_pnl_thb": -21927.170142499952,
+        "same_fills_fee_added_back_return_pct": -4.050550000000029,
+        "traded_notional_over_initial_capital": 0.9659729999999996,
+        "traded_notional_thb": 9659729.999999996,
+        "unrealized_loss_share_pct": 94.79513714286483,
+        "unrealized_pnl_thb": -399355.21028450294
+      }
+    },
+    "T3": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7019069615976721,
+          "fees_thb": 11749.968155499997,
+          "net_pnl_change_thb": 43190.031844502315,
+          "return_from_previous_nav_pct": 0.4319003184450221,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 6994444.999999998
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7493916321615312,
+          "fees_thb": 1349.018496499999,
+          "net_pnl_change_thb": -35659.018496505916,
+          "return_from_previous_nav_pct": -0.35505669397313255,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 803034.9999999994
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.746763450378284,
+          "fees_thb": 139.7256825000004,
+          "net_pnl_change_thb": -113594.72568250261,
+          "return_from_previous_nav_pct": -1.1350924172105037,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 83175.00000000023
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7325102626545849,
+          "fees_thb": 409.4000294999987,
+          "net_pnl_change_thb": -15419.400029499084,
+          "return_from_previous_nav_pct": -0.15584697112636103,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 243704.99999999924
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "hard_drawdown",
+          "exposure": 0.5450983896437512,
+          "fees_thb": 3134.945385000008,
+          "net_pnl_change_thb": 25640.05461500585,
+          "return_from_previous_nav_pct": 0.25955368509920085,
+          "target_exposure": 0.55,
+          "traded_notional_thb": 1866150.000000005
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7502833345678186,
+          "fees_thb": 3464.424171999999,
+          "net_pnl_change_thb": -134394.42417200282,
+          "return_from_previous_nav_pct": -1.3569496622037325,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 2062279.9999999995
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7289248787620797,
+          "fees_thb": 383.68076049999945,
+          "net_pnl_change_thb": 71361.31923950277,
+          "return_from_previous_nav_pct": 0.7304304388919158,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 228394.99999999968
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7175152753453728,
+          "fees_thb": 356.2227950000015,
+          "net_pnl_change_thb": -59081.2227950003,
+          "return_from_previous_nav_pct": -0.600350364162261,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 212050.0000000009
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7169724252405033,
+          "fees_thb": 191.47500200000286,
+          "net_pnl_change_thb": 52568.52499799803,
+          "return_from_previous_nav_pct": 0.5373982415487477,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 113980.0000000017
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.718075131716234,
+          "fees_thb": 434.92611000000034,
+          "net_pnl_change_thb": 35505.07389000431,
+          "return_from_previous_nav_pct": 0.3610216345750983,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 258900.0000000002
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7406277381882649,
+          "fees_thb": 353.56855299999734,
+          "net_pnl_change_thb": 45391.43144699931,
+          "return_from_previous_nav_pct": 0.4598875075586317,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 210469.9999999984
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7458698668345537,
+          "fees_thb": 98.4421399999992,
+          "net_pnl_change_thb": -26443.442140001804,
+          "return_from_previous_nav_pct": -0.26668772882962877,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 58599.99999999952
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7526913650914796,
+          "fees_thb": 313.7213249999986,
+          "net_pnl_change_thb": -17813.721324998885,
+          "return_from_previous_nav_pct": -0.1801355614629574,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 186749.99999999919
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7551385940770191,
+          "fees_thb": 263.5763100000004,
+          "net_pnl_change_thb": -73128.57630999945,
+          "return_from_previous_nav_pct": -0.7408238343038831,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 156900.00000000023
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.720258962305309,
+          "fees_thb": 835.2882774999998,
+          "net_pnl_change_thb": -2735.288277497515,
+          "return_from_previous_nav_pct": -0.027916454847110028,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 497224.9999999999
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7118547527150867,
+          "fees_thb": 475.15131550000297,
+          "net_pnl_change_thb": -224375.15131550096,
+          "return_from_previous_nav_pct": -2.2906206778049887,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 282845.00000000175
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.349769181368718
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.4096530176424675
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7118547527150867,
+          "fees_thb": 475.15131550000297,
+          "net_pnl_change_thb": -224375.15131550096,
+          "return_from_previous_nav_pct": -2.2906206778049887,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 282845.00000000175
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7502833345678186,
+          "fees_thb": 3464.424171999999,
+          "net_pnl_change_thb": -134394.42417200282,
+          "return_from_previous_nav_pct": -1.3569496622037325,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 2062279.9999999995
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.746763450378284,
+          "fees_thb": 139.7256825000004,
+          "net_pnl_change_thb": -113594.72568250261,
+          "return_from_previous_nav_pct": -1.1350924172105037,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 83175.00000000023
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -0.6019840838308426,
+        "average_exposure": 0.7208676888299715,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 61,
+        "completed_lot_net_pnl_thb": -37735.070500000016,
+        "expected_payoff_thb": -618.6077131147542,
+        "fee_drag_pp": 0.23953534509500007,
+        "fees_thb": 23953.534509500005,
+        "name": "MACD acceleration",
+        "net_pnl_thb": -428988.53450949676,
+        "net_return_pct": -4.289885345094968,
+        "nonflat_win_rate": 0.22950819672131148,
+        "official_excess_return_pp": -0.19038947229015335,
+        "partial_realization_on_open_lots_thb": -33311.91711800003,
+        "post_first_day_traded_notional_thb": 7264460.000000005,
+        "profit_factor": 0.4088503438588101,
+        "realized_pnl_thb": -71046.98761800004,
+        "same_fills_fee_added_back_return_pct": -4.050349999999967,
+        "traded_notional_over_initial_capital": 1.4258905000000002,
+        "traded_notional_thb": 14258905.000000002,
+        "unrealized_loss_share_pct": 83.43848800079593,
+        "unrealized_pnl_thb": -357941.54689149675
+      }
+    },
+    "T4": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.6987806436982321,
+          "fees_thb": 11756.563442900002,
+          "net_pnl_change_thb": -74102.56344290078,
+          "return_from_previous_nav_pct": -0.7410256344290045,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 6998371.000000001
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7556278543062354,
+          "fees_thb": 1697.0601785000017,
+          "net_pnl_change_thb": 23314.93982150033,
+          "return_from_previous_nav_pct": 0.23488999327789806,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 1010215.000000001
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7572377953337582,
+          "fees_thb": 596.8029538999981,
+          "net_pnl_change_thb": -66600.8029538989,
+          "return_from_previous_nav_pct": -0.6694077926411746,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 355260.9999999989
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7105847905671785,
+          "fees_thb": 775.0571428999974,
+          "net_pnl_change_thb": -1581.0571429021657,
+          "return_from_previous_nav_pct": -0.01599837382209035,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 461370.9999999985
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "normal",
+          "exposure": 0.749876245648661,
+          "fees_thb": 1564.6874182999982,
+          "net_pnl_change_thb": 65057.312581701204,
+          "return_from_previous_nav_pct": 0.6584061497887372,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 931416.999999999
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7519880562253833,
+          "fees_thb": 1218.3827529000082,
+          "net_pnl_change_thb": -68517.38275290467,
+          "return_from_previous_nav_pct": -0.6888877710698238,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 725271.0000000049
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "normal",
+          "exposure": 0.7489441575886246,
+          "fees_thb": 1565.9775814999884,
+          "net_pnl_change_thb": 44224.02241849899,
+          "return_from_previous_nav_pct": 0.4477216605011769,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 932184.9999999931
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7550344503445341,
+          "fees_thb": 839.5720225000005,
+          "net_pnl_change_thb": 7805.427977498621,
+          "return_from_previous_nav_pct": 0.07866951892883112,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 499775.0000000003
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7598486164372613,
+          "fees_thb": 741.8102419999923,
+          "net_pnl_change_thb": -1536.8102420009673,
+          "return_from_previous_nav_pct": -0.015477061090263255,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 441579.9999999954
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.753729954172037,
+          "fees_thb": 891.7413169999963,
+          "net_pnl_change_thb": 15153.258683003485,
+          "return_from_previous_nav_pct": 0.15263056400163233,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 530829.9999999978
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7652822354403307,
+          "fees_thb": 420.16650860000664,
+          "net_pnl_change_thb": 45725.83349140175,
+          "return_from_previous_nav_pct": 0.45986964283077914,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 250114.00000000396
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7536729694584414,
+          "fees_thb": 1020.6148455000002,
+          "net_pnl_change_thb": -95563.61484550312,
+          "return_from_previous_nav_pct": -0.9566940436573579,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 607545.0000000001
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7654903140122707,
+          "fees_thb": 332.37325469999996,
+          "net_pnl_change_thb": -2626.373254703358,
+          "return_from_previous_nav_pct": -0.026546778108427205,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 197852.99999999997
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7554070152413668,
+          "fees_thb": 802.9838005000092,
+          "net_pnl_change_thb": -25263.98380050063,
+          "return_from_previous_nav_pct": -0.255430358726183,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 477995.0000000055
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7590015441108751,
+          "fees_thb": 637.5808464999973,
+          "net_pnl_change_thb": -92161.58084649593,
+          "return_from_previous_nav_pct": -0.934181653427113,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 379534.99999999837
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7097402388324862,
+          "fees_thb": 1399.9026675000096,
+          "net_pnl_change_thb": -230316.90266750008,
+          "return_from_previous_nav_pct": -2.356586569633834,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 833325.0000000057
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -4.635555962196312
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -4.7012091546355625
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7097402388324862,
+          "fees_thb": 1399.9026675000096,
+          "net_pnl_change_thb": -230316.90266750008,
+          "return_from_previous_nav_pct": -2.356586569633834,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 833325.0000000057
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7536729694584414,
+          "fees_thb": 1020.6148455000002,
+          "net_pnl_change_thb": -95563.61484550312,
+          "return_from_previous_nav_pct": -0.9566940436573579,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 607545.0000000001
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7590015441108751,
+          "fees_thb": 637.5808464999973,
+          "net_pnl_change_thb": -92161.58084649593,
+          "return_from_previous_nav_pct": -0.934181653427113,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 379534.99999999837
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": 0.24203395583366438,
+        "average_exposure": 0.7468904300886048,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 54,
+        "completed_lot_net_pnl_thb": -35364.21806269998,
+        "expected_payoff_thb": -654.8929270870368,
+        "fee_drag_pp": 0.2626127697570001,
+        "fees_thb": 26261.276975700006,
+        "name": "RSI pullback",
+        "net_pnl_thb": -456990.2769757062,
+        "net_return_pct": -4.5699027697570616,
+        "nonflat_win_rate": 0.24074074074074073,
+        "official_excess_return_pp": -0.47040689695224724,
+        "partial_realization_on_open_lots_thb": -51798.84992359997,
+        "post_first_day_traded_notional_thb": 8634272.000000002,
+        "profit_factor": 0.2594337747989167,
+        "realized_pnl_thb": -87163.06798629995,
+        "same_fills_fee_added_back_return_pct": -4.307290000000062,
+        "traded_notional_over_initial_capital": 1.5632643000000004,
+        "traded_notional_thb": 15632643.000000004,
+        "unrealized_loss_share_pct": 80.926712803797,
+        "unrealized_pnl_thb": -369827.20898940624
+      }
+    },
+    "T5": {
+      "daily": [
+        {
+          "date": "2026-09-09",
+          "drawdown_guard": "normal",
+          "exposure": 0.7437636666101869,
+          "fees_thb": 12507.3729092,
+          "net_pnl_change_thb": -78750.37290920317,
+          "return_from_previous_nav_pct": -0.7875037290920317,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 7445308.0
+        },
+        {
+          "date": "2026-09-10",
+          "drawdown_guard": "normal",
+          "exposure": 0.7457206420778252,
+          "fees_thb": 1342.4080900000008,
+          "net_pnl_change_thb": -3251.408089997247,
+          "return_from_previous_nav_pct": -0.03277216290494822,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 799100.0000000005
+        },
+        {
+          "date": "2026-09-11",
+          "drawdown_guard": "normal",
+          "exposure": 0.7539425974486526,
+          "fees_thb": 1266.5270069999951,
+          "net_pnl_change_thb": -58893.52700699866,
+          "return_from_previous_nav_pct": -0.5938045733278163,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 753929.9999999971
+        },
+        {
+          "date": "2026-09-14",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7224200298362994,
+          "fees_thb": 694.0187668999988,
+          "net_pnl_change_thb": -17823.018766900524,
+          "return_from_previous_nav_pct": -0.18077725436239644,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 413130.9999999993
+        },
+        {
+          "date": "2026-09-15",
+          "drawdown_guard": "hard_drawdown",
+          "exposure": 0.5498294471727435,
+          "fees_thb": 2877.404955700007,
+          "net_pnl_change_thb": 25441.59504429251,
+          "return_from_previous_nav_pct": 0.2585191227023387,
+          "target_exposure": 0.55,
+          "traded_notional_thb": 1712843.0000000042
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7532466045281098,
+          "fees_thb": 3406.6154532000037,
+          "net_pnl_change_thb": -98129.61545319483,
+          "return_from_previous_nav_pct": -0.9945512079856722,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 2027868.000000002
+        },
+        {
+          "date": "2026-09-17",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7155753171320131,
+          "fees_thb": 1231.2911045,
+          "net_pnl_change_thb": 71998.70889549702,
+          "return_from_previous_nav_pct": 0.737042725435999,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 732955.0
+        },
+        {
+          "date": "2026-09-18",
+          "drawdown_guard": "normal",
+          "exposure": 0.7488407144047601,
+          "fees_thb": 1375.4601225000006,
+          "net_pnl_change_thb": 3984.539877500385,
+          "return_from_previous_nav_pct": 0.0404908539144655,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 818775.0000000003
+        },
+        {
+          "date": "2026-09-21",
+          "drawdown_guard": "normal",
+          "exposure": 0.7624616389741351,
+          "fees_thb": 689.8509350000022,
+          "net_pnl_change_thb": 38530.14906499721,
+          "return_from_previous_nav_pct": 0.39138450997087126,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 410650.00000000134
+        },
+        {
+          "date": "2026-09-22",
+          "drawdown_guard": "normal",
+          "exposure": 0.7570036340390375,
+          "fees_thb": 1279.966207000005,
+          "net_pnl_change_thb": 22420.03379300423,
+          "return_from_previous_nav_pct": 0.22685207878545555,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 761930.0000000029
+        },
+        {
+          "date": "2026-09-23",
+          "drawdown_guard": "normal",
+          "exposure": 0.7408453237194378,
+          "fees_thb": 626.4901467000091,
+          "net_pnl_change_thb": 22125.509853299707,
+          "return_from_previous_nav_pct": 0.2233652956038501,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 372933.0000000054
+        },
+        {
+          "date": "2026-09-24",
+          "drawdown_guard": "normal",
+          "exposure": 0.7611216381890383,
+          "fees_thb": 775.0554630000006,
+          "net_pnl_change_thb": -91548.05546300113,
+          "return_from_previous_nav_pct": -0.9221520857361831,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 461370.00000000035
+        },
+        {
+          "date": "2026-09-25",
+          "drawdown_guard": "normal",
+          "exposure": 0.7592184192233211,
+          "fees_thb": 1008.1399081000054,
+          "net_pnl_change_thb": -16693.13990809396,
+          "return_from_previous_nav_pct": -0.1697129167566147,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 600119.0000000033
+        },
+        {
+          "date": "2026-09-28",
+          "drawdown_guard": "normal",
+          "exposure": 0.7543906422329775,
+          "fees_thb": 945.215893800003,
+          "net_pnl_change_thb": 760.784106194973,
+          "return_from_previous_nav_pct": 0.007747756716636189,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 562662.0000000017
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7578137310279013,
+          "fees_thb": 1413.9751897999959,
+          "net_pnl_change_thb": -111321.97518979944,
+          "return_from_previous_nav_pct": -1.1336051253977852,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 841701.9999999976
+        },
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7099075942595502,
+          "fees_thb": 1723.0314325000072,
+          "net_pnl_change_thb": -219556.03143250756,
+          "return_from_previous_nav_pct": -2.2614009561610304,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 1025675.0000000043
+        }
+      ],
+      "fixed_fill_fee_stress": [
+        {
+          "fee_multiplier": 1.25,
+          "net_return_pct": -5.189965294811355
+        },
+        {
+          "fee_multiplier": 1.5,
+          "net_return_pct": -5.272872353773605
+        }
+      ],
+      "largest_loss_days": [
+        {
+          "date": "2026-09-30",
+          "drawdown_guard": "soft_drawdown",
+          "exposure": 0.7099075942595502,
+          "fees_thb": 1723.0314325000072,
+          "net_pnl_change_thb": -219556.03143250756,
+          "return_from_previous_nav_pct": -2.2614009561610304,
+          "target_exposure": 0.72,
+          "traded_notional_thb": 1025675.0000000043
+        },
+        {
+          "date": "2026-09-29",
+          "drawdown_guard": "normal",
+          "exposure": 0.7578137310279013,
+          "fees_thb": 1413.9751897999959,
+          "net_pnl_change_thb": -111321.97518979944,
+          "return_from_previous_nav_pct": -1.1336051253977852,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 841701.9999999976
+        },
+        {
+          "date": "2026-09-16",
+          "drawdown_guard": "normal",
+          "exposure": 0.7532466045281098,
+          "fees_thb": 3406.6154532000037,
+          "net_pnl_change_thb": -98129.61545319483,
+          "return_from_previous_nav_pct": -0.9945512079856722,
+          "target_exposure": 0.76,
+          "traded_notional_thb": 2027868.000000002
+        }
+      ],
+      "raw_diagnostics": {
+        "reason": "Recover the original hashed report, FIFO and fill log bundle",
+        "status": "unavailable"
+      },
+      "summary": {
+        "aligned_first_close_excess_pp": -0.2543452955114933,
+        "average_exposure": 0.7335063525547493,
+        "best_alpha_status": "fail",
+        "common_status": "fail",
+        "completed_fifo_lots": 72,
+        "completed_lot_net_pnl_thb": -159939.0168422,
+        "expected_payoff_thb": -2221.3752339194443,
+        "fee_drag_pp": 0.33162823584900036,
+        "fees_thb": 33162.823584900034,
+        "name": "Bollinger reversion",
+        "net_pnl_thb": -510705.8235849105,
+        "net_return_pct": -5.107058235849104,
+        "nonflat_win_rate": 0.06944444444444445,
+        "official_excess_return_pp": -1.0075623630442898,
+        "partial_realization_on_open_lots_thb": -12568.916628200037,
+        "post_first_day_traded_notional_thb": 12295643.00000002,
+        "profit_factor": 0.028467152055910893,
+        "realized_pnl_thb": -172507.93347040005,
+        "same_fills_fee_added_back_return_pct": -4.775430000000105,
+        "traded_notional_over_initial_capital": 1.9740951000000018,
+        "traded_notional_thb": 19740951.00000002,
+        "unrealized_loss_share_pct": 66.2216631368178,
+        "unrealized_pnl_thb": -338197.89011451043
+      }
+    }
+  },
+  "sample_role": "reused_development",
+  "schema_version": 1,
+  "validation_complete": false
+}

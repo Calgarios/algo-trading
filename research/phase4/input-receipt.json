@@ -1,0 +1,13 @@
+{
+  "additional_tick_dates": false,
+  "archive_and_package_git_ignored": true,
+  "archive_bytes": 17749522,
+  "archive_name": "tradeSim0.2.7.zip",
+  "archive_sha256": "86ead90a23e36cda27089811851e023abe2e82646c944761628903eed3363249",
+  "installed_path": ".local/tradesim-0.2.7",
+  "matches_original_provenance": true,
+  "package_tree_sha256": "d2338e6fee3846d757fdfbd8480a745fd353d9877a981e01202e1cebaa1f6415",
+  "project_agents_or_skill_files_in_archive": false,
+  "received_date_bangkok": "2026-10-30",
+  "retained_path": ".local/archives/tradeSim0.2.7.zip"
+}

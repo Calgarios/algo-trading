@@ -4,7 +4,9 @@
 Project: algo-trading | League: Chulalongkorn University (CU)
 Prepared: 29 October 2026 (Asia/Bangkok)
 
-> Status update: Phases 1 and 2 are now complete and merged. Read
+> Status update: Phases 1–3 are merged. Phase 4 diagnostics, declared controls
+> and visual reporting are complete; independent validation remains blocked by
+> missing additional permitted data. Read
 > [current progress](current-progress/README.md), the
 > [Phase 3 comparison](result-data-visualisation/phase-3-results.md), and
 > [next actions](to-do/README.md) before continuing.

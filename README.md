@@ -13,6 +13,97 @@ KGI Algo Trading Bootcamp & Competition 2026, CU league.
 - [Phase 3 results and limitations](docs/phase-3-summary.md)
 - [Phase 3 follow-up and prize criteria](docs/phase-3-followup.md)
 - [Common criteria versus Best Alpha](docs/award-criteria.md)
+- [Phase 4 research protocol](docs/phase-4-research-spec.md)
+- [Phase 4 diagnostics](docs/phase-4-diagnostics/README.md) and [experiment log](docs/phase-4-experiments.md)
+- [Phase 4 visual report](docs/result-data-visualisation/phase-4/phase-4-results.md)
+  and [12-page PDF](docs/result-data-visualisation/phase-4/phase-4-results.pdf)
+
+## Continue Phase 4
+
+Phase 3 PR #5 is merged. Phase 4 development diagnostics and all five declared
+new control runs are complete. P-C3 passes common criteria but has negative total
+return and does not beat R76; no candidate is promoted. Independent validation
+remains blocked on additional permitted data and membership history. The original
+baseline remains the fallback, and Phase 5 engineering can use it while that
+dependency stays open. The first diagnostics require only the
+Python standard library and committed evidence:
+
+```bash
+.venv/bin/python scripts/phase4_diagnostics.py --output artifacts/phase4-diagnostics
+.venv/bin/python -m unittest discover -s tests -p test_phase4_research.py -v
+.venv/bin/python -m unittest discover -s tests -p test_phase3_reporting.py -v
+```
+
+Outputs are `README.md`, `summary.csv` and `diagnostics.json`; existing directories
+are refused. The committed snapshot is under `docs/phase-4-diagnostics/`. It
+includes all ten runs, daily P&L/fees, completed-lot statistics and fixed-fill
+commission/VAT stresses. Fee add-back retains slippage in execution prices and
+does not represent a new replay. To add symbol/lot attribution, recover the
+original raw suite bundles and pass `--runs artifacts/comparison`; artifacts are
+checked against their committed Phase 3 hashes before use. Missing bundles stay
+unavailable, and a present but incomplete or changed bundle fails verification.
+
+After restoring the original TradeSim package using the Phase 2 installer:
+
+```bash
+.venv/bin/python scripts/run_phase4_control.py --check
+.venv/bin/python scripts/run_phase4_control.py --output artifacts/phase4-R76
+```
+
+R76 changes only the original reference's target exposure to 76%; actual exposure
+is measured. The wrapper verifies the declaration/source/config hashes and uses
+the unchanged official-engine runner for all 16 September sessions. It retains
+run status, logs and the complete replay bundle under the new experiment directory.
+It cannot be relabeled as validation or run with a silently changed hypothesis.
+Equal-weight/passive controls and the band sensitivity are also implemented and
+replayed through a separate research copy, with a two-day behavioral parity gate.
+A new declaration is required after any frozen source changes; preserve prior outcomes.
+
+The reuploaded archive is retained at `.local/archives/tradeSim0.2.7.zip`, with
+the verified package installed at `.local/tradesim-0.2.7/`; both are ignored by
+Git. Its checksum and file tree match the original Phase 2 inputs. The upload
+adds no new tick dates. See [input receipt](research/phase4/input-receipt.json).
+
+The full engine-dependent tests now run. Reproduce the raw-evidence recovery and
+the control report with new output directories:
+
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/run_strategy_suite.py --output artifacts/phase4-recovered-suite --workers 3
+.venv/bin/python scripts/build_phase4_recovery.py \
+  --suite artifacts/phase4-recovered-suite --control artifacts/phase4-R76 \
+  --output artifacts/phase4-replay-report
+```
+
+The recovery report requires all nine deterministic files for each historical
+run to match their original committed hashes. It adds actual symbol P&L, FIFO
+holding sessions and filled price concessions, plus the R76 comparison. The
+initial aggregate-only snapshot and pre-run declaration remain unchanged.
+
+Reproduce the completed paired controls and final visual report:
+
+```bash
+.venv/bin/python scripts/run_phase4_comparisons.py --output artifacts/phase4-controls
+.venv/bin/python -m unittest discover -s tests -v > artifacts/phase4-final-tests.log 2>&1
+.venv/bin/python scripts/build_phase4_results.py \
+  --suite artifacts/phase4-recovered-suite --controls artifacts/phase4-controls \
+  --r76 artifacts/phase4-R76 --test-log artifacts/phase4-final-tests.log \
+  --output artifacts/phase4-visual-report
+```
+
+Install `requirements-reporting.txt` for the visual generator. The runner uses
+the frozen `research/phase4-controls/configs/` manifest, first checks parity, runs
+P-C2/P-C3/H-C3, then runs B-C3. To independently reproduce configuration preparation,
+use `scripts/prepare_phase4_controls.py --output artifacts/prepared-phase4-controls`
+with the same Python interpreter and compare hashes. The original strategy and
+official engine are never patched; replay sources are staged under each run.
+
+The final report has 12 pages, ten figures and matching Markdown/CSV/JSON. It
+includes common/Best Alpha status, return anchors, daily risk/exposure, actual
+fees and price concessions, symbol P&L, and completed-lot quote MAE/MFE. Those
+post-trade quote paths are diagnostics, not trading inputs or portfolio intraday
+drawdown. Earlier Phase 4 reports are historical checkpoints; the final visual
+report and current-progress/to-do pages supersede their pending-control status.
 
 ## Reproduce Phase 3
 
