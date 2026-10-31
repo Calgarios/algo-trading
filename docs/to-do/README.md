@@ -3,38 +3,54 @@
 Updated 30 October 2026 (Asia/Bangkok). Achievements and present status belong in
 [current progress](../current-progress/README.md); this file holds future work.
 
-## Start Phase 4 here
+## Phase 4 closeout and Phase 5 continuation
 
-1. Read the [ten-strategy comparison](../result-data-visualisation/phase-3-results.md)
-   and its [PDF](../result-data-visualisation/phase-3-results.pdf), including failures.
-   Review [PR #5](https://github.com/Calgarios/algo-trading/pull/5) and its current
-   merge status before branching from main. The default alphabetical baseline
-   remains an engineering reference; run a research candidate with its explicit
-   `research/phase3-suite/<ID>.json` configuration.
+Start with the [Phase 4 visual report](../result-data-visualisation/phase-4/phase-4-results.md),
+its [PDF](../result-data-visualisation/phase-4/phase-4-results.pdf), and the
+[experiment log](../phase-4-experiments.md). The declared development experiments
+are finished. **Independent Phase 4 validation remains blocked**, so do not mark
+the entire phase validated or claim a profitable strategy.
+
+1. Preserve the original alphabetical strategy as the engineering fallback.
+   P-C3 is the best new control to study further: equal weighting improves C3,
+   and it passes common criteria, but its return remains negative and below R76.
+   It is a research comparator, not a promoted submission. P-C2 has only one
+   completed lot, H-C3 has none, and B-C3's wider band did not improve net return.
 2. Obtain additional permitted tick data and effective-dated SET50 membership.
-   Declare chronological development, validation and final evaluation periods.
-   September 9–30 has been inspected repeatedly; it cannot be reused as untouched
-   validation. A new start date needs a basket prepared using only earlier history.
-3. Diagnose return and payoff at the symbol/lot level before adding complexity:
-   entry quality, adverse price moves, fee/slippage burden, rebalance turnover,
-   holding horizon, and realized versus unrealized P&L. Test whether any apparent
-   improvement survives a passive portfolio with matched exposure and basket.
-4. Declare the next hypothesis and acceptance criteria before running it. Compare
-   a small set of defensible changes, retaining all outcomes. Use chronological
-   sensitivity checks for lookbacks, rebalance bands, liquidity and costs; do not
-   search repeatedly against the same final holdout.
-5. Advance a candidate only when results support positive net expectancy with
-   adequate exposure and controlled drawdown across more than this short sample.
-   Best Alpha additionally needs nonnegative total and excess return. A common
-   criteria pass, competition acceptance, prize ranking and robust profitability
-   are separate conclusions.
+   Record data permission, adjustments and when membership was available; declare
+   chronological development, validation and final-evaluation periods before
+   viewing results. September is consumed development data. Prepare new baskets
+   using only history preceding each new start date. Do not recycle the September
+   basket or rename a September slice as a holdout.
+3. Run the frozen candidate and R76/matched controls on those new periods. Require
+   positive payoff, adequate exposure, controlled drawdown and improvement over
+   simple controls before promotion. Best Alpha additionally requires nonnegative
+   total and excess return. If a candidate reaches that gate, predeclare actual
+   replay sensitivities for costs, lookbacks and liquidity before final selection.
+   Fixed-fill fee stresses are diagnostics, not substitutes for those replays.
+4. The development guide permits **Phase 5 engineering from a retained baseline**.
+   Continue with one predeclared change at a time: sizing/concentration, guard
+   recovery after drawdown, and turnover/partial-exit behavior. Compare with the
+   untouched baseline, R76 and P-C3; keep the Phase 4 validation dependency open.
+   Do not automatically add exits to manufacture completed lots.
+5. The 15-name fixed-basket expansion is declared but awaits effective-dated
+   membership. Keep the current ten-name budget until that requirement is met.
+   The intended expansion uses the top-30 prior liquidity pool, at most three
+   names per sector and no within-run rotation; declare any revision before testing.
 
-The completed comparison makes the first research priorities concrete: all ten
-models have negative completed-lot payoff, and none beats the original reference's
-net return. C3 has the best new return; C2 has the lowest new official drawdown.
-Treat them as hypotheses for diagnosis, not approved candidates. Include a
-separately declared 76%-target version of the original reference as an
-exposure-matched control before attributing changes to more elaborate signals.
+The archive is restored and retained at `.local/archives/tradeSim0.2.7.zip`.
+Full evidence is in `artifacts/phase4-recovered-suite`, `artifacts/phase4-R76`
+and `artifacts/phase4-controls`. Exact configurations and source hashes are in
+`research/phase4/` and `research/phase4-controls/configs/`. Use the repository
+README reproduction commands; do not overwrite frozen declarations or outputs.
+Project `AGENTS.md`/`SKILL.md` locations remain unresolved; neither was in the ZIP.
+
+Keep the measurement distinctions from this phase: positive completed-lot payoff
+can coexist with large unrealized losses, first-close-aligned excess can differ
+from official excess, and quote MAE/MFE do not measure executable returns or
+portfolio intraday drawdown. Same-time endpoint ticks are deliberately excluded
+except the actual fill quotes. Never feed these post-trade diagnostics into a
+historical trading decision.
 
 ## Portfolio constraints to carry forward
 

@@ -1,0 +1,56 @@
+{
+  "config": "research/phase4/R76.json",
+  "days": [
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30"
+  ],
+  "declared_date_bangkok": "2026-10-30",
+  "hypothesis": "Changing only the original target from 70% to 76% provides a simple target-exposure control; realized exposure must be measured.",
+  "id": "R76",
+  "pending_comparisons": [
+    "P-C2",
+    "P-C3",
+    "H-C3",
+    "B-C3"
+  ],
+  "periods": {
+    "development": {
+      "end": "2026-09-30",
+      "previously_inspected": true,
+      "start": "2026-09-09"
+    },
+    "final_evaluation": null,
+    "validation": null
+  },
+  "promotion_status": "none",
+  "sample_role": "reused_development",
+  "schema_version": 1,
+  "source_sha256": {
+    "docs/phase-4-research-spec.md": "a30cd05144ade264e4f9dab4cf9ef7b3a33420f82213d1953a09f63ee3317d3e",
+    "docs/result-data-visualisation/phase-3-results.json": "744671d9ea086844b297c146035059315c9b45c09daf96a70e4f9acb3c1d400c",
+    "requirements-phase2.txt": "71811c158ce5bac60fc8494f79631085bd9ea22a69dd82e5c743afe90ac6f344",
+    "research/phase4/R76.json": "fa5d4de60778668beddb9f3a386fa080e8d44702ff99067c3e41cb4e13d131f6",
+    "scripts/package_support.py": "eac7b48f0498171317e91b5ac045e70b72dd5bc2beaf1284394e019fceb2d5e6",
+    "scripts/phase3_reporting.py": "026833bef0ab866a60bb3c03503e5cfc1393b9b7bc12a2e629d79243148c1de3",
+    "scripts/phase3_support.py": "9c5b3651dbf4de2f3c977f6b8dfb6f0d2943832f9e4a1f5bc73ede1807692e04",
+    "scripts/phase4_diagnostics.py": "9f906f1902aa1c68142ef05096058a0f76e135572aafd7d8b885422917e2dbc8",
+    "scripts/run_phase3.py": "8890d62f14d816314bfe3d8c14166db879f13821dfccbc020de2620477fd1768",
+    "scripts/run_phase4_control.py": "72b0caadc8628f2c1cf72db817781b1bbf541112aec85267f83fc78117936838",
+    "strategy/DiversifiedBaseline.py": "623d42a44d03e0306b53fc6c6559ae4099d6369a6b7b368d698dc0932446b243",
+    "strategy/baseline.json": "326583b626cc7d304d8652fade1e67a68a421b897c667e7c16cd97c1740a344a"
+  }
+}

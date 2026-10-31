@@ -1,0 +1,60 @@
+{
+  "config_sha256": {
+    "B-C3": "c00b4dca5d8c67694840acfd9a9d3392ae146619e3a7095df14ffa9313b762eb",
+    "H-C3": "961c08843f08630fc6d84fd61fb2e503b130b627aa409df4394f5e76a16c3d99",
+    "P-C2": "c4a776413160d606b7d5c86550b93c773cefe95b5c505f6b632255f6b3590350",
+    "P-C3": "0d82efcebdc3fc29dd7a8ebd2932707afe75302b49c0fdc235abbf7d0de2d4e9",
+    "R-C3": "81cb0d7c182796d23689c537788e5ca251933da4d437274198f8f50932bbdc74"
+  },
+  "days": [
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30"
+  ],
+  "declared_date_bangkok": "2026-10-30",
+  "experiments": [
+    "P-C2",
+    "P-C3",
+    "H-C3",
+    "B-C3"
+  ],
+  "final_evaluation_period": null,
+  "parity_control": "R-C3",
+  "sample_role": "reused_development",
+  "source_sha256": {
+    "docs/award-criteria.md": "839e0c97d1e997a53380dbd93c756fc742122bb518a67735fbdd3c3adab50872",
+    "docs/phase-3-baseline-spec.md": "7df88b0f1c496dc55540d48e529c5d916e6d08fb532b8e53695b0cbb7a5a1108",
+    "docs/phase-3-exit-experiment.md": "56ffb1a3c973b01f824360b863822406335be677062bac4d655ce3556c175b3a",
+    "docs/phase-3-ten-strategy-spec.md": "3cc392873bd013e9e85f139914f1a62bc9b694638ca9f094fdd4f3e10c6ce874",
+    "docs/phase-4-control-implementation.md": "f0bb5619acbeabd8a0bfd686981d562b232ddf4dcd152ba8e25037eb23c534f6",
+    "docs/phase-4-research-spec.md": "a30cd05144ade264e4f9dab4cf9ef7b3a33420f82213d1953a09f63ee3317d3e",
+    "docs/tradesim-0.2.7-provenance.json": "74eabb9509ef090825169dda9a629f7e505858adf62ef8a00ebd53c0328fb89c",
+    "requirements-phase2.txt": "71811c158ce5bac60fc8494f79631085bd9ea22a69dd82e5c743afe90ac6f344",
+    "research/phase3-suite/C2.json": "6a13bb5f06e9e9d89b80deb19555ecdeb30c8998b2de7058bc74fe6bb1ae7692",
+    "research/phase3-suite/C3.json": "57384c24be67f447480c7050c247855c3804ed07481f3e8f31debc94dab88d5b",
+    "research/phase3-suite/manifest.json": "09943759bba4965449d4dc40b919c149a9d30a620beb67afec1a879ea7d5acd5",
+    "research/phase4-controls/strategy/DiversifiedBaseline.py": "466e40bca93b8042f2f0ca08681127dd44a2d3743d44be06c2af5b94ca4bc627",
+    "scripts/package_support.py": "eac7b48f0498171317e91b5ac045e70b72dd5bc2beaf1284394e019fceb2d5e6",
+    "scripts/phase3_reporting.py": "026833bef0ab866a60bb3c03503e5cfc1393b9b7bc12a2e629d79243148c1de3",
+    "scripts/phase3_support.py": "9c5b3651dbf4de2f3c977f6b8dfb6f0d2943832f9e4a1f5bc73ede1807692e04",
+    "scripts/phase4_diagnostics.py": "9f906f1902aa1c68142ef05096058a0f76e135572aafd7d8b885422917e2dbc8",
+    "scripts/prepare_phase4_controls.py": "4642a67f92afdb0b6f7f014fe9ee9ff33bd43da90c0d6d9817af156ed31166c4",
+    "scripts/prepare_strategy_suite.py": "bc00465b253712ab130eb9e71dbaf6bc4216672a1fb9b091e2ce426269a52e00",
+    "scripts/run_phase3.py": "8890d62f14d816314bfe3d8c14166db879f13821dfccbc020de2620477fd1768",
+    "scripts/run_phase4_comparisons.py": "67f284765151602f5dbbded94fc7375e9b1b6097136aa51bc9460872dbd85017"
+  },
+  "validation_period": null
+}
