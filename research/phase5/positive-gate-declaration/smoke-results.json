@@ -1,0 +1,80 @@
+{
+  "all_stocks_with_positive_supported_calibration": 0,
+  "decision": "Reject infeasible gate; version 2 tests price/risk hypotheses without positive-edge claim",
+  "purpose": "Rejected pre-start positive-edge gate; engineering smoke, not a full simulation",
+  "runs": {
+    "C1-equal": {
+      "days": [
+        "2026-09-09",
+        "2026-09-10"
+      ],
+      "hashes": {
+        "decisions.jsonl": "ec84a6c0d3d9519142243aa898763e194f2aa91bd78e22e405fe33ae4fd2803b",
+        "engine/baseline/baseline_portfolio.json": "3d52f4643f7336c9d20d5ced4ee121b1dcb637471226101a766e28a9ade5eec2",
+        "engine/baseline/baseline_transaction_log.csv": "f15a30054f8fa43481ae0cc3b0436af3f96e66c92649d1493b855433ec08bb12",
+        "fifo.json": "8df71b5e71e34df9aa94045c46c55692d558ead2f8d758efcd7c017417e6141b",
+        "plans.json": "45aa6dfb05752763c4ccdd9a342abee32ecf4576dee4b77c1547f85214fd721d",
+        "report.json": "30d3ce56365687bc4590390c674178852b0e2e18dc04be3655c0cce32df3a292",
+        "report.md": "a02af087b02939e66524d522f647aed7a1504129c478561c4a56c6c85e7af8b3",
+        "strategy/DiversifiedBaseline.py": "a59869e42154658df3622835a54742fe9883e898cd2279560b562b50dab64ec6",
+        "strategy/baseline.json": "2e3025913a58782b26a2778e6dcf1977fa6b7504a53e949d903bf076eac367c9"
+      },
+      "performance": {
+        "aligned_first_close_excess_pp": 0.11633704503904996,
+        "aligned_first_close_return_pct": 0.0,
+        "average_exposure": 0.0,
+        "benchmark_max_drawdown_pct": 0.11633704503905519,
+        "benchmark_return_pct": -0.11633704503904996,
+        "completed_fifo_round_trips": 0,
+        "distinct_stocks": 0,
+        "excess_return_pp": 0.11633704503904996,
+        "expected_payoff_thb": null,
+        "fees_thb": 0.0,
+        "final_cash_thb": 10000000.0,
+        "final_nav_thb": 10000000.0,
+        "initial_capital_max_drawdown_pct": 0.0,
+        "net_return_pct": 0.0,
+        "official_max_drawdown_pct": 0.0,
+        "realized_pnl_thb": 0.0,
+        "unrealized_pnl_thb": 0.0
+      }
+    },
+    "C1-quality": {
+      "days": [
+        "2026-09-09",
+        "2026-09-10"
+      ],
+      "hashes": {
+        "decisions.jsonl": "ec84a6c0d3d9519142243aa898763e194f2aa91bd78e22e405fe33ae4fd2803b",
+        "engine/baseline/baseline_portfolio.json": "3d52f4643f7336c9d20d5ced4ee121b1dcb637471226101a766e28a9ade5eec2",
+        "engine/baseline/baseline_transaction_log.csv": "f15a30054f8fa43481ae0cc3b0436af3f96e66c92649d1493b855433ec08bb12",
+        "fifo.json": "8df71b5e71e34df9aa94045c46c55692d558ead2f8d758efcd7c017417e6141b",
+        "plans.json": "aa3320d42be37d031795ac5686c04d93077601107beaab125bd75967f3d679a4",
+        "report.json": "a47058eafde2caf63d0e5eb714064701a728ce4b213260aa60a67e7f073ce4f2",
+        "report.md": "a02af087b02939e66524d522f647aed7a1504129c478561c4a56c6c85e7af8b3",
+        "strategy/DiversifiedBaseline.py": "a59869e42154658df3622835a54742fe9883e898cd2279560b562b50dab64ec6",
+        "strategy/baseline.json": "20c03cf93d9fa6fdb83537d5c97c8e44df08c161e37b4f439364dbded7a573f3"
+      },
+      "performance": {
+        "aligned_first_close_excess_pp": 0.11633704503904996,
+        "aligned_first_close_return_pct": 0.0,
+        "average_exposure": 0.0,
+        "benchmark_max_drawdown_pct": 0.11633704503905519,
+        "benchmark_return_pct": -0.11633704503904996,
+        "completed_fifo_round_trips": 0,
+        "distinct_stocks": 0,
+        "excess_return_pp": 0.11633704503904996,
+        "expected_payoff_thb": null,
+        "fees_thb": 0.0,
+        "final_cash_thb": 10000000.0,
+        "final_nav_thb": 10000000.0,
+        "initial_capital_max_drawdown_pct": 0.0,
+        "net_return_pct": 0.0,
+        "official_max_drawdown_pct": 0.0,
+        "realized_pnl_thb": 0.0,
+        "unrealized_pnl_thb": 0.0
+      }
+    }
+  },
+  "sample_role": "reused_development_smoke"
+}
