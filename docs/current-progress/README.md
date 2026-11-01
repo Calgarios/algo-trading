@@ -1,19 +1,76 @@
 # Current progress
 
-Updated 30 October 2026 (Asia/Bangkok). Project:
+Updated 1 November 2026 (Asia/Bangkok). Project:
 [Calgarios/algo-trading](https://github.com/Calgarios/algo-trading), KGI CU league.
 
-**Phases 1–3 are merged. Phase 3 [PR #5](https://github.com/Calgarios/algo-trading/pull/5)
-merged on 30 October 2026 at 13:52 Asia/Bangkok, commit `5554194`.
-Phase 4 development experiments and visual reporting are complete.
-A profitable or prize-ready strategy has not been established.**
-**Phase 4 is not fully closed:** independent chronological validation is blocked
-by missing additional permitted ticks and effective-dated membership. All results
-still use September development data. See [next actions](../to-do/README.md) for
-the remaining validation work and a Phase 5 handoff using the retained baseline.
+**Phases 1–3 and Phase 4 development reporting are merged. Phase 5
+implementation, twenty paired simulations, eight sensitivity simulations and
+visual reporting are complete locally. Common criteria: 0/20; Best Alpha:
+0/20. No Phase 5 candidate is promoted.**
+Independent Phase 4 validation and the Phase 5 improvement checkpoint remain
+open. The [next-phase handoff](../to-do/phase-6.md) holds future actions and guidance.
 
 This page records achievements and measured status only. Future actions and
 lessons are separated into [docs/to-do](../to-do/README.md).
+
+## Phase 5 achievements and measured outcome
+
+[Full visual report](../result-data-visualisation/phase-5/phase-5-results.md),
+[PDF](../result-data-visualisation/phase-5/phase-5-results.pdf),
+[CSV](../result-data-visualisation/phase-5/phase-5-results.csv), and
+[strategy explanations](../phase-5-strategies.md) are available.
+
+- Implemented a separate research strategy that assesses all **48 supplied
+  constituents** each day, with dynamic per-stock eligibility and no ten-name
+  universe cap. The archive does not contain 50 constituents.
+- Completed **20 paired full-period runs**: equal and quality sizing for each of
+  C1–C5 and T1–T5. Completed **8 predeclared sensitivity replays** for doubled
+  commission and a wider rebalance band on C1/C3 in both weighting modes.
+- Added past-only trend/indicator filters, 8% position and 20% sector caps,
+  liquidity-based position capacity, volatility-aware exits, actual-fill buy
+  budgets, and a drawdown guard that recovers with current NAV drawdown.
+- Saved all **15,360 stock/date/run assessments**, calibration observations,
+  completed FIFO records, stock attribution, execution outcomes and source/input
+  hashes. The original Phase 3/4 strategy and declarations remain unchanged.
+- Verified all **448 comparison strategy-days** against independent accounting.
+  **108 tests pass**. A full C1-quality fresh-process repeat matches
+  **9/9 deterministic artifacts**. The largest measured daily runtime across
+  the 28 runs was **38.813 seconds**
+  under concurrent local research execution.
+- Recovered the original archive from the prior Phase 4 chat attachment and
+  verified its original checksum/tree. No new tick period was added.
+
+**Measured criteria across the 20 base runs:** common **0/20**; Best Alpha
+**0/20**; user >5 FIFO round trips **20/20**; strict drawdown rule
+**20/20**; average exposure >=50% **0/20**; positive payoff **0/20**.
+No Phase 5 candidate is promoted. The Phase 5 improvement checkpoint and
+independent chronological validation remain open.
+
+| Strategy | Equal FIFO round trips | Quality FIFO round trips |
+| --- | ---: | ---: |
+| C1 | 445 | 393 |
+| C2 | 438 | 360 |
+| C3 | 341 | 355 |
+| C4 | 535 | 531 |
+| C5 | 421 | 375 |
+| T1 | 457 | 446 |
+| T2 | 431 | 415 |
+| T3 | 411 | 446 |
+| T4 | 507 | 504 |
+| T5 | 317 | 335 |
+
+The five-session pre-start daily-bar calibration found no stock with a positive
+mean after estimated ticks and fees. The first hard positive-edge gate produced
+zero trades in its two-day C1 smoke tests; its source, declaration and outcomes
+are retained. Version 2 explicitly tests price/risk hypotheses without claiming
+verified positive expected returns or calibrated future win probabilities.
+
+The broader policies increased completed FIFO lots, but many lots came from IOC
+fragmentation. Full position episodes, realized and open losses, cost effects,
+win/loss sizes and payoff uncertainty are reported separately. The 35% hard
+risk target and selective entries caused exposure shortfalls; these are measured
+failures, not claimed eligibility passes. Local engineering completion has not
+established a profitable or competition-ready strategy.
 
 ## Completed milestones
 
@@ -33,6 +90,10 @@ lessons are separated into [docs/to-do](../to-do/README.md).
 | Phase 4 R76 control | Full 16-day replay: −3.245602% return, 75.690713% average exposure, 3.148817% official drawdown; zero completed FIFO lots and undefined payoff |
 | Phase 4 paired controls | P-C2, P-C3, H-C3 and B-C3 implemented and fully replayed under predeclared configurations; all outcomes retained |
 | Phase 4 visual report | 12-page PDF, matching Markdown, CSV/JSON and ten figures, including costs, symbol attribution and completed-lot quote excursions |
+| Phase 4 merge | PR #6 merged; current base commit `b66baf9` |
+| Phase 5 implementation | All-available-universe screening, equal/quality sizing, stock/sector/liquidity controls, sampled exits and turnover budget |
+| Phase 5 replay/reporting | 20 base runs, 8 actual sensitivity runs, 448 reconciled strategy-days, stock-level evidence and visual/PDF reporting |
+| Phase 5 verification | 108 passing tests and a nine-artifact deterministic repeat; original source and package hashes preserved |
 
 The official engine, market data and all six recorded Phase 2 runtime/validation
 sources remain unchanged. The organizer example remains integration evidence,

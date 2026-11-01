@@ -4,14 +4,15 @@
 Project: algo-trading | League: Chulalongkorn University (CU)
 Prepared: 29 October 2026 (Asia/Bangkok)
 
-> Status update: Phases 1–3 are merged. Phase 4 diagnostics, declared controls
-> and visual reporting are complete; independent validation remains blocked by
-> missing additional permitted data. Read
+> Status update (1 November 2026): Phases 1–3 are merged and Phase 4
+> development reporting is complete. Phase 5 implements full supplied-universe
+> paired comparisons and execution/risk experiments. See
 > [current progress](current-progress/README.md), the
-> [Phase 3 comparison](result-data-visualisation/phase-3-results.md), and
-> [next actions](to-do/README.md) before continuing.
-> This guide and its PDF preserve the original planning snapshot;
-> their progress statements below predate Phase 2 completion.
+> [Phase 5 report](result-data-visualisation/phase-5/phase-5-results.md), and
+> [next actions](to-do/phase-6.md) for measured results and open gates.
+> Independent validation still needs additional permitted ticks and dated membership.
+> This guide and its original PDF otherwise preserve the original planning snapshot;
+> their historical status statements below predate Phase 2 completion.
 
 ## Our objective
 

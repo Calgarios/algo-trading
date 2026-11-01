@@ -18,7 +18,22 @@ KGI Algo Trading Bootcamp & Competition 2026, CU league.
 - [Phase 4 visual report](docs/result-data-visualisation/phase-4/phase-4-results.md)
   and [12-page PDF](docs/result-data-visualisation/phase-4/phase-4-results.pdf)
 
-## Continue Phase 4
+## Continue after Phase 5 experiments
+
+Phase 5 tests daily eligibility over all 48 supplied constituents with equal and
+quality sizing for each of ten models, plus actual fee/band sensitivities.
+Read the [Phase 5 visual report](docs/result-data-visualisation/phase-5/phase-5-results.md),
+[PDF](docs/result-data-visualisation/phase-5/phase-5-results.pdf),
+[strategy explanations](docs/phase-5-strategies.md), and
+[Phase 6 handoff](docs/to-do/phase-6.md). Independent validation remains open;
+a strategy is not promoted merely because implementation or simulations finish.
+
+The [research README](research/phase5/README.md) gives reproducible commands.
+The original strategy, Phase 3 and Phase 4 declarations remain unchanged.
+The current archive is restored from the earlier chat attachment and verified;
+it contains the same 16 September sessions and 48 static names, not fresh data.
+
+## Phase 4 historical reproduction
 
 Phase 3 PR #5 is merged. Phase 4 development diagnostics and all five declared
 new control runs are complete. P-C3 passes common criteria but has negative total
