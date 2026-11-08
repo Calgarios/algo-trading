@@ -13,6 +13,18 @@ open. The [next-phase handoff](../to-do/phase-6.md) holds future actions and gui
 This page records achievements and measured status only. Future actions and
 lessons are separated into [docs/to-do](../to-do/README.md).
 
+## Retention research update
+
+9 November 2026: tested a retention-only change on C3 and C4 using the official
+engine over the same 16 development sessions. All 32 strategy-days reconciled.
+C3 return improved from -4.137% to -3.819%, exposure rose from 35.069% to
+51.237%, and FIFO trips fell from 341 to 254. C4 return declined from -3.608%
+to -3.793%, exposure rose from 38.439% to 59.042%, and trips fell from 535 to
+437. Both retain negative payoff and fail common criteria and Best Alpha.
+Exposure differences prevent a matched-exposure interpretation. No candidate
+is promoted; independent validation remains open. See the
+[comparison](../result-data-visualisation/phase-5-retention/README.md).
+
 ## Phase 5 achievements and measured outcome
 
 [Full visual report](../result-data-visualisation/phase-5/phase-5-results.md),
