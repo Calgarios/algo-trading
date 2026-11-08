@@ -1,6 +1,6 @@
 # Current progress
 
-Updated 1 November 2026 (Asia/Bangkok). Project:
+Updated 8 November 2026 (UTC). Project:
 [Calgarios/algo-trading](https://github.com/Calgarios/algo-trading), KGI CU league.
 
 **Phases 1–3 and Phase 4 development reporting are merged. Phase 5
@@ -12,6 +12,24 @@ open. The [next-phase handoff](../to-do/phase-6.md) holds future actions and gui
 
 This page records achievements and measured status only. Future actions and
 lessons are separated into [docs/to-do](../to-do/README.md).
+
+## Cost-aware alpha research update
+
+8 November 2026 (UTC): implemented and replayed three declared policies
+(cost-aware breakout, relative strength and defensive pullback), each with
+equal and risk weighting. All 96 new strategy-days reconciled using the official
+engine; all 115 tests passed. Hash-verified charts, a three-page PDF, per-stock
+net P&L, position episodes and descriptive payoff intervals are recorded in the
+[alpha comparison](../result-data-visualisation/phase-5-alpha/README.md).
+
+No new variant passes common criteria or Best Alpha. Breakout return is -3.6368%
+versus retained C3 -3.8188% and SET50 -4.0995%, but exposure is 46.71%, payoff is
+THB -2,596.02 and FIFO trips are 96. Equal/risk breakout outcomes are identical.
+Relative-strength returns are -4.2229% / -4.1429% with 208 / 209 trips; defensive
+returns are -3.9539% / -3.8652% with 156 / 162 trips. All six exceed five FIFO
+trips and meet the working relative drawdown condition, but all have negative
+payoff and total return. No replacement is promoted. These results use the
+same September development data and do not establish independent validation.
 
 ## Retention research update
 

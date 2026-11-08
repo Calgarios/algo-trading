@@ -120,3 +120,7 @@ commands. Keep the original archive outside Git and retain it separately when
 moving workspaces. Never overwrite frozen experiment directories; changed
 hypotheses need new declarations. Store future lessons here, and put only
 completed achievements and measured status in current-progress.
+
+## Cost-aware alpha follow-up
+
+Use [alpha-research-next.md](alpha-research-next.md) for the next experiment protocol, matched-risk comparisons and data dependencies following the three-policy paired replay.

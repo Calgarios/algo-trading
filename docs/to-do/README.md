@@ -37,3 +37,5 @@ Use the [strategy explanations](../phase-5-strategies.md),
 Keep the original baseline as the engineering fallback until a replacement
 passes the declared evidence gates. Phase 6 compatibility work can proceed
 without claiming that the unresolved Phase 4/5 validation gates have passed.
+
+See also [next alpha research](alpha-research-next.md) after the cost-aware retention, relative-strength and defensive-pullback experiment.
