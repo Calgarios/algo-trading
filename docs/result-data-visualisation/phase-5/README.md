@@ -14,3 +14,5 @@ common criteria or Best Alpha.** All exceed five FIFO trips and satisfy the
 strict drawdown limit, but all have negative payoff and average exposure below
 50%. Returns range from -4.495% to -2.504%. These are reused September development
 results, not independent validation or evidence of high future win probability.
+
+Follow-up research: [retention-only comparison](../phase-5-retention/README.md) and [cost-aware alpha comparison](../phase-5-alpha/README.md). These are separate experiments; the original Phase 5 results above remain unchanged.

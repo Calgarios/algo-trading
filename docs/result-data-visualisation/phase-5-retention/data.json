@@ -1,0 +1,934 @@
+{
+  "days": {
+    "C3": [
+      {
+        "date": "2026-09-09",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.0,
+          "aligned_first_close_return_pct": 0.0,
+          "average_exposure": 0.5494362911033035,
+          "benchmark_max_drawdown_pct": 0.0,
+          "benchmark_return_pct": 0.0,
+          "completed_fifo_round_trips": 0,
+          "distinct_stocks": 7,
+          "excess_return_pp": 0.529034747752033,
+          "expected_payoff_thb": null,
+          "fees_thb": 9174.525224799998,
+          "final_cash_thb": 4529473.474775203,
+          "final_nav_thb": 10052903.474775203,
+          "initial_capital_max_drawdown_pct": 0.0,
+          "net_return_pct": 0.529034747752033,
+          "official_max_drawdown_pct": 0.0,
+          "realized_pnl_thb": 0.0,
+          "unrealized_pnl_thb": 52903.47477520257
+        }
+      },
+      {
+        "date": "2026-09-10",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.2303665640720376,
+          "aligned_first_close_return_pct": -0.34670360911108755,
+          "average_exposure": 0.5452481471335213,
+          "benchmark_max_drawdown_pct": 0.11633704503905519,
+          "benchmark_return_pct": -0.11633704503904996,
+          "completed_fifo_round_trips": 1,
+          "distinct_stocks": 7,
+          "excess_return_pp": 0.2968340011160753,
+          "expected_payoff_thb": 78.59276250000039,
+          "fees_thb": 9289.304392299999,
+          "final_cash_thb": 4597683.695607702,
+          "final_nav_thb": 10018049.695607703,
+          "initial_capital_max_drawdown_pct": 0.34670360911108594,
+          "net_return_pct": 0.18049695607702532,
+          "official_max_drawdown_pct": 0.34670360911108594,
+          "realized_pnl_thb": 1498.3394924999993,
+          "unrealized_pnl_thb": 16551.35611520318
+        }
+      },
+      {
+        "date": "2026-09-11",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.14000107257881034,
+          "aligned_first_close_return_pct": -0.922044542008027,
+          "average_exposure": 0.5640113129158011,
+          "benchmark_max_drawdown_pct": 0.7820434694292123,
+          "benchmark_return_pct": -0.7820434694292167,
+          "completed_fifo_round_trips": 1,
+          "distinct_stocks": 10,
+          "excess_return_pp": 0.38415573915624446,
+          "expected_payoff_thb": 78.59276250000039,
+          "fees_thb": 10353.773027299998,
+          "final_cash_thb": 3968769.226972703,
+          "final_nav_thb": 9960211.226972703,
+          "initial_capital_max_drawdown_pct": 0.9220445420080233,
+          "net_return_pct": -0.3978877302729722,
+          "official_max_drawdown_pct": 0.9220445420080233,
+          "realized_pnl_thb": 1688.9320524999994,
+          "unrealized_pnl_thb": -41477.70507979711
+        }
+      },
+      {
+        "date": "2026-09-14",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.27386929235053703,
+          "aligned_first_close_return_pct": -1.4455495316724631,
+          "average_exposure": 0.5516456760401007,
+          "benchmark_max_drawdown_pct": 1.1716802393219263,
+          "benchmark_return_pct": -1.171680239321926,
+          "completed_fifo_round_trips": 24,
+          "distinct_stocks": 10,
+          "excess_return_pp": 0.24751799608297986,
+          "expected_payoff_thb": -636.3401183958327,
+          "fees_thb": 13408.224323900004,
+          "final_cash_thb": 4809648.7756761005,
+          "final_nav_thb": 9907583.775676105,
+          "initial_capital_max_drawdown_pct": 1.44554953167246,
+          "net_return_pct": -0.9241622432389462,
+          "official_max_drawdown_pct": 1.44554953167246,
+          "realized_pnl_thb": -24248.242547800015,
+          "unrealized_pnl_thb": -68167.98177609482
+        }
+      },
+      {
+        "date": "2026-09-15",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.28302728301576874,
+          "aligned_first_close_return_pct": -0.9726741555010188,
+          "average_exposure": 0.5557287659562917,
+          "benchmark_max_drawdown_pct": 1.2557014385167866,
+          "benchmark_return_pct": -1.2557014385167875,
+          "completed_fifo_round_trips": 25,
+          "distinct_stocks": 10,
+          "excess_return_pp": 0.8069162465027868,
+          "expected_payoff_thb": -2004.4217606199993,
+          "fees_thb": 16148.519201400004,
+          "final_cash_thb": 4260183.480798598,
+          "final_nav_thb": 9955121.4807986,
+          "initial_capital_max_drawdown_pct": 1.44554953167246,
+          "net_return_pct": -0.4487851920140007,
+          "official_max_drawdown_pct": 1.44554953167246,
+          "realized_pnl_thb": -55038.67680580001,
+          "unrealized_pnl_thb": 10160.15760440025
+        }
+      },
+      {
+        "date": "2026-09-16",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.1861783272367079,
+          "aligned_first_close_return_pct": -2.186728067607535,
+          "average_exposure": 0.511954051749651,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -2.372906394844243,
+          "completed_fifo_round_trips": 59,
+          "distinct_stocks": 11,
+          "excess_return_pp": 0.7036445236722422,
+          "expected_payoff_thb": -1043.872276567795,
+          "fees_thb": 22106.18711720001,
+          "final_cash_thb": 6951191.8128828,
+          "final_nav_thb": 9833073.8128828,
+          "initial_capital_max_drawdown_pct": 2.186728067607539,
+          "net_return_pct": -1.6692618711720009,
+          "official_max_drawdown_pct": 2.186728067607539,
+          "realized_pnl_thb": -98137.6687294,
+          "unrealized_pnl_thb": -68788.51838780034
+        }
+      },
+      {
+        "date": "2026-09-17",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.8761427385101217,
+          "aligned_first_close_return_pct": -2.1032215707077806,
+          "average_exposure": 0.5020490297227008,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.227078832197659,
+          "completed_fifo_round_trips": 59,
+          "distinct_stocks": 12,
+          "excess_return_pp": -0.3582347636893579,
+          "expected_payoff_thb": -1043.872276567795,
+          "fees_thb": 24564.35958870001,
+          "final_cash_thb": 5485448.6404113,
+          "final_nav_thb": 9841468.640411299,
+          "initial_capital_max_drawdown_pct": 2.186728067607539,
+          "net_return_pct": -1.5853135958870168,
+          "official_max_drawdown_pct": 2.186728067607539,
+          "realized_pnl_thb": -98137.6687294,
+          "unrealized_pnl_thb": -60393.69085930128
+        }
+      },
+      {
+        "date": "2026-09-18",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.0098618667877868,
+          "aligned_first_close_return_pct": -2.237864008866708,
+          "average_exposure": 0.5051601580451976,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.228002142078921,
+          "completed_fifo_round_trips": 63,
+          "distinct_stocks": 13,
+          "excess_return_pp": -0.4926661972501023,
+          "expected_payoff_thb": -865.8519394047607,
+          "fees_thb": 26833.83393290001,
+          "final_cash_thb": 4649221.166067099,
+          "final_nav_thb": 9827933.166067097,
+          "initial_capital_max_drawdown_pct": 2.237864008866711,
+          "net_return_pct": -1.7206683393290234,
+          "official_max_drawdown_pct": 2.237864008866711,
+          "realized_pnl_thb": -91142.98981440002,
+          "unrealized_pnl_thb": -80923.84411850265
+        }
+      },
+      {
+        "date": "2026-09-21",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.9083522280895826,
+          "aligned_first_close_return_pct": -2.406939563971233,
+          "average_exposure": 0.5145745947411008,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.4985873358816506,
+          "completed_fifo_round_trips": 65,
+          "distinct_stocks": 15,
+          "excess_return_pp": -1.3920510269883613,
+          "expected_payoff_thb": -839.5783968692297,
+          "fees_thb": 27921.836287000013,
+          "final_cash_thb": 4023562.163712999,
+          "final_nav_thb": 9810936.163712999,
+          "initial_capital_max_drawdown_pct": 2.4069395639712385,
+          "net_return_pct": -1.8906383628700119,
+          "official_max_drawdown_pct": 2.4069395639712385,
+          "realized_pnl_thb": -91185.78206520002,
+          "unrealized_pnl_thb": -97878.05422180113
+        }
+      },
+      {
+        "date": "2026-09-22",
+        "performance": {
+          "aligned_first_close_excess_pp": -2.0680963436547017,
+          "aligned_first_close_return_pct": -2.2952305744452395,
+          "average_exposure": 0.5220209850430871,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.22713423079053774,
+          "completed_fifo_round_trips": 70,
+          "distinct_stocks": 18,
+          "excess_return_pp": -1.551204163182518,
+          "expected_payoff_thb": -806.1496570214279,
+          "fees_thb": 29128.83939730002,
+          "final_cash_thb": 4036532.1606026995,
+          "final_nav_thb": 9822166.160602694,
+          "initial_capital_max_drawdown_pct": 2.4069395639712385,
+          "net_return_pct": -1.7783383939730557,
+          "official_max_drawdown_pct": 2.4069395639712385,
+          "realized_pnl_thb": -96256.04017450011,
+          "unrealized_pnl_thb": -81577.79922280551
+        }
+      },
+      {
+        "date": "2026-09-23",
+        "performance": {
+          "aligned_first_close_excess_pp": -2.0677085804508444,
+          "aligned_first_close_return_pct": -2.109257525107655,
+          "average_exposure": 0.5223427750633447,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.041548944656810693,
+          "completed_fifo_round_trips": 91,
+          "distinct_stocks": 20,
+          "excess_return_pp": -1.5498325379262101,
+          "expected_payoff_thb": -1093.9871169230769,
+          "fees_thb": 32259.14825830002,
+          "final_cash_thb": 4668891.851741698,
+          "final_nav_thb": 9840861.851741698,
+          "initial_capital_max_drawdown_pct": 2.4069395639712385,
+          "net_return_pct": -1.5913814825830208,
+          "official_max_drawdown_pct": 2.4069395639712385,
+          "realized_pnl_thb": -131721.34676500014,
+          "unrealized_pnl_thb": -27416.80149330222
+        }
+      },
+      {
+        "date": "2026-09-24",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.7469789318613427,
+          "aligned_first_close_return_pct": -2.273265564180882,
+          "average_exposure": 0.5280351483983226,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.5262866323195392,
+          "completed_fifo_round_trips": 91,
+          "distinct_stocks": 20,
+          "excess_return_pp": -1.2299705488525103,
+          "expected_payoff_thb": -1093.9871169230769,
+          "fees_thb": 33344.71811720002,
+          "final_cash_thb": 4021595.281882799,
+          "final_nav_thb": 9824374.281882795,
+          "initial_capital_max_drawdown_pct": 2.4069395639712385,
+          "net_return_pct": -1.7562571811720495,
+          "official_max_drawdown_pct": 2.4069395639712385,
+          "realized_pnl_thb": -131721.34676500014,
+          "unrealized_pnl_thb": -43904.371352205286
+        }
+      },
+      {
+        "date": "2026-09-25",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.9888181927853799,
+          "aligned_first_close_return_pct": -2.565886868574352,
+          "average_exposure": 0.5327771664964925,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.577068675788972,
+          "completed_fifo_round_trips": 96,
+          "distinct_stocks": 20,
+          "excess_return_pp": -1.473357878156123,
+          "expected_payoff_thb": -1048.6250715833335,
+          "fees_thb": 34219.655394500034,
+          "final_cash_thb": 4019053.3446055,
+          "final_nav_thb": 9794957.34460549,
+          "initial_capital_max_drawdown_pct": 2.5658868685743554,
+          "net_return_pct": -2.050426553945095,
+          "official_max_drawdown_pct": 2.5658868685743554,
+          "realized_pnl_thb": -131917.34971650012,
+          "unrealized_pnl_thb": -73125.30567800932
+        }
+      },
+      {
+        "date": "2026-09-28",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.8263454619394714,
+          "aligned_first_close_return_pct": -2.595462593031006,
+          "average_exposure": 0.5360383722035921,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.7691171310915346,
+          "completed_fifo_round_trips": 100,
+          "distinct_stocks": 20,
+          "excess_return_pp": -1.3110416131694835,
+          "expected_payoff_thb": -974.984597186,
+          "fees_thb": 35329.874426100054,
+          "final_cash_thb": 4127967.1255739005,
+          "final_nav_thb": 9791984.125573898,
+          "initial_capital_max_drawdown_pct": 2.5954625930310082,
+          "net_return_pct": -2.080158744261018,
+          "official_max_drawdown_pct": 2.5954625930310082,
+          "realized_pnl_thb": -114010.19438270007,
+          "unrealized_pnl_thb": -94005.6800434022
+        }
+      },
+      {
+        "date": "2026-09-29",
+        "performance": {
+          "aligned_first_close_excess_pp": -1.4925322601841873,
+          "aligned_first_close_return_pct": -3.1175576512059155,
+          "average_exposure": 0.5269800010267681,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.6250253910217283,
+          "completed_fifo_round_trips": 170,
+          "distinct_stocks": 20,
+          "excess_return_pp": -0.9799904756882416,
+          "expected_payoff_thb": -897.4339667500005,
+          "fees_thb": 38646.58667100007,
+          "final_cash_thb": 5842113.4133290015,
+          "final_nav_thb": 9739498.413329003,
+          "initial_capital_max_drawdown_pct": 3.1175576512059107,
+          "net_return_pct": -2.60501586670997,
+          "official_max_drawdown_pct": 3.1175576512059107,
+          "realized_pnl_thb": -173678.74074359998,
+          "unrealized_pnl_thb": -86822.84592739664
+        }
+      },
+      {
+        "date": "2026-09-30",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.22542740085594914,
+          "aligned_first_close_return_pct": -4.3249232736607635,
+          "average_exposure": 0.5123710532786727,
+          "benchmark_max_drawdown_pct": 4.099495872804818,
+          "benchmark_return_pct": -4.099495872804814,
+          "completed_fifo_round_trips": 254,
+          "distinct_stocks": 20,
+          "excess_return_pp": 0.2807269999647972,
+          "expected_payoff_thb": -1050.7502631724412,
+          "fees_thb": 43366.887284000084,
+          "final_cash_thb": 6797735.112715998,
+          "final_nav_thb": 9618123.112715999,
+          "initial_capital_max_drawdown_pct": 4.324923273660759,
+          "net_return_pct": -3.818768872840017,
+          "official_max_drawdown_pct": 4.324923273660759,
+          "realized_pnl_thb": -278303.1617498001,
+          "unrealized_pnl_thb": -103573.72553420125
+        }
+      }
+    ],
+    "C4": [
+      {
+        "date": "2026-09-09",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.0,
+          "aligned_first_close_return_pct": 0.0,
+          "average_exposure": 0.44084723675139176,
+          "benchmark_max_drawdown_pct": 0.0,
+          "benchmark_return_pct": 0.0,
+          "completed_fifo_round_trips": 0,
+          "distinct_stocks": 10,
+          "excess_return_pp": -0.19116298825001543,
+          "expected_payoff_thb": null,
+          "fees_thb": 7411.298825000002,
+          "final_cash_thb": 5580838.701174997,
+          "final_nav_thb": 9980883.701174999,
+          "initial_capital_max_drawdown_pct": 0.19116298825001343,
+          "net_return_pct": -0.19116298825001543,
+          "official_max_drawdown_pct": 0.0,
+          "realized_pnl_thb": 0.0,
+          "unrealized_pnl_thb": -19116.298825001344
+        }
+      },
+      {
+        "date": "2026-09-10",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.13359538585447917,
+          "aligned_first_close_return_pct": -0.24993243089352912,
+          "average_exposure": 0.45198918712170233,
+          "benchmark_max_drawdown_pct": 0.11633704503905519,
+          "benchmark_return_pct": -0.11633704503904996,
+          "completed_fifo_round_trips": 0,
+          "distinct_stocks": 10,
+          "excess_return_pp": -0.32428059580098534,
+          "expected_payoff_thb": null,
+          "fees_thb": 7806.764084000002,
+          "final_cash_thb": 5345033.235915997,
+          "final_nav_thb": 9955938.235915996,
+          "initial_capital_max_drawdown_pct": 0.4406176408400387,
+          "net_return_pct": -0.4406176408400353,
+          "official_max_drawdown_pct": 0.24993243089352718,
+          "realized_pnl_thb": 0.0,
+          "unrealized_pnl_thb": -44061.764084003866
+        }
+      },
+      {
+        "date": "2026-09-11",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.043322659824751586,
+          "aligned_first_close_return_pct": -0.7387208096044651,
+          "average_exposure": 0.4490032651105203,
+          "benchmark_max_drawdown_pct": 0.7820434694292123,
+          "benchmark_return_pct": -0.7820434694292167,
+          "completed_fifo_round_trips": 8,
+          "distinct_stocks": 13,
+          "excess_return_pp": -0.1464281676507917,
+          "expected_payoff_thb": -3160.416479999994,
+          "fees_thb": 10447.163708000005,
+          "final_cash_thb": 5517972.836291995,
+          "final_nav_thb": 9907152.836291999,
+          "initial_capital_max_drawdown_pct": 0.9284716370800137,
+          "net_return_pct": -0.9284716370800083,
+          "official_max_drawdown_pct": 0.7387208096044648,
+          "realized_pnl_thb": -27686.86679499996,
+          "unrealized_pnl_thb": -65160.29691300141
+        }
+      },
+      {
+        "date": "2026-09-14",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.3020064453733484,
+          "aligned_first_close_return_pct": -0.8696737939485777,
+          "average_exposure": 0.4440149203516609,
+          "benchmark_max_drawdown_pct": 1.1716802393219263,
+          "benchmark_return_pct": -1.171680239321926,
+          "completed_fifo_round_trips": 30,
+          "distinct_stocks": 16,
+          "excess_return_pp": 0.1125059515358684,
+          "expected_payoff_thb": -2622.2807257500003,
+          "fees_thb": 13888.4287786,
+          "final_cash_thb": 5649027.571221395,
+          "final_nav_thb": 9894082.571221394,
+          "initial_capital_max_drawdown_pct": 1.0591742877860553,
+          "net_return_pct": -1.0591742877860577,
+          "official_max_drawdown_pct": 0.8696737939485814,
+          "realized_pnl_thb": -78668.42177250003,
+          "unrealized_pnl_thb": -27249.0070061055
+        }
+      },
+      {
+        "date": "2026-09-15",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.824619822004824,
+          "aligned_first_close_return_pct": -0.43108161651196353,
+          "average_exposure": 0.4639964858123949,
+          "benchmark_max_drawdown_pct": 1.2557014385167866,
+          "benchmark_return_pct": -1.2557014385167875,
+          "completed_fifo_round_trips": 30,
+          "distinct_stocks": 18,
+          "excess_return_pp": 0.6342809022547247,
+          "expected_payoff_thb": -2622.2807257500003,
+          "fees_thb": 15761.0536262,
+          "final_cash_thb": 4532430.946373796,
+          "final_nav_thb": 9937857.946373794,
+          "initial_capital_max_drawdown_pct": 1.0591742877860553,
+          "net_return_pct": -0.6214205362620628,
+          "official_max_drawdown_pct": 0.8696737939485814,
+          "realized_pnl_thb": -78668.42177250003,
+          "unrealized_pnl_thb": 16526.368146294262
+        }
+      },
+      {
+        "date": "2026-09-16",
+        "performance": {
+          "aligned_first_close_excess_pp": 1.442505580270359,
+          "aligned_first_close_return_pct": -0.930400814573884,
+          "average_exposure": 0.4783069789766883,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -2.372906394844243,
+          "completed_fifo_round_trips": 62,
+          "distinct_stocks": 23,
+          "excess_return_pp": 1.2531211740201886,
+          "expected_payoff_thb": -1648.1443343951607,
+          "fees_thb": 18774.522082399984,
+          "final_cash_thb": 4450999.477917594,
+          "final_nav_thb": 9888021.477917595,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -1.1197852208240544,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -105480.28864149998,
+          "unrealized_pnl_thb": -6498.233440905184
+        }
+      },
+      {
+        "date": "2026-09-17",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.7993198382642785,
+          "aligned_first_close_return_pct": -0.42775899393338035,
+          "average_exposure": 0.5070735085316532,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.227078832197659,
+          "completed_fifo_round_trips": 65,
+          "distinct_stocks": 26,
+          "excess_return_pp": 0.6089745668895752,
+          "expected_payoff_thb": -1569.905705461538,
+          "fees_thb": 21234.42653079999,
+          "final_cash_thb": 3183473.5734691937,
+          "final_nav_thb": 9938189.573469192,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.6181042653080837,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -105339.21076399999,
+          "unrealized_pnl_thb": 43528.78423319178
+        }
+      },
+      {
+        "date": "2026-09-18",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.7421662756947001,
+          "aligned_first_close_return_pct": -0.48583586638422105,
+          "average_exposure": 0.5286147000812937,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.228002142078921,
+          "completed_fifo_round_trips": 107,
+          "distinct_stocks": 27,
+          "excess_return_pp": 0.5519320258048577,
+          "expected_payoff_thb": -321.1806794953272,
+          "fees_thb": 24729.011627399974,
+          "final_cash_thb": 3184294.9883725937,
+          "final_nav_thb": 9932392.988372594,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.6760701162740634,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -37661.67261500001,
+          "unrealized_pnl_thb": -29945.33901240587
+        }
+      },
+      {
+        "date": "2026-09-21",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.043755004168744005,
+          "aligned_first_close_return_pct": -0.4548323317129066,
+          "average_exposure": 0.5461790041682402,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.4985873358816506,
+          "completed_fifo_round_trips": 117,
+          "distinct_stocks": 27,
+          "excess_return_pp": -0.1465385130044461,
+          "expected_payoff_thb": -115.90769757606851,
+          "fees_thb": 27258.58488859998,
+          "final_cash_thb": 3112853.415111393,
+          "final_nav_thb": 9935487.41511139,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.6451258488860967,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -16856.540525400014,
+          "unrealized_pnl_thb": -47656.04436320911
+        }
+      },
+      {
+        "date": "2026-09-22",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.11424545785654328,
+          "aligned_first_close_return_pct": -0.341379688647081,
+          "average_exposure": 0.5633716971780354,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.22713423079053774,
+          "completed_fifo_round_trips": 123,
+          "distinct_stocks": 27,
+          "excess_return_pp": -0.30475585449245557,
+          "expected_payoff_thb": -64.12233025528484,
+          "fees_thb": 28962.00852829998,
+          "final_cash_thb": 2803946.9914716934,
+          "final_nav_thb": 9946810.9914717,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.5318900852829933,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -11182.386530400032,
+          "unrealized_pnl_thb": -42006.621997899594
+        }
+      },
+      {
+        "date": "2026-09-23",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.16369066233897778,
+          "aligned_first_close_return_pct": -0.20523960699578847,
+          "average_exposure": 0.5781321786075129,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.041548944656810693,
+          "completed_fifo_round_trips": 143,
+          "distinct_stocks": 27,
+          "excess_return_pp": -0.3544613084231929,
+          "expected_payoff_thb": -198.21905681398619,
+          "fees_thb": 31587.025307999993,
+          "final_cash_thb": 2731768.9746919945,
+          "final_nav_thb": 9960398.974692,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.3960102530800036,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -31640.665033400022,
+          "unrealized_pnl_thb": -7960.3602745999015
+        }
+      },
+      {
+        "date": "2026-09-24",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.07292794242549361,
+          "aligned_first_close_return_pct": -0.4533586898940456,
+          "average_exposure": 0.5944377718951034,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.5262866323195392,
+          "completed_fifo_round_trips": 148,
+          "distinct_stocks": 27,
+          "excess_return_pp": -0.11736839180541692,
+          "expected_payoff_thb": -220.05100403310826,
+          "fees_thb": 33053.50241249999,
+          "final_cash_thb": 2247447.4975874955,
+          "final_nav_thb": 9935634.497587504,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -0.6436550241249561,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -35902.04166340002,
+          "unrealized_pnl_thb": -28463.460749096113
+        }
+      },
+      {
+        "date": "2026-09-25",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.32583788999321905,
+          "aligned_first_close_return_pct": -0.9029065657821911,
+          "average_exposure": 0.6070593840786017,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.577068675788972,
+          "completed_fifo_round_trips": 172,
+          "distinct_stocks": 28,
+          "excess_return_pp": -0.5152748550709796,
+          "expected_payoff_thb": -282.69629191220923,
+          "fees_thb": 36321.353085999974,
+          "final_cash_thb": 2388434.6469139964,
+          "final_nav_thb": 9890765.646914005,
+          "initial_capital_max_drawdown_pct": 1.1197852208240517,
+          "net_return_pct": -1.0923435308599516,
+          "official_max_drawdown_pct": 0.93040081457388,
+          "realized_pnl_thb": -50941.56196039997,
+          "unrealized_pnl_thb": -58292.79112559475
+        }
+      },
+      {
+        "date": "2026-09-28",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.36808214233599035,
+          "aligned_first_close_return_pct": -1.137199273427525,
+          "average_exposure": 0.6168795947692224,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -0.7691171310915346,
+          "completed_fifo_round_trips": 214,
+          "distinct_stocks": 28,
+          "excess_return_pp": -0.5570712264725608,
+          "expected_payoff_thb": -24.098024053738435,
+          "fees_thb": 38985.83575639998,
+          "final_cash_thb": 2520698.164243595,
+          "final_nav_thb": 9867381.16424359,
+          "initial_capital_max_drawdown_pct": 1.3261883575640991,
+          "net_return_pct": -1.3261883575640954,
+          "official_max_drawdown_pct": 1.1371992734275271,
+          "realized_pnl_thb": -8116.039541999995,
+          "unrealized_pnl_thb": -124502.79621440991
+        }
+      },
+      {
+        "date": "2026-09-29",
+        "performance": {
+          "aligned_first_close_excess_pp": -0.2509135104641125,
+          "aligned_first_close_return_pct": -1.8759389014858407,
+          "average_exposure": 0.6143717662019238,
+          "benchmark_max_drawdown_pct": 2.372906394844242,
+          "benchmark_return_pct": -1.6250253910217283,
+          "completed_fifo_round_trips": 278,
+          "distinct_stocks": 29,
+          "excess_return_pp": -0.43849039785229804,
+          "expected_payoff_thb": -157.7130163705035,
+          "fees_thb": 42615.5788874,
+          "final_cash_thb": 4120558.421112594,
+          "final_nav_thb": 9793648.421112597,
+          "initial_capital_max_drawdown_pct": 2.0635157888740303,
+          "net_return_pct": -2.0635157888740263,
+          "official_max_drawdown_pct": 1.8759389014858414,
+          "realized_pnl_thb": -57140.097981099956,
+          "unrealized_pnl_thb": -149211.48090630304
+        }
+      },
+      {
+        "date": "2026-09-30",
+        "performance": {
+          "aligned_first_close_excess_pp": 0.4906619582356715,
+          "aligned_first_close_return_pct": -3.608833914569143,
+          "average_exposure": 0.5904221433695583,
+          "benchmark_max_drawdown_pct": 4.099495872804818,
+          "benchmark_return_pct": -4.099495872804814,
+          "completed_fifo_round_trips": 437,
+          "distinct_stocks": 29,
+          "excess_return_pp": 0.30639772473772764,
+          "expected_payoff_thb": -679.1024783345537,
+          "fees_thb": 50810.8148067,
+          "final_cash_thb": 7396600.185193292,
+          "final_nav_thb": 9620690.185193291,
+          "initial_capital_max_drawdown_pct": 3.7930981480670907,
+          "net_return_pct": -3.7930981480670867,
+          "official_max_drawdown_pct": 3.6088339145691477,
+          "realized_pnl_thb": -303387.50402219995,
+          "unrealized_pnl_thb": -75922.31078450911
+        }
+      }
+    ]
+  },
+  "runs": {
+    "C3": {
+      "control": {
+        "aligned_first_close_excess_pp": -0.5421337828847577,
+        "aligned_first_close_return_pct": -4.641629655689572,
+        "average_exposure": 0.35068891118425444,
+        "benchmark_max_drawdown_pct": 4.099495872804818,
+        "benchmark_return_pct": -4.099495872804814,
+        "completed_fifo_round_trips": 341,
+        "distinct_stocks": 20,
+        "excess_return_pp": -0.037654868873294056,
+        "expected_payoff_thb": -1044.7375621501467,
+        "fees_thb": 57701.074167799976,
+        "final_cash_thb": 8097768.925832191,
+        "final_nav_thb": 9586284.92583219,
+        "initial_capital_max_drawdown_pct": 4.641629655689569,
+        "net_return_pct": -4.137150741678108,
+        "official_max_drawdown_pct": 4.641629655689569,
+        "realized_pnl_thb": -356384.5617732003,
+        "unrealized_pnl_thb": -57330.512394610094
+      },
+      "daily_reconciled": 16,
+      "eligibility": {
+        "basis": "Scoring PDF page 18 (recovered extraction); later amendments unconfirmed",
+        "best_alpha_status": "fail",
+        "checks": {
+          "average_exposure": {
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": ">= 0.50",
+            "value": 0.5123710532786727
+          },
+          "completed_fifo_round_trips": {
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": ">= 5",
+            "value": 254
+          },
+          "distinct_stocks": {
+            "scope": "trading_participation",
+            "status": "pass",
+            "threshold": ">= 5",
+            "value": 20
+          },
+          "excess_return_pp": {
+            "scope": "best_alpha_addition",
+            "status": "pass",
+            "threshold": ">= 0",
+            "value": 0.2807269999647972
+          },
+          "expected_payoff_thb": {
+            "scope": "common_performance",
+            "status": "fail",
+            "threshold": "> 0",
+            "value": -1050.7502631724412
+          },
+          "net_return_pct": {
+            "scope": "best_alpha_addition",
+            "status": "fail",
+            "threshold": ">= 0",
+            "value": -3.818768872840017
+          },
+          "relative_drawdown": {
+            "benchmark_max_drawdown_pct": 4.099495872804818,
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": "< 1.5 * benchmark_max_drawdown_pct",
+            "value": 4.324923273660759
+          }
+        },
+        "common_and_participation_status": "fail",
+        "common_status": "fail",
+        "competition_acceptance": "unknown",
+        "other_award_performance_status": {
+          "best_risk_control": "fail",
+          "most_active_trader": "fail",
+          "precision_trader": "fail"
+        },
+        "trading_participation_status": "pass"
+      },
+      "hashes": {
+        "decisions.jsonl": "5b51de25a9fee2148982ba640fe223e2dcda4cae502cf8576b392db78cc450e4",
+        "engine/baseline/baseline_portfolio.json": "749b5210694a4b3a733bdc96e58a643bd34f8ff039c0dfecfa6ba60eb67aa768",
+        "engine/baseline/baseline_transaction_log.csv": "7a67d130ea4e8efb8d4c8a8f19771622940034f01b5116b78f8bc24811f1f8ac",
+        "fifo.json": "042eb9855163dd9a37e2665073bb35c4fa798a7d471e6ca714b6ab70a777cd83",
+        "plans.json": "33879c842e6097bd8f6ef03e1222d0b6e5f9d555e28008ece7c942167a159b0f",
+        "report.json": "091a9cfa95328e3eefe9e28c3f822ee12f0e3f4aef93dd9160a928fa8462888a",
+        "report.md": "638fda4d0ab65ec6c09b7c84569eb58699b6fc5b19ce4ab975f06f7e2320b61a",
+        "strategy/DiversifiedBaseline.py": "197a97f2ddbec8120513214b280c6e8dfac7988008386966eb896603807985d0",
+        "strategy/baseline.json": "938d03460dfb0797ccad3bf85dbbc136294951a0667b3c4d696f13c77f22d354"
+      },
+      "retention": {
+        "aligned_first_close_excess_pp": -0.22542740085594914,
+        "aligned_first_close_return_pct": -4.3249232736607635,
+        "average_exposure": 0.5123710532786727,
+        "benchmark_max_drawdown_pct": 4.099495872804818,
+        "benchmark_return_pct": -4.099495872804814,
+        "completed_fifo_round_trips": 254,
+        "distinct_stocks": 20,
+        "excess_return_pp": 0.2807269999647972,
+        "expected_payoff_thb": -1050.7502631724412,
+        "fees_thb": 43366.887284000084,
+        "final_cash_thb": 6797735.112715998,
+        "final_nav_thb": 9618123.112715999,
+        "initial_capital_max_drawdown_pct": 4.324923273660759,
+        "net_return_pct": -3.818768872840017,
+        "official_max_drawdown_pct": 4.324923273660759,
+        "realized_pnl_thb": -278303.1617498001,
+        "unrealized_pnl_thb": -103573.72553420125
+      }
+    },
+    "C4": {
+      "control": {
+        "aligned_first_close_excess_pp": 0.6759840365937126,
+        "aligned_first_close_return_pct": -3.4235118362111017,
+        "average_exposure": 0.38438734075678765,
+        "benchmark_max_drawdown_pct": 4.099495872804818,
+        "benchmark_return_pct": -4.099495872804814,
+        "completed_fifo_round_trips": 535,
+        "distinct_stocks": 29,
+        "excess_return_pp": 0.4913655358728892,
+        "expected_payoff_thb": -559.9506884882244,
+        "fees_thb": 63039.03369319994,
+        "final_cash_thb": 7900886.966306807,
+        "final_nav_thb": 9639186.966306807,
+        "initial_capital_max_drawdown_pct": 3.608130336931925,
+        "net_return_pct": -3.608130336931925,
+        "official_max_drawdown_pct": 3.4235118362111057,
+        "realized_pnl_thb": -300992.43680370017,
+        "unrealized_pnl_thb": -59820.59688949236
+      },
+      "daily_reconciled": 16,
+      "eligibility": {
+        "basis": "Scoring PDF page 18 (recovered extraction); later amendments unconfirmed",
+        "best_alpha_status": "fail",
+        "checks": {
+          "average_exposure": {
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": ">= 0.50",
+            "value": 0.5904221433695583
+          },
+          "completed_fifo_round_trips": {
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": ">= 5",
+            "value": 437
+          },
+          "distinct_stocks": {
+            "scope": "trading_participation",
+            "status": "pass",
+            "threshold": ">= 5",
+            "value": 29
+          },
+          "excess_return_pp": {
+            "scope": "best_alpha_addition",
+            "status": "pass",
+            "threshold": ">= 0",
+            "value": 0.30639772473772764
+          },
+          "expected_payoff_thb": {
+            "scope": "common_performance",
+            "status": "fail",
+            "threshold": "> 0",
+            "value": -679.1024783345537
+          },
+          "net_return_pct": {
+            "scope": "best_alpha_addition",
+            "status": "fail",
+            "threshold": ">= 0",
+            "value": -3.7930981480670867
+          },
+          "relative_drawdown": {
+            "benchmark_max_drawdown_pct": 4.099495872804818,
+            "scope": "common_performance",
+            "status": "pass",
+            "threshold": "< 1.5 * benchmark_max_drawdown_pct",
+            "value": 3.6088339145691477
+          }
+        },
+        "common_and_participation_status": "fail",
+        "common_status": "fail",
+        "competition_acceptance": "unknown",
+        "other_award_performance_status": {
+          "best_risk_control": "fail",
+          "most_active_trader": "fail",
+          "precision_trader": "fail"
+        },
+        "trading_participation_status": "pass"
+      },
+      "hashes": {
+        "decisions.jsonl": "b87b6e3d197c0a0d36c7397ca9a83be8d8be0a50cd0f95c457d3c769a8994c38",
+        "engine/baseline/baseline_portfolio.json": "ea96fc465ae04f30337ae964dd102b463738d712370fa18ec0b3a6cbf7594f4d",
+        "engine/baseline/baseline_transaction_log.csv": "83ca3d7ae30ce529cb47c1fe718ccd2762e1fc75750e5b72f9727ba7d64af04a",
+        "fifo.json": "0e5297a60955659247e594611fd27e47301c61c3e05e919d818386d9851d2e04",
+        "plans.json": "20cc9d2cfa5df9b8735b8071daad99be1b4f0856809d2f3e35dce5a346e9c1d9",
+        "report.json": "34a993152766891104bdacf13dd81f19e07578029e43725337e16ce97beb610b",
+        "report.md": "a3ef58d35566406d6a95331e2410f98672a62f6c5701ebfec6130d781bd14404",
+        "strategy/DiversifiedBaseline.py": "197a97f2ddbec8120513214b280c6e8dfac7988008386966eb896603807985d0",
+        "strategy/baseline.json": "179f1464409c91386d25e863f493af25fdf813128d97773a4a8de9fb99101a4f"
+      },
+      "retention": {
+        "aligned_first_close_excess_pp": 0.4906619582356715,
+        "aligned_first_close_return_pct": -3.608833914569143,
+        "average_exposure": 0.5904221433695583,
+        "benchmark_max_drawdown_pct": 4.099495872804818,
+        "benchmark_return_pct": -4.099495872804814,
+        "completed_fifo_round_trips": 437,
+        "distinct_stocks": 29,
+        "excess_return_pp": 0.30639772473772764,
+        "expected_payoff_thb": -679.1024783345537,
+        "fees_thb": 50810.8148067,
+        "final_cash_thb": 7396600.185193292,
+        "final_nav_thb": 9620690.185193291,
+        "initial_capital_max_drawdown_pct": 3.7930981480670907,
+        "net_return_pct": -3.7930981480670867,
+        "official_max_drawdown_pct": 3.6088339145691477,
+        "realized_pnl_thb": -303387.50402219995,
+        "unrealized_pnl_thb": -75922.31078450911
+      }
+    }
+  }
+}

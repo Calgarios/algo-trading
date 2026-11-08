@@ -20,6 +20,14 @@ open when those conditions are not met. Phase 6 compatibility/recovery work may
 proceed in parallel using an explicitly named fallback; production promotion and
 claims of successful validation remain blocked.
 
+## Retention experiment follow-up
+
+The [retention-only comparison](../result-data-visualisation/phase-5-retention/README.md)
+raised exposure and reduced fees on C3 and C4, but payoff remained negative;
+C4 return worsened and C3 accumulated larger open losses. Compare changes at
+matched exposure, add explicit risk-cap enforcement and cost-aware turnover,
+and test on independent permitted data before promoting any strategy.
+
 ## Research that must precede a stronger claim
 
 1. Obtain additional permitted tick sessions and effective-dated constituents.
@@ -112,3 +120,7 @@ commands. Keep the original archive outside Git and retain it separately when
 moving workspaces. Never overwrite frozen experiment directories; changed
 hypotheses need new declarations. Store future lessons here, and put only
 completed achievements and measured status in current-progress.
+
+## Cost-aware alpha follow-up
+
+Use [alpha-research-next.md](alpha-research-next.md) for the next experiment protocol, matched-risk comparisons and data dependencies following the three-policy paired replay.
