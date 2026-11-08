@@ -80,4 +80,3 @@ risk tests, but reject promotion of these trading variants. Further parameter
 search on the same 16 sessions cannot supply independent evidence. See
 [next research](../../to-do/alpha-research-next.md) for the required comparison
 and new-data protocol.
-

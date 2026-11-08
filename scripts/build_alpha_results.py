@@ -172,7 +172,7 @@ def main():
               '.venv/bin/python scripts/build_alpha_results.py --runs artifacts/alpha-repeat --output artifacts/alpha-report-repeat', '```', '',
               'The builder also requires the existing verified artifacts/retention-C3 and artifacts/retention-C4 controls. The literal quality config suffix means risk sizing in this experiment, not estimated profitability.']
     lines.append('\n## Decision\n\nNo strategy is promoted. The best new return, breakout -3.6368%, improves on\nretained C3 by 0.1820 percentage points, but exposure falls below eligibility\nand payoff worsens. Its 96 FIFO trips represent only seven closed position\nepisodes. Relative strength loses more than SET50; defensive pullbacks do not\nbeat the C3/C4 retention controls. All new payoff intervals remain below zero.\nThe results do not support claims of high win probability or prize readiness.\n\nThe cost/retention/risk changes were bundled and exposure differs, so the return\nchange cannot be attributed to better stock selection. Preserve the engineering\nrisk tests, but reject promotion of these trading variants. Further parameter\nsearch on the same 16 sessions cannot supply independent evidence. See\n[next research](../../to-do/alpha-research-next.md) for the required comparison\nand new-data protocol.\n')
-    (out / 'README.md').write_text('\n'.join(lines) + '\n')
+    (out / 'README.md').write_text('\n'.join(lines).rstrip() + '\n')
 
 
 if __name__ == '__main__':
