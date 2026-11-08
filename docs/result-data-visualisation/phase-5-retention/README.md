@@ -47,7 +47,9 @@ Reproduce after installing the checksum-pinned official package and Python 3.13:
 ```bash
 .venv/bin/python -m unittest discover -s tests -p test_phase5_retention.py -v
 .venv/bin/python scripts/run_retention_experiment.py --output artifacts/retention-repeat
-.venv/bin/python scripts/build_retention_visualisation.py --output artifacts/retention-visuals
+.venv/bin/python scripts/build_retention_visualisation.py \
+  --c3 artifacts/retention-repeat/C3 --c4 artifacts/retention-repeat/C4 \
+  --output artifacts/retention-visuals
 ```
 
 The runner stages the research strategy separately and refuses to overwrite an
