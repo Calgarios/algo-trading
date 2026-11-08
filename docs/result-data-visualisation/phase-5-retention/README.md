@@ -12,7 +12,15 @@ filter. Existing stops, profit exits, portfolio guard and execution remain activ
 | C4 | Phase 5 equal | -3.608 | 38.439 | 3.424 | 535 | -559.95 | 63,039 | -59,821 |
 | C4 | Retention | -3.793 | 59.042 | 3.609 | 437 | -679.10 | 50,811 | -75,922 |
 
-![Returns and exposure](comparison.png)
+[Five-page visual report (PDF)](retention-results.pdf) · [Daily data](data.json)
+
+![Comparison overview](overview.png)
+
+![Payoff, costs and losses](payoff-costs.png)
+
+![C3 daily paths](c3-paths.png)
+
+![C4 daily paths](c4-paths.png)
 
 Both retention versions meet the 50% exposure and >5 FIFO-trip targets and
 remain below the 6.149244% drawdown boundary. Both fail common criteria because
@@ -39,6 +47,7 @@ Reproduce after installing the checksum-pinned official package and Python 3.13:
 ```bash
 .venv/bin/python -m unittest discover -s tests -p test_phase5_retention.py -v
 .venv/bin/python scripts/run_retention_experiment.py --output artifacts/retention-repeat
+.venv/bin/python scripts/build_retention_visualisation.py --output artifacts/retention-visuals
 ```
 
 The runner stages the research strategy separately and refuses to overwrite an
